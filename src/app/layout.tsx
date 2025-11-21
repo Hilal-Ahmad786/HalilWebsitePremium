@@ -2,9 +2,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Header, Footer, FloatingButtons } from "@/components/layout";
+import { Header, Footer } from "@/components/layout";
 import { GoogleTagManager, GoogleAnalytics, FacebookPixel } from "@/components/tracking";
-import { siteConfig } from "@/data/site";
+import { siteConfig } from '@/config/site';
+import CustomerCarePopup from '@/components/ui/CustomerCarePopup';
+import UnifiedFloatingButtons from '@/components/layout/UnifiedFloatingButtons';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,33 +14,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.metaTitle || siteConfig.name,
-  description: siteConfig.metaDescription || siteConfig.description,
+  title: {
+    default: 'Premium Auto Expert - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
+    template: '%s | Premium Auto Expert',
+  },
+  description: siteConfig.description,
   keywords: [
-    "araç alım",
-    "ikinci el araç",
-    "araç satış",
-    "ekspertiz",
-    "İstanbul araç alım",
-    "güvenilir araç alım",
+    'kazalı araç alan',
+    'hasarlı araç alan',
+    'pert araç alan',
+    'hurda araç alan',
+    'istanbul araç alım',
   ],
-  authors: [{ name: siteConfig.name }],
   openGraph: {
-    type: "website",
-    locale: "tr_TR",
+    type: 'website',
+    locale: 'tr_TR',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.metaTitle || siteConfig.name,
-    description: siteConfig.metaDescription || siteConfig.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.metaTitle || siteConfig.name,
-    description: siteConfig.metaDescription || siteConfig.description,
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
@@ -49,17 +41,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={inter.className}>
-        {/* Tracking Scripts */}
         <GoogleTagManager />
         <GoogleAnalytics />
         <FacebookPixel />
 
-        {/* Layout */}
         <Header />
         <main>{children}</main>
         <Footer />
-        <FloatingButtons />
+        <UnifiedFloatingButtons />
+        <CustomerCarePopup />
       </body>
     </html>
   );

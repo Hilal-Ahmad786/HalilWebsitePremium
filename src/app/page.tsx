@@ -1,27 +1,96 @@
 
 // ===== src/app/page.tsx =====
-import { 
-  HeroSection, 
-  ServicesGrid, 
-  ProcessSteps, 
-  StatsSection,
-  TestimonialsSection,
-  FAQSection,
-  CTASection,
-  ServiceCoverageMap 
-} from "@/components/sections";
+import { Metadata } from 'next';
+import HeroBanner from '@/components/sections/HeroBanner';
+import WhyUs from '@/components/sections/WhyUs';
+import ProcessTimeline from '@/components/sections/ProcessTimeline';
+import ContactCTA from '@/components/sections/ContactCTA';
+import TrustBadges from '@/components/sections/TrustBadges';
+import ServicesComparison from '@/components/sections/ServicesComparison';
+import CoverageArea from '@/components/sections/CoverageArea';
+import UrgentCTABanner from '@/components/sections/UrgentCTABanner';
+
+export const metadata: Metadata = {
+  title: 'Premium Auto Expert - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
+  description: 'İstanbul\'da En Güvenilir Araç Alım Merkezi. 30 dakikada nakit teklif, ücretsiz ekspertiz, 7/24 hizmet.',
+};
 
 export default function HomePage() {
+  const whyUsItems = [
+    {
+      icon: 'fas fa-clock',
+      title: '30 Dakikada Teklif',
+      description: 'Ekspertiz sonrası 30 dakika içinde nakit teklif alın.',
+    },
+    {
+      icon: 'fas fa-search',
+      title: 'Ücretsiz Ekspertiz',
+      description: 'Yerinde veya noter yanında ekspertiz—%100 ücretsiz.',
+    },
+    {
+      icon: 'fas fa-truck-moving',
+      title: 'Ücretsiz Çekici',
+      description: 'Aracınızı ücretsiz çekiciyle alırız.',
+    },
+    {
+      icon: 'fas fa-headset',
+      title: '7/24 Destek',
+      description: 'Her adımda yanınızdayız—anında yanıt.',
+    },
+  ];
+
+  const processSteps = [
+    {
+      icon: 'fas fa-phone-volume',
+      title: 'Bize Ulaşın',
+      description: '7/24 çağrı merkezi | WhatsApp.',
+    },
+    {
+      icon: 'fas fa-search-location',
+      title: 'Ücretsiz Ekspertiz',
+      description: 'Yerinde inceleme + rapor.',
+    },
+    {
+      icon: 'fas fa-file-signature',
+      title: 'Teklif & Onay',
+      description: 'Piyasa üstü en iyi fiyat.',
+    },
+    {
+      icon: 'fas fa-hand-holding-usd',
+      title: 'Noter & Nakit',
+      description: 'Noter devir → anında ödeme.',
+    },
+  ];
+
   return (
-    <>
-      <HeroSection />
-      <ServicesGrid />
-      <StatsSection />
-      <ProcessSteps />
-      <TestimonialsSection />
-      <ServiceCoverageMap />
-      <FAQSection />
-      <CTASection />
-    </>
+    <div className="home-page">
+      <HeroBanner
+        variant="default"
+        tagline="İstanbul'un En Güvenilir Araç Alım Merkezi"
+        title="Hasarlı | Kazalı | Pert | Hurda Araç Alımı"
+        subtitle="Hasarlı | Kazalı | Pert | Hurda Araç Alımında #1"
+        highlight="30 Dakikada Anında Teklif"
+      />
+      
+      <UrgentCTABanner/>
+      <TrustBadges /> 
+      
+      <WhyUs
+        title="Neden Premium Auto Expert?"
+        subtitle="30 Dakikada Teklif • Ücretsiz Ekspertiz • Ücretsiz Çekici • 7/24 Destek"
+        items={whyUsItems}
+      />
+      
+      <ServicesComparison />
+      
+      <ProcessTimeline
+        title="Araç Alım Satımı Sürecimiz — 4 Adımda Tamam!"
+        subtitle="Kazalı, Hasarlı, Pert & Hurda araçlar için tüm aşamalar."
+        steps={processSteps}
+      />
+      
+      <CoverageArea /> 
+      <ContactCTA />
+    </div>
   );
 }
