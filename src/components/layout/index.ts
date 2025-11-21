@@ -1,5 +1,7 @@
 
 // ===== src/components/layout/index.ts =====
+
+// src/components/layout/index.ts
 export { Header } from './Header';
 export { Footer } from './Footer';
-export { FloatingButtons } from './FloatingButtons';
+export { default as UnifiedFloatingButtons } from './UnifiedFloatingButtons';

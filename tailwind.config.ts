@@ -38,15 +38,7 @@ const config: Config = {
           700: '#1B2951',
           800: '#0F1B2E',
           900: '#0A1220',
-        },
-
-        // CTA için "brand" shortname (turuncu paletini aynen bağladım)
-        brand: {
-          50: '#FFF4ED',
-          100: '#FFE4D4',
-          500: '#FF6B35', // ana CTA
-          600: '#E55100',
-          700: '#C44500',
+          950: '#050911',
         },
       },
 

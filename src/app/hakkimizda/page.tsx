@@ -1,8 +1,7 @@
-
-// ===== src/app/hakkimizda/page.tsx =====
+// src/app/hakkimizda/page.tsx
 import { Metadata } from 'next';
 import { siteConfig, businessInfo } from '@/data/site';
-import { CTASection } from '@/components/sections';
+import CTASection from '@/components/sections/CTASection';
 
 export const metadata: Metadata = {
   title: `Hakkımızda | ${siteConfig.name}`,
@@ -10,86 +9,225 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const milestones = [
+    { year: '2008', title: 'Kuruluş', description: 'İstanbul\'da araç alım hizmeti başladı' },
+    { year: '2012', title: '5000+ Araç', description: 'İlk 5000 araç alım işlemi tamamlandı' },
+    { year: '2018', title: 'Türkiye Geneli', description: 'Hizmet ağı Türkiye\'ye yayıldı' },
+    { year: '2024', title: '15000+ Araç', description: 'Sektörün lider firması olduk' },
+  ];
+
+  const values = [
+    {
+      icon: '🤝',
+      title: 'Güven',
+      description: 'İşimizin temeli güven üzerine kuruludur. Her işlemde şeffaflık ve dürüstlük önceliğimizdir.',
+    },
+    {
+      icon: '⚡',
+      title: 'Hız',
+      description: '30 dakikada teklif, aynı gün ödeme. Zamanınıza değer veriyoruz.',
+    },
+    {
+      icon: '💰',
+      title: 'Adil Fiyat',
+      description: 'Piyasa araştırması yaparak size en iyi fiyatı garanti ediyoruz.',
+    },
+    {
+      icon: '🎯',
+      title: 'Profesyonellik',
+      description: 'Uzman ekibimizle en iyi hizmeti sunuyoruz.',
+    },
+  ];
+
+  const team = [
+    { role: 'Ekspertiz Uzmanları', count: '8 Kişi', icon: '🔍' },
+    { role: 'Müşteri Temsilcileri', count: '5 Kişi', icon: '📞' },
+    { role: 'Evrak İşlemleri', count: '3 Kişi', icon: '📄' },
+    { role: 'Lojistik Ekibi', count: '4 Kişi', icon: '🚚' },
+  ];
+
   return (
     <>
-      <div className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-lacivert-700 mb-6">
-              Hakkımızda
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-lacivert-700 via-lacivert-700 to-lacivert-700 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+          }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 mb-6">
+              <span className="w-2 h-2 bg-turuncu-400 rounded-full animate-pulse" />
+              {businessInfo.foundedYear} Yılından Beri Hizmetinizdeyiz
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Türkiye'nin En Güvenilir
+              <span className="block text-turuncu-400">Araç Alım Merkezi</span>
             </h1>
+            
+            <p className="text-xl text-blue-200 leading-relaxed">
+              {businessInfo.experienceYears}+ yıllık deneyimimiz, {businessInfo.vehiclesPurchased} araç alım işlemi 
+              ve {businessInfo.customerSatisfaction} müşteri memnuniyeti ile sektörün lideri olduk.
+            </p>
 
-            <div className="prose prose-lg max-w-none">
-              <p className="text-xl text-gray-600 mb-8">
-                {businessInfo.experienceYears} yıllık deneyimimizle İstanbul'un güvenilir araç alım satım firmasıyız.
-              </p>
-
-              <h2>Misyonumuz</h2>
-              <p>
-                Araç alım satım sürecini müşterilerimiz için güvenli, hızlı ve şeffaf hale getirmek. 
-                Profesyonel hizmet anlayışımız ve deneyimli ekibimizle sektörde fark yaratmak.
-              </p>
-
-              <h2>Vizyonumuz</h2>
-              <p>
-                Türkiye'nin en güvenilir ve tercih edilen araç alım satım platformu olmak. 
-                Teknoloji ve insan odaklı yaklaşımımızla sektöre yön vermek.
-              </p>
-
-              <h2>Değerlerimiz</h2>
-              <ul>
-                <li><strong>Güven:</strong> İşimizin temeli güven üzerine kuruludur.</li>
-                <li><strong>Şeffaflık:</strong> Tüm süreçlerimizde tam şeffaflık sağlarız.</li>
-                <li><strong>Profesyonellik:</strong> Uzman ekibimizle en iyi hizmeti sunarız.</li>
-                <li><strong>Müşteri Odaklılık:</strong> Müşteri memnuniyeti önceliğimizdir.</li>
-              </ul>
-
-              <h2>Neden Bizi Seçmelisiniz?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <div className="text-3xl mb-3">🏆</div>
-                  <h3 className="text-xl font-bold text-lacivert-700 mb-2">
-                    {businessInfo.experienceYears} Yıllık Deneyim
-                  </h3>
-                  <p className="text-gray-600">
-                    {businessInfo.foundedYear} yılından beri sektörde hizmet veriyoruz.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <div className="text-3xl mb-3">👥</div>
-                  <h3 className="text-xl font-bold text-lacivert-700 mb-2">
-                    {businessInfo.teamSize} Kişilik Uzman Ekip
-                  </h3>
-                  <p className="text-gray-600">
-                    Profesyonel ve deneyimli ekibimizle hizmetinizdeyiz.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <div className="text-3xl mb-3">🚗</div>
-                  <h3 className="text-xl font-bold text-lacivert-700 mb-2">
-                    {businessInfo.vehiclesPurchased} Araç Alımı
-                  </h3>
-                  <p className="text-gray-600">
-                    Binlerce araç alım satım işlemi gerçekleştirdik.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 rounded-xl p-6">
-                  <div className="text-3xl mb-3">⭐</div>
-                  <h3 className="text-xl font-bold text-lacivert-700 mb-2">
-                    {businessInfo.customerSatisfaction} Müşteri Memnuniyeti
-                  </h3>
-                  <p className="text-gray-600">
-                    Müşterilerimizin büyük çoğunluğu memnun ayrılıyor.
-                  </p>
-                </div>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <div className="text-3xl font-bold text-turuncu-400">{businessInfo.vehiclesPurchased}</div>
+                <div className="text-sm text-blue-200">Araç Aldık</div>
+              </div>
+              <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <div className="text-3xl font-bold text-turuncu-400">{businessInfo.customerSatisfaction}</div>
+                <div className="text-sm text-blue-200">Memnuniyet</div>
+              </div>
+              <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl">
+                <div className="text-3xl font-bold text-turuncu-400">{businessInfo.teamSize}+</div>
+                <div className="text-sm text-blue-200">Uzman Ekip</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-gradient-to-br from-turuncu-50 to-orange-100 rounded-3xl p-8">
+              <div className="w-16 h-16 bg-turuncu-500 rounded-2xl flex items-center justify-center text-white text-3xl mb-6">
+                🎯
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Misyonumuz</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Araç alım satım sürecini müşterilerimiz için güvenli, hızlı ve şeffaf hale getirmek. 
+                Profesyonel hizmet anlayışımız ve deneyimli ekibimizle sektörde fark yaratmak.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-lacivert-50 rounded-3xl p-8">
+              <div className="w-16 h-16 bg-lacivert-700 rounded-2xl flex items-center justify-center text-white text-3xl mb-6">
+                🚀
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Vizyonumuz</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Türkiye'nin en güvenilir ve tercih edilen araç alım satım platformu olmak. 
+                Teknoloji ve insan odaklı yaklaşımımızla sektöre yön vermek.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Başarı Hikayemiz</h2>
+            <p className="text-xl text-gray-600">Yıllar içinde attığımız önemli adımlar</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {milestones.map((milestone, index) => (
+              <div key={index} className="relative">
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all">
+                  <div className="text-4xl font-bold text-turuncu-500 mb-2">{milestone.year}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                  <p className="text-gray-600 text-sm">{milestone.description}</p>
+                </div>
+                {index < milestones.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-1 bg-turuncu-500" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Değerlerimiz</h2>
+            <p className="text-xl text-gray-600">Bizi biz yapan prensipler</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+                <div className="text-5xl mb-4">{value.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 bg-gradient-to-br from-lacivert-700 to-lacivert-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Ekibimiz</h2>
+            <p className="text-xl text-blue-200">
+              {businessInfo.teamSize} kişilik uzman ekibimizle hizmetinizdeyiz
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-5xl mb-4">{member.icon}</div>
+                <div className="text-2xl font-bold text-turuncu-400 mb-2">{member.count}</div>
+                <div className="text-sm text-blue-200">{member.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Neden Bizi Seçmelisiniz?</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-turuncu-100 rounded-2xl flex items-center justify-center text-turuncu-500 text-4xl mx-auto mb-6">
+                ⚡
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Hızlı İşlem</h3>
+              <p className="text-gray-600">
+                30 dakikada teklif, aynı gün ödeme. Zamanınız değerli.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center text-green-500 text-4xl mx-auto mb-6">
+                💰
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">En İyi Fiyat</h3>
+              <p className="text-gray-600">
+                Piyasa araştırması yaparak size en yüksek fiyatı veriyoruz.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-500 text-4xl mx-auto mb-6">
+                🔒
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Güvenli İşlem</h3>
+              <p className="text-gray-600">
+                Noter onaylı, yasal prosedür ile %100 güvenli işlem.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CTASection />
     </>

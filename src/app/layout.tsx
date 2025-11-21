@@ -1,12 +1,11 @@
-// ===== src/app/layout.tsx =====
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
+import UnifiedFloatingButtons from "@/components/layout/UnifiedFloatingButtons";
 import { GoogleTagManager, GoogleAnalytics, FacebookPixel } from "@/components/tracking";
 import { siteConfig } from '@/config/site';
-import CustomerCarePopup from '@/components/ui/CustomerCarePopup';
-import UnifiedFloatingButtons from '@/components/layout/UnifiedFloatingButtons';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,10 +53,9 @@ export default function RootLayout({
         <FacebookPixel />
 
         <Header />
-        <main>{children}</main>
+        <main className="pt-[120px] md:pt-[104px]">{children}</main>
         <Footer />
         <UnifiedFloatingButtons />
-        <CustomerCarePopup />
       </body>
     </html>
   );

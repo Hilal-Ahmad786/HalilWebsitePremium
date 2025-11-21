@@ -1,14 +1,13 @@
-
-// ===== src/app/page.tsx =====
+// src/app/page.tsx
 import { Metadata } from 'next';
-import HeroBanner from '@/components/sections/HeroBanner';
+import { HeroSection } from '@/components/sections/HeroSection';
 import WhyUs from '@/components/sections/WhyUs';
 import ProcessTimeline from '@/components/sections/ProcessTimeline';
-import ContactCTA from '@/components/sections/ContactCTA';
-import TrustBadges from '@/components/sections/TrustBadges';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import ServicesComparison from '@/components/sections/ServicesComparison';
+import CTASection from '@/components/sections/CTASection';
+import TrustBadges from '@/components/sections/TrustBadges';
 import CoverageArea from '@/components/sections/CoverageArea';
-import UrgentCTABanner from '@/components/sections/UrgentCTABanner';
 
 export const metadata: Metadata = {
   title: 'Premium Auto Expert - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
@@ -37,6 +36,16 @@ export default function HomePage() {
       title: '7/24 Destek',
       description: 'Her adımda yanınızdayız—anında yanıt.',
     },
+    {
+      icon: 'fas fa-shield-alt',
+      title: 'Güvenli İşlem',
+      description: 'Noter onaylı, %100 yasal süreç.',
+    },
+    {
+      icon: 'fas fa-money-bill-wave',
+      title: 'En Yüksek Fiyat',
+      description: 'Piyasa üstü teklif garantisi.',
+    },
   ];
 
   const processSteps = [
@@ -64,33 +73,22 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      <HeroBanner
-        variant="default"
-        tagline="İstanbul'un En Güvenilir Araç Alım Merkezi"
-        title="Hasarlı | Kazalı | Pert | Hurda Araç Alımı"
-        subtitle="Hasarlı | Kazalı | Pert | Hurda Araç Alımında #1"
-        highlight="30 Dakikada Anında Teklif"
-      />
-      
-      <UrgentCTABanner/>
-      <TrustBadges /> 
-      
+      <HeroSection />
+      <TrustBadges />
       <WhyUs
-        title="Neden Premium Auto Expert?"
+        title="Premium Auto'yu Seçin"
         subtitle="30 Dakikada Teklif • Ücretsiz Ekspertiz • Ücretsiz Çekici • 7/24 Destek"
         items={whyUsItems}
       />
-      
       <ServicesComparison />
-      
       <ProcessTimeline
-        title="Araç Alım Satımı Sürecimiz — 4 Adımda Tamam!"
+        title="4 Adımda Araç Satışı"
         subtitle="Kazalı, Hasarlı, Pert & Hurda araçlar için tüm aşamalar."
         steps={processSteps}
       />
-      
-      <CoverageArea /> 
-      <ContactCTA />
+      <TestimonialsSection />
+      <CoverageArea />
+      <CTASection />
     </div>
   );
 }

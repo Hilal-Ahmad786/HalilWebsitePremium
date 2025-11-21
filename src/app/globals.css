@@ -24,14 +24,11 @@
   --color-lacivert-700: #1B2951;
   --color-lacivert-800: #0F1B2E;
   --color-lacivert-900: #0A1220;
+  --color-lacivert-950: #050911;
 
   /* Base colors */
   --color-background: #ffffff;
   --color-foreground: #1B2951;
-  
-  /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 :root {
@@ -75,6 +72,7 @@ body {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 /* Selection Color */
@@ -212,30 +210,6 @@ html {
   }
 }
 
-/* Button Hover Effects */
-.btn-primary {
-  @apply bg-turuncu-500 text-white font-semibold py-3 px-6 rounded-lg 
-         hover:bg-turuncu-600 transition-all hover:scale-105 shadow-lg;
-}
-
-.btn-secondary {
-  @apply border-2 border-lacivert-700 text-lacivert-700 font-semibold py-3 px-6 
-         rounded-lg hover:bg-lacivert-700 hover:text-white transition-all;
-}
-
-/* Card Styles */
-.card {
-  @apply bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100;
-}
-
-/* Container Max Width */
-.container {
-  max-width: 1280px;
-}
-
-
-/* Add to existing globals.css */
-
 /* Hero Animations */
 @keyframes slideInDown {
   from {
@@ -299,13 +273,13 @@ html {
 /* Pulse Ring */
 @keyframes pulseRing {
   0% {
-    box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
   }
   70% {
-    box-shadow: 0 0 0 20px rgba(251, 146, 60, 0);
+    box-shadow: 0 0 0 20px rgba(255, 107, 53, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(251, 146, 60, 0);
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
   }
 }
 
@@ -326,12 +300,6 @@ html {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 /* WhatsApp Button Pulse */

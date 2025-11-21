@@ -6,19 +6,26 @@ import { siteConfig } from '@/config/site';
 import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
 
 export default function UnifiedFloatingButtons() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showPulse, setShowPulse] = useState(true);
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
-    const checkBusinessHours = () => {
+    const checkOnline = () => {
       const now = new Date();
       const hour = now.getHours();
       setIsOnline(hour >= 9 && hour < 22);
     };
-    checkBusinessHours();
-    const interval = setInterval(checkBusinessHours, 60000);
+    checkOnline();
+    const interval = setInterval(checkOnline, 60000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (isExpanded) {
+      setShowPulse(false);
+    }
+  }, [isExpanded]);
 
   const handlePhoneClick = () => {
     trackPhoneClick();
@@ -30,118 +37,183 @@ export default function UnifiedFloatingButtons() {
     trackCTAClick('Floating WhatsApp', 'floating-buttons');
   };
 
-  const quickMessages = [
-    { emoji: '🚗', text: 'Araç değerlendirmesi', message: 'Merhaba, aracım için değerlendirme almak istiyorum.' },
-    { emoji: '📸', text: 'Fotoğraf göndermek istiyorum', message: 'Merhaba, araç fotoğraflarımı göndermek istiyorum.' },
-    { emoji: '💰', text: 'Fiyat öğrenmek istiyorum', message: 'Merhaba, aracım için fiyat teklifi alabilir miyim?' },
-    { emoji: '📞', text: 'Hemen görüşmek istiyorum', message: 'Merhaba, sizi aramak istiyorum. Müsait misiniz?' },
+  const quickActions = [
+    {
+      icon: '💬',
+      label: 'WhatsApp',
+      href: `https://wa.me/${siteConfig.whatsapp}`,
+      color: 'from-green-500 to-green-600',
+      onClick: handleWhatsAppClick,
+      angle: -45,
+    },
+    {
+      icon: '📞',
+      label: 'Ara',
+      href: `tel:${siteConfig.phone}`,
+      color: 'from-lacivert-600 to-lacivert-700',
+      onClick: handlePhoneClick,
+      angle: -90,
+    },
+    {
+      icon: '📧',
+      label: 'Mail',
+      href: `mailto:${siteConfig.email}`,
+      color: 'from-turuncu-500 to-turuncu-600',
+      onClick: () => trackCTAClick('Floating Email', 'floating-buttons'),
+      angle: -135,
+    },
   ];
 
   return (
     <>
-      {/* Desktop Floating Buttons */}
-      <div className="hidden md:block">
+      {/* Desktop Floating Widget */}
+      <div className="hidden md:block fixed bottom-8 right-8 z-50">
+        {/* Expanded Quick Actions */}
+        {isExpanded && (
+          <div className="absolute bottom-0 right-0 mb-20">
+            {quickActions.map((action, index) => {
+              const radius = 80;
+              const angleRad = (action.angle * Math.PI) / 180;
+              const x = Math.cos(angleRad) * radius;
+              const y = Math.sin(angleRad) * radius;
+
+              return (
+                <a
+                  key={index}
+                  href={action.href}
+                  target={action.href.startsWith('http') ? '_blank' : undefined}
+                  rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  onClick={action.onClick}
+                  className="absolute group"
+                  style={{
+                    transform: `translate(${x}px, ${y}px)`,
+                    animation: `fadeInScale 0.3s ease-out ${index * 0.1}s both`,
+                  }}
+                >
+                  <div
+                    className={`w-14 h-14 rounded-full bg-gradient-to-r ${action.color} shadow-lg flex items-center justify-center text-2xl hover:scale-110 transition-transform`}
+                  >
+                    {action.icon}
+                  </div>
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                    {action.label}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Main Button */}
         <button
-          onClick={() => setIsChatOpen(!isChatOpen)}
-          className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center"
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="relative w-16 h-16 bg-gradient-to-r from-turuncu-500 to-turuncu-600 rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all flex items-center justify-center"
         >
-          {isChatOpen ? (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
+          {showPulse && (
+            <span className="absolute inset-0 rounded-full bg-turuncu-400 animate-ping opacity-75"></span>
           )}
+
           {isOnline && (
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full animate-pulse"></span>
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 border-2 border-white rounded-full animate-pulse"></span>
           )}
+
+          <span
+            className="relative text-2xl text-white transition-transform"
+            style={{
+              transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
+            }}
+          >
+            {isExpanded ? '✕' : '💬'}
+          </span>
         </button>
 
-        <a
-          href={`https://wa.me/${siteConfig.whatsapp}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleWhatsAppClick}
-          className="fixed bottom-28 right-6 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-        </a>
-
-        <a
-          href={`tel:${siteConfig.phone}`}
-          onClick={handlePhoneClick}
-          className="fixed right-6 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center"
-          style={{ bottom: '12.5rem' }}
-        >
-          <i className="fas fa-phone-alt text-xl"></i>
-        </a>
+        {/* Info Card */}
+        {isExpanded && (
+          <div
+            className="absolute bottom-20 right-0 w-64 bg-white rounded-2xl shadow-2xl p-4"
+            style={{ animation: 'fadeInUp 0.3s ease-out' }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-lacivert-700 to-lacivert-800 rounded-xl flex items-center justify-center text-white font-bold">
+                PA
+              </div>
+              <div>
+                <div className="font-bold text-gray-900">Premium Auto</div>
+                <div className="text-xs text-gray-500 flex items-center gap-1">
+                  <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-500' : 'bg-gray-400'}`}></span>
+                  {isOnline ? 'Çevrimiçi' : 'Çevrimdışı'}
+                </div>
+              </div>
+            </div>
+            <p className="text-sm text-gray-600 mb-3">Size nasıl yardımcı olabiliriz?</p>
+            <div className="text-xs text-gray-500">
+              Ortalama yanıt süresi:{' '}
+              <span className="font-semibold text-turuncu-600">2 dakika</span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Mobile Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t shadow-2xl z-50">
-        <div className="grid grid-cols-2 gap-0">
-          <button
-            onClick={() => setIsChatOpen(!isChatOpen)}
-            className="flex flex-col items-center py-3 active:bg-gray-100"
-          >
-            <div className="w-11 h-11 bg-blue-500 rounded-full flex items-center justify-center mb-1">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-            </div>
-            <span className="text-xs font-semibold">Destek</span>
-          </button>
-
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
+        <div className="grid grid-cols-3 divide-x divide-gray-200">
           <a
             href={`tel:${siteConfig.phone}`}
             onClick={handlePhoneClick}
-            className="flex flex-col items-center py-2 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
+            className="flex flex-col items-center justify-center py-4 hover:bg-gray-50 transition-colors"
           >
-            <div className="w-12 h-12 bg-white/25 rounded-full flex items-center justify-center mb-1">
-              <i className="fas fa-phone-alt text-xl"></i>
-            </div>
-            <span className="text-xs font-bold">HEMEN ARA</span>
+            <span className="text-2xl mb-1">📞</span>
+            <span className="text-xs font-medium text-gray-700">Ara</span>
+          </a>
+
+          <a
+            href={`https://wa.me/${siteConfig.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
+            className="flex flex-col items-center justify-center py-4 bg-green-50 hover:bg-green-100 transition-colors relative"
+          >
+            {showPulse && (
+              <span className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            )}
+            <span className="text-2xl mb-1">💬</span>
+            <span className="text-xs font-medium text-green-700">WhatsApp</span>
+          </a>
+
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="flex flex-col items-center justify-center py-4 hover:bg-gray-50 transition-colors"
+          >
+            <span className="text-2xl mb-1">📧</span>
+            <span className="text-xs font-medium text-gray-700">Mail</span>
           </a>
         </div>
       </div>
 
-      {/* Chat Window */}
-      {isChatOpen && (
-        <div className="fixed bottom-24 right-6 md:bottom-24 md:right-24 w-[90vw] max-w-sm bg-white rounded-2xl shadow-2xl z-50 border">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4">
-            <h3 className="font-bold text-lg">Premium Auto Expert</h3>
-            <p className="text-sm">{isOnline ? 'Çevrimiçi' : 'Çevrimdışı'}</p>
-          </div>
+      {/* Animations */}
+      <style jsx>{`
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
 
-          <div className="p-4 space-y-2 max-h-96 overflow-y-auto">
-            {quickMessages.map((item, index) => (
-              <a
-                key={index}
-                href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(item.message)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-50 hover:bg-blue-50 p-3 rounded-lg"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{item.emoji}</span>
-                  <span className="text-sm font-medium">{item.text}</span>
-                </div>
-              </a>
-            ))}
-
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="block bg-orange-500 text-white p-4 rounded-lg text-center font-bold"
-            >
-              Hemen Ara: {siteConfig.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      )}
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </>
   );
 }
