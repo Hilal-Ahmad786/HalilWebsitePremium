@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -11,20 +11,22 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
         // Turuncu (Orange) - Main Brand Color
         turuncu: {
           50: '#FFF4ED',
           100: '#FFE4D4',
           200: '#FFC5A8',
           300: '#FF9D71',
-          400: '#FF6B35', // Main Orange
-          500: '#FF6B35', // Main Orange (repeated for consistency)
+          400: '#FF6B35',
+          500: '#FF6B35',
           600: '#E55100',
           700: '#C44500',
           800: '#9A3700',
           900: '#7A2C00',
         },
-        // Lacivert (Navy Blue) - Main Brand Color
+
+        // Lacivert (Navy Blue)
         lacivert: {
           50: '#E8EBF3',
           100: '#D1D7E7',
@@ -33,11 +35,21 @@ const config: Config = {
           400: '#47609F',
           500: '#2C4170',
           600: '#243661',
-          700: '#1B2951', // Main Navy Blue
+          700: '#1B2951',
           800: '#0F1B2E',
           900: '#0A1220',
         },
+
+        // CTA için "brand" shortname (turuncu paletini aynen bağladım)
+        brand: {
+          50: '#FFF4ED',
+          100: '#FFE4D4',
+          500: '#FF6B35', // ana CTA
+          600: '#E55100',
+          700: '#C44500',
+        },
       },
+
       container: {
         center: true,
         padding: {
@@ -48,10 +60,12 @@ const config: Config = {
           '2xl': '6rem',
         },
       },
+
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
       },
+
       typography: {
         DEFAULT: {
           css: {
@@ -63,24 +77,12 @@ const config: Config = {
                 color: '#E55100',
               },
             },
-            h1: {
-              color: '#1B2951',
-            },
-            h2: {
-              color: '#1B2951',
-            },
-            h3: {
-              color: '#1B2951',
-            },
-            h4: {
-              color: '#1B2951',
-            },
-            strong: {
-              color: '#1B2951',
-            },
-            code: {
-              color: '#FF6B35',
-            },
+            h1: { color: '#1B2951' },
+            h2: { color: '#1B2951' },
+            h3: { color: '#1B2951' },
+            h4: { color: '#1B2951' },
+            strong: { color: '#1B2951' },
+            code: { color: '#FF6B35' },
           },
         },
       },

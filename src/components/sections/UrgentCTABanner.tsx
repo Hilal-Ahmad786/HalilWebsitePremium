@@ -74,7 +74,7 @@ export default function UrgentCTABanner() {
               </div>
             </div>
 
-            
+            <a
               href={`tel:${siteConfig.phone}`}
               onClick={handleClick}
               className="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all shadow-lg hover:scale-105 whitespace-nowrap flex items-center gap-2"

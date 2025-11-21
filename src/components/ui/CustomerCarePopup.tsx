@@ -1,5 +1,5 @@
-// src/components/ui/CustomerCarePopup.tsx
 
+// src/components/ui/CustomerCarePopup.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -78,7 +78,7 @@ export default function CustomerCarePopup() {
 
           <div className="px-6 pt-4 pb-4">
             <div className="space-y-2.5">
-              
+              <a
                 href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Merhaba, aracım hakkında bilgi almak istiyorum.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,7 +91,7 @@ export default function CustomerCarePopup() {
                 WhatsApp ile Mesaj Gönder
               </a>
 
-              
+              <a
                 href={`tel:${siteConfig.phone}`}
                 onClick={handlePhoneClick}
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all shadow-lg flex items-center justify-center gap-2.5"

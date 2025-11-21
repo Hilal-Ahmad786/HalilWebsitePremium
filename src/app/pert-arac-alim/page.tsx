@@ -5,90 +5,87 @@ import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import ContactCTA from '@/components/sections/ContactCTA';
 
 export const metadata: Metadata = {
-  title: 'Kazalı Araç Alan | 30 Dakikada Nakit Teklif • Premium Auto Expert',
-  description: 'Kazalı araç alan lider firma! Türkiye\'nin her yerinde 30 dakikada ücretsiz ekspertiz ve anında nakit ödeme.',
-  keywords: ['kazalı araç alan', 'kazalı araç alan yerler', 'kazalı araç alan firmalar'],
+  title: 'Pert Araç Alan | Sigorta Çıkışlı Araçlar • Premium Auto Expert',
+  description: 'Pert (sigorta çıkışlı) araç alımında uzman! Kasko pert kayıtlı tüm araçlar için en iyi fiyat ve yasal işlem garantisi.',
+  keywords: ['pert araç alan', 'sigorta çıkışlı araç', 'pert belgeli araç satmak'],
 };
 
-export default function KazaliAracPage() {
+export default function PertAracPage() {
   const whyUsItems = [
     {
+      icon: 'fas fa-file-medical-alt',
+      title: 'Pert Uzmanı',
+      description: 'Sigorta pert süreçlerinde 15 yıllık deneyim.',
+    },
+    {
+      icon: 'fas fa-balance-scale',
+      title: 'Yasal Güvence',
+      description: 'Tüm pert işlemleri yasal prosedüre uygun.',
+    },
+    {
+      icon: 'fas fa-coins',
+      title: 'Adil Değerleme',
+      description: 'Pert durumuna göre en iyi piyasa fiyatı.',
+    },
+    {
       icon: 'fas fa-clock',
-      title: '30 Dakikada Teklif',
-      description: 'Ekspertiz sonrası 30 dakika içinde nakit teklif alın.',
-    },
-    {
-      icon: 'fas fa-search',
-      title: 'Ücretsiz Ekspertiz',
-      description: 'Yerinde veya noter yanında ekspertiz—%100 ücretsiz.',
-    },
-    {
-      icon: 'fas fa-truck-moving',
-      title: 'Ücretsiz Çekici',
-      description: 'Aracınızı yerinden alırız—ekspertiz ve evrak masrafsız.',
-    },
-    {
-      icon: 'fas fa-headset',
-      title: '7/24 Destek',
-      description: 'Her adımda yanınızdayız—çağrı merkezi desteğiyle.',
+      title: 'Hızlı Süreç',
+      description: 'Pert evrakları ile 24 saat içinde işlem.',
     },
   ];
 
   const processSteps = [
     {
-      icon: 'fas fa-phone-volume',
-      title: 'Bize Ulaşın',
-      description: '7/24 çağrı merkezi | WhatsApp fotoğraf gönder.',
+      icon: 'fas fa-file-upload',
+      title: 'Pert Belgesini Gönderin',
+      description: 'WhatsApp\'tan pert raporunu paylaşın.',
     },
     {
-      icon: 'fas fa-search-location',
-      title: 'Ücretsiz Ekspertiz',
-      description: 'Yerinde inceleme + hasar raporu hazırlığı.',
+      icon: 'fas fa-calculator',
+      title: 'Değerleme',
+      description: 'Pert durumuna göre fiyat hesaplıyoruz.',
     },
     {
-      icon: 'fas fa-file-signature',
-      title: 'Teklif & Onay',
-      description: 'Piyasa üstü en iyi fiyat; onayınızla süreç başlar.',
+      icon: 'fas fa-stamp',
+      title: 'Yasal İşlemler',
+      description: 'Pert devir işlemlerini tamamlıyoruz.',
     },
     {
-      icon: 'fas fa-hand-holding-usd',
-      title: 'Noter & Nakit',
-      description: 'Noter huzurunda devir → anında nakit/EFT.',
+      icon: 'fas fa-money-check-alt',
+      title: 'Anında Ödeme',
+      description: 'Noter sonrası anında nakit/EFT.',
     },
   ];
 
   return (
     <div>
       <HeroBanner
-        variant="kazali"
-        tagline="Türkiye'de Kazalı Araç Alan Güvenilir Merkez"
-        title="Kazalı Araç Alan"
-        subtitle="Hasarlı • Pert • Hurda Araç Alımında #1"
-        highlight="30 Dakikada Nakit Teklif"
+        variant="pert"
+        tagline="Sigorta Çıkışlı Araçlar İçin"
+        title="Pert Araç Alımı"
+        subtitle="Kasko Pert • Trafik Pert • Tüm Pert Türleri"
+        highlight="Yasal İşlem Garantisi"
       />
 
-      <section className="intro-keyword px-4 py-12 bg-light">
-        <div className="container mx-auto text-center max-w-4xl">
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
           <p className="text-lg leading-relaxed mb-6">
-            Premium Auto Expert olarak İstanbul genelinde{' '}
-            <strong className="text-primary">7/24 kazalı araç alan yerler</strong> ve{' '}
-            <strong className="text-primary">kazalı araç alan firmalar</strong> arasında öne çıkıyoruz.
-            Ücretsiz ekspertiz, noter onaylı işlem ve{' '}
-            <strong className="text-orange-500">30 dakikada nakit teklif</strong> garantisiyle
-            "<em>Kazalı aracımı satmak istiyorum</em>" diyen herkesi hemen yönlendiriyoruz.
+            <strong className="text-orange-600">Pert araç alan</strong> en güvenilir merkez! 
+            Kasko pert, trafik pert, sigorta çıkışlı tüm araçlar için{' '}
+            <strong className="text-orange-500">yasal prosedür ve en iyi fiyat</strong> garantisi veriyoruz.
           </p>
         </div>
       </section>
 
       <WhyUs
-        title="Neden Kazalı Araç Alan Yerler & Firmalar Premium Auto?"
-        subtitle="30 dakikada teklif • 7/24 nakit ödeme garantisi"
+        title="Pert Araç Alımında Neden Biz?"
+        subtitle="Yasal güvence • Adil değerleme • Hızlı işlem"
         items={whyUsItems}
       />
 
       <ProcessTimeline
-        title="Kazalı Araç Alım Satımı Sürecimiz — 4 Adımda Tamam!"
-        subtitle="Başvurudan nakit ödemeye kadar tüm aşamalar burada."
+        title="Pert Araç Satış Süreci"
+        subtitle="Pert belgesi ile 4 adımda satış"
         steps={processSteps}
       />
 

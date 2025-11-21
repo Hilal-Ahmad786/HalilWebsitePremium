@@ -1,5 +1,4 @@
 // src/components/layout/UnifiedFloatingButtons.tsx
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -60,7 +59,7 @@ export default function UnifiedFloatingButtons() {
           )}
         </button>
 
-        
+        <a
           href={`https://wa.me/${siteConfig.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -72,7 +71,7 @@ export default function UnifiedFloatingButtons() {
           </svg>
         </a>
 
-        
+        <a
           href={`tel:${siteConfig.phone}`}
           onClick={handlePhoneClick}
           className="fixed right-6 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center"
@@ -97,7 +96,7 @@ export default function UnifiedFloatingButtons() {
             <span className="text-xs font-semibold">Destek</span>
           </button>
 
-          
+          <a
             href={`tel:${siteConfig.phone}`}
             onClick={handlePhoneClick}
             className="flex flex-col items-center py-2 bg-gradient-to-br from-orange-500 to-orange-600 text-white"
@@ -120,7 +119,7 @@ export default function UnifiedFloatingButtons() {
 
           <div className="p-4 space-y-2 max-h-96 overflow-y-auto">
             {quickMessages.map((item, index) => (
-              
+              <a
                 key={index}
                 href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(item.message)}`}
                 target="_blank"
@@ -134,7 +133,7 @@ export default function UnifiedFloatingButtons() {
               </a>
             ))}
 
-            
+            <a
               href={`tel:${siteConfig.phone}`}
               className="block bg-orange-500 text-white p-4 rounded-lg text-center font-bold"
             >
