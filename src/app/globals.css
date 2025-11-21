@@ -1,15 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Custom Colors - Turuncu (Orange) */
+  --color-turuncu-50: #FFF4ED;
+  --color-turuncu-100: #FFE4D4;
+  --color-turuncu-200: #FFC5A8;
+  --color-turuncu-300: #FF9D71;
+  --color-turuncu-400: #FF6B35;
+  --color-turuncu-500: #FF6B35;
+  --color-turuncu-600: #E55100;
+  --color-turuncu-700: #C44500;
+  --color-turuncu-800: #9A3700;
+  --color-turuncu-900: #7A2C00;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Custom Colors - Lacivert (Navy Blue) */
+  --color-lacivert-50: #E8EBF3;
+  --color-lacivert-100: #D1D7E7;
+  --color-lacivert-200: #A3AFCF;
+  --color-lacivert-300: #7587B7;
+  --color-lacivert-400: #47609F;
+  --color-lacivert-500: #2C4170;
+  --color-lacivert-600: #243661;
+  --color-lacivert-700: #1B2951;
+  --color-lacivert-800: #0F1B2E;
+  --color-lacivert-900: #0A1220;
+
+  /* Base colors */
+  --color-background: #ffffff;
+  --color-foreground: #1B2951;
+  
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1B2951;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +49,186 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF6B35;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E55100;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background-color: #FF6B35;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #FF6B35;
+  color: white;
+}
+
+/* Focus Visible */
+*:focus-visible {
+  outline: 2px solid #FF6B35;
+  outline-offset: 2px;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Custom Gradient Backgrounds */
+.gradient-turuncu {
+  background: linear-gradient(135deg, #FF6B35 0%, #E55100 100%);
+}
+
+.gradient-lacivert {
+  background: linear-gradient(135deg, #1B2951 0%, #0F1B2E 100%);
+}
+
+.gradient-mixed {
+  background: linear-gradient(135deg, #1B2951 0%, #FF6B35 100%);
+}
+
+/* Prose Customization for Blog Content */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: #1B2951;
+  font-weight: 700;
+}
+
+.prose a {
+  color: #FF6B35;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: #E55100;
+}
+
+.prose code {
+  color: #FF6B35;
+  background-color: #FFF4ED;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: #1B2951;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose blockquote {
+  border-left: 4px solid #FF6B35;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #6B7280;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  @apply bg-turuncu-500 text-white font-semibold py-3 px-6 rounded-lg 
+         hover:bg-turuncu-600 transition-all hover:scale-105 shadow-lg;
+}
+
+.btn-secondary {
+  @apply border-2 border-lacivert-700 text-lacivert-700 font-semibold py-3 px-6 
+         rounded-lg hover:bg-lacivert-700 hover:text-white transition-all;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100;
+}
+
+/* Container Max Width */
+.container {
+  max-width: 1280px;
 }
