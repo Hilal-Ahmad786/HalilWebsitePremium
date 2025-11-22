@@ -48,7 +48,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-lacivert-800 via-lacivert-500 to-lacivert-800 overflow-hidden pt-32 md:pt-20">
+    <section className="relative min-h-screen bg-gradient-to-br from-lacivert-800 via-lacivert-500 to-lacivert-800 overflow-hidden pt-16 md:pt-20">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Grid Pattern */}
