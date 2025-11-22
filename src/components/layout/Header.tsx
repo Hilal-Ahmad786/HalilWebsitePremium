@@ -204,6 +204,16 @@ export function Header() {
             >
               Hakkımızda
             </Link>
+            <Link
+  href="/iletisim"
+  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+    pathname === '/iletisim'
+      ? 'text-turuncu-500 bg-turuncu-50'
+      : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
+  }`}
+>
+  İletişim
+</Link>
           </nav>
 
           {/* CTA Button - Desktop */}
@@ -332,7 +342,13 @@ export function Header() {
             >
               Hakkımızda
             </Link>
-
+<Link
+  href="/iletisim"
+  onClick={closeMobile}
+  className="block px-4 py-3 text-gray-700 hover:bg-turuncu-50 hover:text-turuncu-600 rounded-lg transition-colors"
+>
+  İletişim
+</Link>
             {/* Mobile CTA */}
             <a
               href={`https://wa.me/${siteConfig.whatsapp}`}
