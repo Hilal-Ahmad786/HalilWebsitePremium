@@ -187,7 +187,7 @@ export function HeroSection() {
                     </label>
                     <input
                       type="tel"
-                      placeholder="0555 123 45 67"
+                      placeholder="0555 751 22 20"
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-turuncu-500"
                     />
                   </div>
