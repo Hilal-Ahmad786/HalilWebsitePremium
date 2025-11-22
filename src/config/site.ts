@@ -7,12 +7,16 @@ export const siteConfig = {
   phoneDisplay: '0555 123 45 67',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905551234567',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@premiumautoexpert.com',
+
+  address: process.env.NEXT_PUBLIC_ADDRESS 
+    || 'İstanbul / Türkiye',
   social: {
     facebook: 'https://www.facebook.com/premiumautoexpert/',
     instagram: 'https://www.instagram.com/premiumautoexpert/',
   },
   services: [
     {
+      
       title: 'Kazalı Araç Alımı',
       slug: 'kazali-arac-alim',
       icon: 'fa-car-crash',
