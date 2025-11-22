@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { siteConfig } from '@/config/site';
 import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
+import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 export function HeroSection() {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -39,12 +40,12 @@ export function HeroSection() {
 
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('Hero WhatsApp', );
+    trackCTAClick('Hero WhatsApp');
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('Hero Phone', );
+    trackCTAClick('Hero Phone');
   };
 
   return (
@@ -121,24 +122,30 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
+              {/* WhatsApp CTA - Original WhatsApp style */}
               <a
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsApp}
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-turuncu-500/50 transition-all overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20BA5A] rounded-xl font-bold text-lg shadow-2xl hover:shadow-[#25D366]/60 transition-all overflow-hidden"
               >
-                <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform" />
-                <span className="relative">💬</span>
+                <span className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform" />
+                <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#25D366]">
+                  <FaWhatsapp className="w-5 h-5" />
+                </span>
                 <span className="relative">WhatsApp ile Teklif Al</span>
               </a>
 
+              {/* Phone CTA */}
               <a
                 href={`tel:${siteConfig.phone}`}
                 onClick={handlePhone}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
               >
-                <span>📞</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <FaPhoneAlt className="w-4 h-4" />
+                </span>
                 <span>Hemen Ara</span>
               </a>
             </div>
