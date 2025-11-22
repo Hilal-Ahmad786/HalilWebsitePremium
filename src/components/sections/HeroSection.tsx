@@ -81,7 +81,7 @@ export function HeroSection() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium border border-white/20">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Türkiye'nin En Güvenilir Araç Alım Platformu
+              Türkiye'nin En Güvenilir Hasarlı Araç Alım Platformu
             </div>
 
             {/* Main Heading */}
