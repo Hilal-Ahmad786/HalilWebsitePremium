@@ -29,12 +29,12 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('Service Hero WhatsApp', 'service-hero');
+    trackCTAClick('Service Hero WhatsApp', );
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('Service Hero Phone', 'service-hero');
+    trackCTAClick('Service Hero Phone', );
   };
 
   const displayIcon = iconMap[icon] || '🚗';

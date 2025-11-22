@@ -34,12 +34,12 @@ export default function CTASection() {
 
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('CTA WhatsApp', 'cta-section');
+    trackCTAClick('CTA WhatsApp', );
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('CTA Phone', 'cta-section');
+    trackCTAClick('CTA Phone', );
   };
 
   const benefits = [

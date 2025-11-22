@@ -29,15 +29,16 @@ export default function CityHero({
   description,
   stats,
 }: CityHeroProps) {
-  const handleWhatsApp = () => {
-    trackWhatsAppClick();
-    trackCTAClick('City Hero WhatsApp', 'city-hero');
-  };
+const handleWhatsApp = () => {
+  trackWhatsAppClick();
+  trackCTAClick('City Hero WhatsApp');
+};
 
-  const handlePhone = () => {
-    trackPhoneClick();
-    trackCTAClick('City Hero Phone', 'city-hero');
-  };
+const handlePhone = () => {
+  trackPhoneClick();
+  trackCTAClick('City Hero Phone');
+};
+
 
   return (
     <section className="relative bg-gradient-to-br from-lacivert-800 via-lacivert-700 to-lacivert-800 text-white py-20 overflow-hidden">

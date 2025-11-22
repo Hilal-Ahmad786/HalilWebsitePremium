@@ -21,13 +21,16 @@ export default function HeroBanner({
 }: HeroBannerProps) {
   const handlePhoneClick = () => {
     trackPhoneClick();
-    trackCTAClick('Hero Phone', 'hero-banner');
+    trackCTAClick('Hero Phone', );
   };
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick();
-    trackCTAClick('Hero WhatsApp', 'hero-banner');
+    trackCTAClick('Hero WhatsApp', );
   };
+
+
+
 
   // Variant-specific icons and colors
   const variantConfig = {

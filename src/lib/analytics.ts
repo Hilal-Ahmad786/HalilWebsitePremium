@@ -92,3 +92,10 @@ export const trackCTAClick = (ctaName: string) => {
     event_label: ctaName,
   });
 };
+
+export const trackCalculatorUse = (label = 'Price Calculator Used') => {
+  trackEvent('calculator_use', {
+    event_category: 'engagement',
+    event_label: label,
+  });
+};

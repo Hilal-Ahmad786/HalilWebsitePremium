@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { trackCalculatorUse } from '@/lib/analytics';
 
+
+
 export default function PriceCalculator() {
   const [formData, setFormData] = useState({
     brand: '',
@@ -24,9 +26,12 @@ export default function PriceCalculator() {
     const damageFactor = formData.damage === 'heavy' ? 50000 : formData.damage === 'medium' ? 30000 : 10000;
     const mileageFactor = parseInt(formData.mileage) * 0.1;
     
-    const price = Math.max(basePrice - yearFactor - damageFactor - mileageFactor, 20000);
-    setEstimatedPrice(price);
-    trackCalculatorUse(price);
+
+const price = Math.max(basePrice - yearFactor - damageFactor - mileageFactor, 20000);
+setEstimatedPrice(price);
+trackCalculatorUse('Price Calculator Used');
+
+
   };
 
   return (

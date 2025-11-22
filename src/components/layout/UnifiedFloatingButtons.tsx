@@ -1,219 +1,324 @@
 // src/components/layout/UnifiedFloatingButtons.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
+import {
+  trackCTAClick,
+  trackWhatsAppClick,
+  trackPhoneClick,
+} from '@/lib/analytics';
+import { FaPhone, FaWhatsapp, FaComments } from 'react-icons/fa';
+
+type FloatingIconProps = {
+  icon: ReactNode;
+  label: string;
+  description?: string;
+  href?: string;
+  onClick?: () => void;
+  variant?: 'call' | 'whatsapp' | 'chat';
+};
+
+function FloatingIcon({
+  icon,
+  label,
+  description,
+  href,
+  onClick,
+  variant = 'call',
+}: FloatingIconProps) {
+  const baseClasses =
+    'flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110';
+
+  const colorClasses =
+    variant === 'whatsapp'
+      ? 'bg-[#25D366] text-white hover:bg-[#20BA5A] shadow-lg'
+      : variant === 'chat'
+      ? 'bg-lacivert-600 text-white hover:bg-lacivert-700 shadow-lg'
+      : variant === 'call'
+      ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg'
+      : 'bg-white text-lacivert-700 border border-slate-200 hover:shadow-xl';
+
+  // 🔥 Glow animasyonu sadece call & whatsapp için
+  const glowClasses =
+    variant === 'whatsapp'
+      ? 'before:absolute before:inset-0 before:rounded-full before:bg-[#25D366] before:opacity-40 before:blur-xl before:animate-pulse before:content-[""]'
+      : variant === 'call'
+      ? 'before:absolute before:inset-0 before:rounded-full before:bg-orange-400 before:opacity-40 before:blur-xl before:animate-pulse before:content-[""]'
+      : '';
+
+  const showBadge = variant === 'chat';
+
+  const content = (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`relative ${baseClasses} ${colorClasses} ${glowClasses}`}
+      aria-label={label}
+    >
+      <span className="relative inline-flex items-center justify-center">
+        {icon}
+        {showBadge && (
+          <>
+            {/* Ping animasyonu */}
+            <span className="absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-red-500 opacity-75 animate-ping" />
+            {/* Sabit kırmızı nokta */}
+            <span className="absolute -top-1 -right-1 inline-flex h-3.5 w-3.5 rounded-full bg-red-500 border border-white" />
+          </>
+        )}
+      </span>
+    </button>
+  );
+
+  return (
+    <div className="group relative flex items-center">
+      {/* Hover ile açılan label */}
+      <div className="pointer-events-none absolute right-16 top-1/2 -translate-y-1/2 origin-right scale-95 opacity-0 translate-x-2 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0 transition-all duration-200">
+        <div className="rounded-full bg-slate-900/95 text-white text-xs px-3 py-1.5 shadow-lg whitespace-nowrap flex flex-col gap-0.5">
+          <span className="font-semibold text-[12px] group-hover:text-[13px] transition-all duration-200">
+            {label}
+          </span>
+          {description && (
+            <span className="text-[11px] opacity-85 group-hover:text-[12px] transition-all duration-200">
+              {description}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {href ? (
+        <a
+          href={href}
+          target={href.startsWith('http') ? '_blank' : undefined}
+          rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          className="block"
+        >
+          {content}
+        </a>
+      ) : (
+        content
+      )}
+    </div>
+  );
+}
 
 export default function UnifiedFloatingButtons() {
   const [showChat, setShowChat] = useState(false);
 
-  const handleWhatsApp = () => {
-    trackWhatsAppClick();
-    trackCTAClick('Floating WhatsApp', 'floating-buttons');
-  };
+  const whatsappMessage =
+    'Merhaba, aracımı satmak istiyorum. Marka/Model/Yıl ve hasar durumunu sizinle paylaşmak isterim.';
+
+  const quickQuestions = [
+    'Aracım farklı şehirde, yine de alım yapıyor musunuz?',
+    'Pert kayıtlı aracım için de teklif verebilir misiniz?',
+    'Ödemeyi nasıl ve ne zaman alacağım?',
+  ];
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('Floating Phone', 'floating-buttons');
+    trackCTAClick('Floating Call');
+  };
+
+  const handleWhatsApp = () => {
+    trackWhatsAppClick();
+    trackCTAClick('Floating WhatsApp');
+  };
+
+  const handleChatToggle = () => {
+    setShowChat((prev) => !prev);
+    trackCTAClick(showChat ? 'Floating Chat Close' : 'Floating Chat Open');
+  };
+
+  const handleQuickQuestion = (q: string) => {
+    const url = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+      q,
+    )}`;
+    trackWhatsAppClick();
+    trackCTAClick('Floating WhatsApp Quick Question');
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
     <>
-      {/* Desktop: Always visible vertical buttons on bottom right */}
-      <div className="hidden md:flex fixed right-6 bottom-6 z-50 flex-col gap-3">
-        {/* WhatsApp Button */}
-        <a
-          href={`https://wa.me/${siteConfig.whatsapp}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleWhatsApp}
-          className="flex items-center gap-3 px-4 py-3 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-xl shadow-lg transition-all group"
-        >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp</span>
-        </a>
-
-        {/* Phone Button */}
-        <a
+      {/* Desktop: sağ altta ikonlar */}
+      <div className="hidden md:flex fixed bottom-24 right-4 z-40 flex-col items-end gap-3">
+        <FloatingIcon
+          icon={<FaPhone className="h-6 w-6" />}
+          label="Hemen Ara"
+          description={siteConfig.phoneDisplay}
           href={`tel:${siteConfig.phone}`}
           onClick={handlePhone}
-          className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-turuncu-500 to-turuncu-600 hover:from-turuncu-600 hover:to-turuncu-700 text-white rounded-xl shadow-lg transition-all group"
-        >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-          </svg>
-          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Ara</span>
-        </a>
+          variant="call"
+        />
 
-        {/* Chat Button - Opens dialog */}
-        <button
-          onClick={() => setShowChat(!showChat)}
-          className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl shadow-lg transition-all group"
-        >
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-          </svg>
-          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Mesaj</span>
-        </button>
+        <FloatingIcon
+          icon={<FaWhatsapp className="h-6 w-6" />}
+          label="WhatsApp"
+          description="Fotoğraf göndererek teklif alın"
+          href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+            whatsappMessage,
+          )}`}
+          onClick={handleWhatsApp}
+          variant="whatsapp"
+        />
+
+        <FloatingIcon
+          icon={<FaComments className="h-6 w-6" />}
+          label="Sohbet Başlat"
+          description="Uzmanımızdan hızlı destek"
+          onClick={handleChatToggle}
+          variant="chat"
+        />
       </div>
 
-      {/* Chat Dialog Box */}
-      {showChat && (
-        <>
-          <div 
-            className="fixed inset-0 bg-black/50 z-40"
-            onClick={() => setShowChat(false)}
-          />
-          <div className="hidden md:block fixed right-6 bottom-32 z-50 w-80">
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-2xl">👋</span>
-                  </div>
-                  <div>
-                    <div className="font-bold text-white">Premium Auto</div>
-                    <div className="text-xs text-blue-100">Çevrimiçi</div>
-                  </div>
-                </div>
-                <button 
-                  onClick={() => setShowChat(false)}
-                  className="text-white hover:bg-white/20 rounded-lg p-1"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              
-              <div className="p-4 bg-gray-50 h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-gray-600 mb-4">Size nasıl yardımcı olabiliriz?</p>
-                  <div className="space-y-2">
-                    <a
-                      href={`https://wa.me/${siteConfig.whatsapp}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={handleWhatsApp}
-                      className="block px-4 py-2 bg-[#25D366] text-white rounded-lg hover:bg-[#20BA5A] transition-colors"
-                    >
-                      WhatsApp ile Yaz
-                    </a>
-                    <a
-                      href={`tel:${siteConfig.phone}`}
-                      onClick={handlePhone}
-                      className="block px-4 py-2 bg-turuncu-500 text-white rounded-lg hover:bg-turuncu-600 transition-colors"
-                    >
-                      Hemen Ara
-                    </a>
-                    <a
-                      href="/iletisim"
-                      className="block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
-                    >
-                      İletişim Formu
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-
-      {/* Mobile: Bottom bar - unchanged */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
-        <div className="grid grid-cols-3 divide-x divide-gray-200">
+      {/* Mobile: altta sabit bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-slate-200">
+        <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-2.5 gap-2">
+          {/* Ara */}
           <a
             href={`tel:${siteConfig.phone}`}
             onClick={handlePhone}
-            className="flex flex-col items-center justify-center py-3 hover:bg-gray-50 transition-colors"
+            className="relative flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-3 py-2.5 text-xs font-semibold text-white hover:bg-orange-600 transition-colors overflow-visible"
           >
-            <svg className="w-6 h-6 text-turuncu-500 mb-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-            </svg>
-            <span className="text-xs font-medium text-gray-700">Ara</span>
+            {/* Glow */}
+            <span className="pointer-events-none absolute inset-0 -z-10 rounded-xl bg-orange-400 opacity-40 blur-xl animate-pulse" />
+            <FaPhone className="h-5 w-5" />
+            <span>Ara</span>
           </a>
 
+          {/* Sohbet */}
+          <button
+            type="button"
+            onClick={handleChatToggle}
+            className="relative flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-lacivert-600 px-3 py-2.5 text-xs font-semibold text-white hover:bg-lacivert-700 transition-colors"
+          >
+            <span className="relative inline-flex">
+              <FaComments className="h-5 w-5" />
+              {/* Mobile butonda da küçük badge */}
+              <span className="absolute -top-1 -right-1 inline-flex h-3 w-3 rounded-full bg-red-500 border border-white" />
+            </span>
+            <span>Sohbet</span>
+          </button>
+
+          {/* WhatsApp */}
           <a
-            href={`https://wa.me/${siteConfig.whatsapp}`}
+            href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+              whatsappMessage,
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleWhatsApp}
-            className="flex flex-col items-center justify-center py-3 bg-[#25D366] hover:bg-[#20BA5A] transition-colors"
+            className="relative flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 py-2.5 text-xs font-semibold text-white hover:bg-[#20BA5A] transition-colors overflow-visible"
           >
-            <svg className="w-6 h-6 text-white mb-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span className="text-xs font-medium text-white">WhatsApp</span>
+            {/* Glow */}
+            <span className="pointer-events-none absolute inset-0 -z-10 rounded-xl bg-[#25D366] opacity-40 blur-xl animate-pulse" />
+            <FaWhatsapp className="h-5 w-5" />
+            <span>WhatsApp</span>
           </a>
-
-          <button
-            onClick={() => setShowChat(!showChat)}
-            className="flex flex-col items-center justify-center py-3 hover:bg-gray-50 transition-colors"
-          >
-            <svg className="w-6 h-6 text-blue-500 mb-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-            </svg>
-            <span className="text-xs font-medium text-gray-700">Mesaj</span>
-          </button>
         </div>
       </div>
 
-      {/* Mobile Chat Dialog */}
+      {/* Sohbet kutusu – chat ikonunun yanında açılır */}
       {showChat && (
-        <div className="md:hidden fixed inset-0 bg-black/50 z-50 flex items-end">
-          <div className="bg-white w-full rounded-t-3xl max-h-[70vh] flex flex-col">
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 flex items-center justify-between rounded-t-3xl">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-2xl">👋</span>
-                </div>
-                <div>
-                  <div className="font-bold text-white">Premium Auto</div>
-                  <div className="text-xs text-blue-100">Çevrimiçi</div>
-                </div>
+        <div className="fixed bottom-24 right-4 z-50 md:right-20 max-w-[calc(100vw-2.5rem)]">
+          <div className="w-[340px] rounded-2xl border border-slate-200 bg-white shadow-xl">
+            {/* Üst başlık */}
+            <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-4 py-3">
+              <div>
+                <p className="text-sm font-semibold text-slate-900">
+                  Uzmanımızla Hemen Görüşün
+                </p>
+                <p className="mt-1 text-xs text-slate-500">
+                  Araç bilgilerinizi iletin, ortalama{' '}
+                  <span className="font-semibold">15 dakika</span> içinde size
+                  dönüş yapalım.
+                </p>
               </div>
-              <button 
-                onClick={() => setShowChat(false)}
-                className="text-white hover:bg-white/20 rounded-lg p-1"
+              <button
+                type="button"
+                onClick={handleChatToggle}
+                className="ml-2 rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+                aria-label="Sohbet penceresini kapat"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                ×
               </button>
             </div>
-            
-            <div className="p-6 flex-1 flex items-center justify-center">
-              <div className="text-center w-full">
-                <p className="text-gray-600 mb-6 text-lg">Size nasıl yardımcı olabiliriz?</p>
-                <div className="space-y-3">
-                  <a
-                    href={`https://wa.me/${siteConfig.whatsapp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={handleWhatsApp}
-                    className="block px-6 py-4 bg-[#25D366] text-white rounded-xl hover:bg-[#20BA5A] transition-colors text-lg font-semibold"
-                  >
-                    WhatsApp ile Yaz
-                  </a>
-                  <a
-                    href={`tel:${siteConfig.phone}`}
-                    onClick={handlePhone}
-                    className="block px-6 py-4 bg-turuncu-500 text-white rounded-xl hover:bg-turuncu-600 transition-colors text-lg font-semibold"
-                  >
-                    Hemen Ara
-                  </a>
-                  <a
-                    href="/iletisim"
-                    className="block px-6 py-4 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-colors text-lg font-semibold"
-                  >
-                    İletişim Formu
-                  </a>
+
+            {/* İçerik */}
+            <div className="px-4 py-3 space-y-3">
+              {/* Örnek mesaj kutusu */}
+              <div className="rounded-xl bg-slate-50 px-3 py-2 text-xs text-slate-600">
+                <p className="font-semibold text-slate-800 mb-1">
+                  Örnek mesaj:
+                </p>
+                <p>
+                  “Merhaba,{' '}
+                  <span className="italic">
+                    [Marka / Model / Yıl, km, hasar durumu]
+                  </span>{' '}
+                  aracımı satmak istiyorum. Tahmini teklif alabilir miyim?”
+                </p>
+              </div>
+
+              {/* Hazır sorular */}
+              <div className="space-y-1.5">
+                <p className="text-[11px] font-semibold text-slate-700">
+                  Hazır sorular:
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {quickQuestions.map((q) => (
+                    <button
+                      key={q}
+                      type="button"
+                      onClick={() => handleQuickQuestion(q)}
+                      className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] text-slate-700 hover:bg-slate-100 hover:border-slate-300 transition-colors"
+                    >
+                      {q}
+                    </button>
+                  ))}
                 </div>
               </div>
+
+              {/* Aksiyon butonları */}
+              <div className="space-y-2 pt-1">
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  onClick={handlePhone}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-3 py-2.5 text-sm font-semibold text-white hover:bg-orange-600 transition-colors"
+                >
+                  <FaPhone className="h-4 w-4" />
+                  <span>Hemen Ara</span>
+                </a>
+
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+                    whatsappMessage,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleWhatsApp}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 py-2.5 text-sm font-semibold text-white hover:bg-[#20BA5A] transition-colors"
+                >
+                  <FaWhatsapp className="h-4 w-4" />
+                  <span>WhatsApp&apos;tan Yaz</span>
+                </a>
+
+                <a
+                  href="/iletisim"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-slate-100 px-3 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-200 transition-colors"
+                >
+                  <span>📨</span>
+                  <span>İletişim Formunu Aç</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Alt bilgi */}
+            <div className="border-t border-slate-100 px-4 py-2.5 text-[11px] text-slate-500 flex items-center justify-between">
+              <span>Çalışma saatleri: 09:00 – 19:00</span>
+              <span>Ortalama dönüş: 15 dk</span>
             </div>
           </div>
         </div>

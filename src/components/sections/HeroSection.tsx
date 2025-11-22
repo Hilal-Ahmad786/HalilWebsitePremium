@@ -39,12 +39,12 @@ export function HeroSection() {
 
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('Hero WhatsApp', 'hero');
+    trackCTAClick('Hero WhatsApp', );
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('Hero Phone', 'hero');
+    trackCTAClick('Hero Phone', );
   };
 
   return (

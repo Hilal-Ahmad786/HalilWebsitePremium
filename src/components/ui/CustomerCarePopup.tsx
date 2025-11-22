@@ -31,13 +31,13 @@ export default function CustomerCarePopup() {
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick();
-    trackCTAClick('Popup WhatsApp', 'popup');
+    trackCTAClick('Popup WhatsApp',);
     handleClose();
   };
 
   const handlePhoneClick = () => {
     trackPhoneClick();
-    trackCTAClick('Popup Call', 'popup');
+    trackCTAClick('Popup Call',);
     handleClose();
   };
 
