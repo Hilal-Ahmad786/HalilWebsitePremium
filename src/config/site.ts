@@ -1,7 +1,7 @@
 // src/config/site.ts
 export const siteConfig = {
   name: 'Premium Auto Expert',
-  description: 'İstanbul\'da Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir Merkezi',
+  description: 'Türkiye\'de Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir Merkezi',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://premiumautoexpert.com',
   phone: process.env.NEXT_PUBLIC_PHONE || '+905557512220',
   
