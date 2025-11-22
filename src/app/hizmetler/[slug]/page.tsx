@@ -89,7 +89,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20 mb-6">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                Profesyonel Hizmettttt
+                Profesyonel Hizmet
               </div>
               
               <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm text-5xl mb-6 border border-white/20">
@@ -250,8 +250,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-white/20 text-center text-sm text-blue-200">
-                  
-                  ⚡ Ortalama yanıt süresi: 15 dakika
+                    ⚡ Ortalama yanıt süresi: 15 dakika
                   </div>
                 </div>
 
