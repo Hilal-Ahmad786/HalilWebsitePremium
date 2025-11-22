@@ -1,168 +1,139 @@
 // src/components/layout/UnifiedFloatingButtons.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { siteConfig } from '@/config/site';
 import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
 
 export default function UnifiedFloatingButtons() {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [showPulse, setShowPulse] = useState(true);
-  const [isOnline, setIsOnline] = useState(true);
+  const [showChat, setShowChat] = useState(false);
 
-  useEffect(() => {
-    const checkOnline = () => {
-      const now = new Date();
-      const hour = now.getHours();
-      setIsOnline(hour >= 9 && hour < 22);
-    };
-    checkOnline();
-    const interval = setInterval(checkOnline, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (isExpanded) {
-      setShowPulse(false);
-    }
-  }, [isExpanded]);
-
-  const handlePhoneClick = () => {
-    trackPhoneClick();
-    trackCTAClick('Floating Phone', 'floating-buttons');
-  };
-
-  const handleWhatsAppClick = () => {
+  const handleWhatsApp = () => {
     trackWhatsAppClick();
     trackCTAClick('Floating WhatsApp', 'floating-buttons');
   };
 
-  const quickActions = [
-    {
-      icon: '💬',
-      label: 'WhatsApp',
-      href: `https://wa.me/${siteConfig.whatsapp}`,
-      color: 'from-green-500 to-green-600',
-      onClick: handleWhatsAppClick,
-      angle: -45,
-    },
-    {
-      icon: '📞',
-      label: 'Ara',
-      href: `tel:${siteConfig.phone}`,
-      color: 'from-lacivert-600 to-lacivert-700',
-      onClick: handlePhoneClick,
-      angle: -90,
-    },
-    {
-      icon: '📧',
-      label: 'Mail',
-      href: `mailto:${siteConfig.email}`,
-      color: 'from-turuncu-500 to-turuncu-600',
-      onClick: () => trackCTAClick('Floating Email', 'floating-buttons'),
-      angle: -135,
-    },
-  ];
+  const handlePhone = () => {
+    trackPhoneClick();
+    trackCTAClick('Floating Phone', 'floating-buttons');
+  };
 
   return (
     <>
-      {/* Desktop Floating Widget */}
-      <div className="hidden md:block fixed bottom-8 right-8 z-50">
-        {/* Expanded Quick Actions */}
-        {isExpanded && (
-          <div className="absolute bottom-0 right-0 mb-20">
-            {quickActions.map((action, index) => {
-              const radius = 80;
-              const angleRad = (action.angle * Math.PI) / 180;
-              const x = Math.cos(angleRad) * radius;
-              const y = Math.sin(angleRad) * radius;
-
-              return (
-                <a
-                  key={index}
-                  href={action.href}
-                  target={action.href.startsWith('http') ? '_blank' : undefined}
-                  rel={action.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  onClick={action.onClick}
-                  className="absolute group"
-                  style={{
-                    transform: `translate(${x}px, ${y}px)`,
-                    animation: `fadeInScale 0.3s ease-out ${index * 0.1}s both`,
-                  }}
-                >
-                  <div
-                    className={`w-14 h-14 rounded-full bg-gradient-to-r ${action.color} shadow-lg flex items-center justify-center text-2xl hover:scale-110 transition-transform`}
-                  >
-                    {action.icon}
-                  </div>
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                    {action.label}
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        )}
-
-        {/* Main Button */}
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="relative w-16 h-16 bg-gradient-to-r from-turuncu-500 to-turuncu-600 rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all flex items-center justify-center"
+      {/* Desktop: Always visible vertical buttons on bottom right */}
+      <div className="hidden md:flex fixed right-6 bottom-6 z-50 flex-col gap-3">
+        {/* WhatsApp Button */}
+        <a
+          href={`https://wa.me/${siteConfig.whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleWhatsApp}
+          className="flex items-center gap-3 px-4 py-3 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-xl shadow-lg transition-all group"
         >
-          {showPulse && (
-            <span className="absolute inset-0 rounded-full bg-turuncu-400 animate-ping opacity-75"></span>
-          )}
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp</span>
+        </a>
 
-          {isOnline && (
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-400 border-2 border-white rounded-full animate-pulse"></span>
-          )}
+        {/* Phone Button */}
+        <a
+          href={`tel:${siteConfig.phone}`}
+          onClick={handlePhone}
+          className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-turuncu-500 to-turuncu-600 hover:from-turuncu-600 hover:to-turuncu-700 text-white rounded-xl shadow-lg transition-all group"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+          </svg>
+          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Ara</span>
+        </a>
 
-          <span
-            className="relative text-2xl text-white transition-transform"
-            style={{
-              transform: isExpanded ? 'rotate(45deg)' : 'rotate(0deg)',
-            }}
-          >
-            {isExpanded ? '✕' : '💬'}
-          </span>
+        {/* Chat Button - Opens dialog */}
+        <button
+          onClick={() => setShowChat(!showChat)}
+          className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl shadow-lg transition-all group"
+        >
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+          </svg>
+          <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Mesaj</span>
         </button>
+      </div>
 
-        {/* Info Card */}
-        {isExpanded && (
-          <div
-            className="absolute bottom-20 right-0 w-64 bg-white rounded-2xl shadow-2xl p-4"
-            style={{ animation: 'fadeInUp 0.3s ease-out' }}
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-lacivert-700 to-lacivert-800 rounded-xl flex items-center justify-center text-white font-bold">
-                PA
+      {/* Chat Dialog Box */}
+      {showChat && (
+        <>
+          <div 
+            className="fixed inset-0 bg-black/50 z-40"
+            onClick={() => setShowChat(false)}
+          />
+          <div className="hidden md:block fixed right-6 bottom-32 z-50 w-80">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-2xl">👋</span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-white">Premium Auto</div>
+                    <div className="text-xs text-blue-100">Çevrimiçi</div>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setShowChat(false)}
+                  className="text-white hover:bg-white/20 rounded-lg p-1"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-              <div>
-                <div className="font-bold text-gray-900">Premium Auto</div>
-                <div className="text-xs text-gray-500 flex items-center gap-1">
-                  <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-500' : 'bg-gray-400'}`}></span>
-                  {isOnline ? 'Çevrimiçi' : 'Çevrimdışı'}
+              
+              <div className="p-4 bg-gray-50 h-64 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="text-gray-600 mb-4">Size nasıl yardımcı olabiliriz?</p>
+                  <div className="space-y-2">
+                    <a
+                      href={`https://wa.me/${siteConfig.whatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleWhatsApp}
+                      className="block px-4 py-2 bg-[#25D366] text-white rounded-lg hover:bg-[#20BA5A] transition-colors"
+                    >
+                      WhatsApp ile Yaz
+                    </a>
+                    <a
+                      href={`tel:${siteConfig.phone}`}
+                      onClick={handlePhone}
+                      className="block px-4 py-2 bg-turuncu-500 text-white rounded-lg hover:bg-turuncu-600 transition-colors"
+                    >
+                      Hemen Ara
+                    </a>
+                    <a
+                      href="/iletisim"
+                      className="block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                    >
+                      İletişim Formu
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-600 mb-3">Size nasıl yardımcı olabiliriz?</p>
-            <div className="text-xs text-gray-500">
-              Ortalama yanıt süresi:{' '}
-              <span className="font-semibold text-turuncu-600">2 dakika</span>
-            </div>
           </div>
-        )}
-      </div>
+        </>
+      )}
 
-      {/* Mobile Bottom Bar */}
+      {/* Mobile: Bottom bar - unchanged */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl">
         <div className="grid grid-cols-3 divide-x divide-gray-200">
           <a
             href={`tel:${siteConfig.phone}`}
-            onClick={handlePhoneClick}
-            className="flex flex-col items-center justify-center py-4 hover:bg-gray-50 transition-colors"
+            onClick={handlePhone}
+            className="flex flex-col items-center justify-center py-3 hover:bg-gray-50 transition-colors"
           >
-            <span className="text-2xl mb-1">📞</span>
+            <svg className="w-6 h-6 text-turuncu-500 mb-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
             <span className="text-xs font-medium text-gray-700">Ara</span>
           </a>
 
@@ -170,50 +141,83 @@ export default function UnifiedFloatingButtons() {
             href={`https://wa.me/${siteConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleWhatsAppClick}
-            className="flex flex-col items-center justify-center py-4 bg-green-50 hover:bg-green-100 transition-colors relative"
+            onClick={handleWhatsApp}
+            className="flex flex-col items-center justify-center py-3 bg-[#25D366] hover:bg-[#20BA5A] transition-colors"
           >
-            {showPulse && (
-              <span className="absolute top-2 right-2 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            )}
-            <span className="text-2xl mb-1">💬</span>
-            <span className="text-xs font-medium text-green-700">WhatsApp</span>
+            <svg className="w-6 h-6 text-white mb-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span className="text-xs font-medium text-white">WhatsApp</span>
           </a>
 
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="flex flex-col items-center justify-center py-4 hover:bg-gray-50 transition-colors"
+          <button
+            onClick={() => setShowChat(!showChat)}
+            className="flex flex-col items-center justify-center py-3 hover:bg-gray-50 transition-colors"
           >
-            <span className="text-2xl mb-1">📧</span>
-            <span className="text-xs font-medium text-gray-700">Mail</span>
-          </a>
+            <svg className="w-6 h-6 text-blue-500 mb-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+            <span className="text-xs font-medium text-gray-700">Mesaj</span>
+          </button>
         </div>
       </div>
 
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+      {/* Mobile Chat Dialog */}
+      {showChat && (
+        <div className="md:hidden fixed inset-0 bg-black/50 z-50 flex items-end">
+          <div className="bg-white w-full rounded-t-3xl max-h-[70vh] flex flex-col">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 flex items-center justify-between rounded-t-3xl">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-2xl">👋</span>
+                </div>
+                <div>
+                  <div className="font-bold text-white">Premium Auto</div>
+                  <div className="text-xs text-blue-100">Çevrimiçi</div>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowChat(false)}
+                className="text-white hover:bg-white/20 rounded-lg p-1"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="p-6 flex-1 flex items-center justify-center">
+              <div className="text-center w-full">
+                <p className="text-gray-600 mb-6 text-lg">Size nasıl yardımcı olabiliriz?</p>
+                <div className="space-y-3">
+                  <a
+                    href={`https://wa.me/${siteConfig.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={handleWhatsApp}
+                    className="block px-6 py-4 bg-[#25D366] text-white rounded-xl hover:bg-[#20BA5A] transition-colors text-lg font-semibold"
+                  >
+                    WhatsApp ile Yaz
+                  </a>
+                  <a
+                    href={`tel:${siteConfig.phone}`}
+                    onClick={handlePhone}
+                    className="block px-6 py-4 bg-turuncu-500 text-white rounded-xl hover:bg-turuncu-600 transition-colors text-lg font-semibold"
+                  >
+                    Hemen Ara
+                  </a>
+                  <a
+                    href="/iletisim"
+                    className="block px-6 py-4 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-colors text-lg font-semibold"
+                  >
+                    İletişim Formu
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
