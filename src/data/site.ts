@@ -3,22 +3,22 @@
 import { SiteConfig } from './types';
 
 export const siteConfig: SiteConfig = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || 'Premium Auto Expert',
-  description: 'İstanbul\'da en iyi fiyatlarla araç alım satım hizmeti. Profesyonel ekspertiz ve güvenilir ödeme garantisi.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://premiumautoexpert.com',
+  name: process.env.NEXT_PUBLIC_SITE_NAME || 'Arabanakıt',
+  description: 'Türkiye\'da en iyi fiyatlarla araç alım satım hizmeti. Profesyonel ekspertiz ve güvenilir ödeme garantisi.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://arabannakit.com',
   phone: process.env.NEXT_PUBLIC_PHONE || '+905551234567',
   phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || '0555 123 45 67',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905551234567',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'info@premiumautoexpert.com',
-  address: 'Beylikdüzü, İstanbul',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'info@arabannakit.com',
+  address: 'Ankara, Türkiye',
   social: {
-    facebook: 'https://facebook.com/premiumautoexpert',
-    instagram: 'https://instagram.com/premiumautoexpert',
-    twitter: 'https://twitter.com/premiumautoexpert',
-    linkedin: 'https://linkedin.com/company/premiumautoexpert',
+    facebook: 'https://facebook.com/arabannakit',
+    instagram: 'https://instagram.com/arabannakit',
+    twitter: 'https://twitter.com/arabannakit',
+    linkedin: 'https://linkedin.com/company/arabannakit',
   },
-  metaTitle: 'Premium Auto Expert | İstanbul Araç Alım Satım',
-  metaDescription: 'İstanbul\'da güvenilir araç alım satım hizmeti. Profesyonel ekspertiz, anında ödeme, tüm markalar. 7/24 hizmet.',
+  metaTitle: 'Arabanakıt | Türkiye Araç Alım Satım',
+  metaDescription: 'Türkiye\'da güvenilir araç alım satım hizmeti. Profesyonel ekspertiz, anında ödeme, tüm markalar. 7/24 hizmet.',
 };
 
 export const businessInfo = {
@@ -34,7 +34,7 @@ export const businessInfo = {
     sunday: '10:00 - 16:00',
   },
   serviceAreas: [
-    'Beylikdüzü', 'Esenyurt', 'Avcılar', 'Küçükçekmece', 
+    'Ankara', 'Esenyurt', 'Avcılar', 'Küçükçekmece',
     'Bağcılar', 'Başakşehir', 'Sultangazi', 'Eyüpsultan',
     'Şişli', 'Beşiktaş', 'Sarıyer', 'Kadıköy', 'Ümraniye'
   ],
