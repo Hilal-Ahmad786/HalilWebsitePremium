@@ -6,25 +6,23 @@ import { siteConfig } from '@/config/site';
 import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
 
 export default function ContactCTA() {
-  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const endOfDay = new Date(now);
+    endOfDay.setHours(23, 59, 59, 999);
+
+    const diff = endOfDay.getTime() - now.getTime();
+
+    return {
+      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((diff / 1000 / 60) % 60),
+      seconds: Math.floor((diff / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const endOfDay = new Date(now);
-      endOfDay.setHours(23, 59, 59, 999);
-
-      const diff = endOfDay.getTime() - now.getTime();
-
-      return {
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / 1000 / 60) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      };
-    };
-
-    setTimeLeft(calculateTimeLeft());
-
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -34,12 +32,12 @@ export default function ContactCTA() {
 
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('CTA WhatsApp', );
+    trackCTAClick('CTA WhatsApp',);
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('CTA Phone', );
+    trackCTAClick('CTA Phone',);
   };
 
   const benefits = [

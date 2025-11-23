@@ -82,7 +82,7 @@ export function HeroSection() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium border border-white/20">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Türkiye'nin En Güvenilir Hasarlı Araç Alım Platformu
+              Türkiye&apos;nin En Güvenilir Hasarlı Araç Alım Platformu
             </div>
 
             {/* Main Heading */}
@@ -105,11 +105,10 @@ export function HeroSection() {
                 <button
                   key={index}
                   onMouseEnter={() => setActiveFeature(index)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                    activeFeature === index
-                      ? 'bg-turuncu-500 shadow-lg scale-105'
-                      : 'bg-white/10 backdrop-blur-sm hover:bg-white/20'
-                  }`}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeFeature === index
+                    ? 'bg-turuncu-500 shadow-lg scale-105'
+                    : 'bg-white/10 backdrop-blur-sm hover:bg-white/20'
+                    }`}
                 >
                   <span className="text-2xl">{feature.icon}</span>
                   <div className="text-left">
@@ -128,7 +127,7 @@ export function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsApp}
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20BA5A] rounded-xl font-bold text-lg shadow-2xl hover:shadow-[#25D366]/60 transition-all overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20BA5A] rounded-xl font-bold text-lg shadow-2xl hover:shadow-green-500/60 transition-all overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform" />
                 <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#25D366]">

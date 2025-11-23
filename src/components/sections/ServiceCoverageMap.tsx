@@ -13,7 +13,7 @@ export function ServiceCoverageMap() {
             Hizmet Bölgelerimiz
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            İstanbul'un her yerinde hizmetinizdeyiz.
+            İstanbul&apos;un her yerinde hizmetinizdeyiz.
           </p>
         </div>
 

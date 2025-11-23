@@ -161,4 +161,130 @@ export const services: Service[] = [
     metaDescription: 'Araç takas hizmeti. Eski aracınızı yenisiyle değiştirin.',
     published: true,
   },
+  {
+    id: 'kazali-arac-alim',
+    slug: 'kazali-arac-alim',
+    title: 'Kazalı Araç Alımı',
+    shortDescription: 'Kazalı araç alan lider firma! Türkiye\'nin her yerinde 30 dakikada ücretsiz ekspertiz ve anında nakit ödeme.',
+    fullDescription: `
+      <p class="text-lg leading-relaxed mb-6">
+        Premium Auto Expert olarak İstanbul genelinde <strong class="text-primary">7/24 kazalı araç alan yerler</strong> ve 
+        <strong class="text-primary">kazalı araç alan firmalar</strong> arasında öne çıkıyoruz.
+        Ücretsiz ekspertiz, noter onaylı işlem ve <strong class="text-orange-500">30 dakikada nakit teklif</strong> garantisiyle
+        "<em>Kazalı aracımı satmak istiyorum</em>" diyen herkesi hemen yönlendiriyoruz.
+      </p>
+    `,
+    icon: 'FaCarCrash',
+    features: [
+      '30 Dakikada Teklif',
+      'Ücretsiz Ekspertiz',
+      'Ücretsiz Çekici',
+      '7/24 Destek',
+    ],
+    benefits: [
+      'En Yüksek Fiyat Garantisi',
+      'Anında Nakit Ödeme',
+      'Noter Onaylı İşlem',
+      'Yerinde Değerleme',
+    ],
+    image: '/images/services/kazali-arac.jpg',
+    order: 5,
+    metaTitle: 'Kazalı Araç Alan | 30 Dakikada Nakit Teklif • Premium Auto Expert',
+    metaDescription: 'Kazalı araç alan lider firma! Türkiye\'nin her yerinde 30 dakikada ücretsiz ekspertiz ve anında nakit ödeme.',
+    published: true,
+  },
+  {
+    id: 'hasarli-arac-alim',
+    slug: 'hasarli-arac-alim',
+    title: 'Hasarlı Araç Alımı',
+    shortDescription: 'Hasarlı araç alımında #1! Motor, şanzıman, kaporta hasarı olan tüm araçlar için en iyi fiyat.',
+    fullDescription: `
+      <p class="text-lg leading-relaxed mb-6">
+        <strong class="text-purple-600">Hasarlı araç alan</strong> firmalar arasında en güvenilir adresiz. 
+        Motor arızası, şanzıman problemi, kaporta hasarı—fark etmeksizin 
+        <strong class="text-orange-500">tüm hasarlı araçlar</strong> için en yüksek fiyatı veriyoruz.
+      </p>
+    `,
+    icon: 'FaTools',
+    features: [
+      'Her Hasar Türü',
+      'En Yüksek Fiyat',
+      'Ücretsiz Çekici',
+      'Kolay Evrak',
+    ],
+    benefits: [
+      'Motor Arızalı Araç Alımı',
+      'Şanzıman Arızalı Araç Alımı',
+      'Kaporta Hasarlı Araç Alımı',
+      'Anında Nakit Ödeme',
+    ],
+    image: '/images/services/hasarli-arac.jpg',
+    order: 6,
+    metaTitle: 'Hasarlı Araç Alan | En Yüksek Fiyat Garantisi • Premium Auto Expert',
+    metaDescription: 'Hasarlı araç alımında #1! Motor, şanzıman, kaporta hasarı olan tüm araçlar için en iyi fiyat. Ücretsiz ekspertiz ve anında ödeme.',
+    published: true,
+  },
+  {
+    id: 'pert-arac-alim',
+    slug: 'pert-arac-alim',
+    title: 'Pert Araç Alımı',
+    shortDescription: 'Pert (sigorta çıkışlı) araç alımında uzman! Kasko pert kayıtlı tüm araçlar için en iyi fiyat.',
+    fullDescription: `
+      <p class="text-lg leading-relaxed mb-6">
+        <strong class="text-orange-600">Pert araç alan</strong> en güvenilir merkez! 
+        Kasko pert, trafik pert, sigorta çıkışlı tüm araçlar için 
+        <strong class="text-orange-500">yasal prosedür ve en iyi fiyat</strong> garantisi veriyoruz.
+      </p>
+    `,
+    icon: 'FaExclamationTriangle',
+    features: [
+      'Pert Uzmanı',
+      'Yasal Güvence',
+      'Adil Değerleme',
+      'Hızlı Süreç',
+    ],
+    benefits: [
+      'Sigorta Çıkışlı Araç Alımı',
+      'Kasko Pert Kayıtlı Araç Alımı',
+      'Yasal Prosedür Garantisi',
+      'Anında Nakit Ödeme',
+    ],
+    image: '/images/services/pert-arac.jpg',
+    order: 7,
+    metaTitle: 'Pert Araç Alan | Sigorta Çıkışlı Araçlar • Premium Auto Expert',
+    metaDescription: 'Pert (sigorta çıkışlı) araç alımında uzman! Kasko pert kayıtlı tüm araçlar için en iyi fiyat ve yasal işlem garantisi.',
+    published: true,
+  },
+  {
+    id: 'hurda-arac-alim',
+    slug: 'hurda-arac-alim',
+    title: 'Hurda Araç Alımı',
+    shortDescription: 'Hurda araç alımında #1! Kullanım ömrü bitmiş, hurdaya çıkmış tüm araçlar için resmi belgeli işlem.',
+    fullDescription: `
+      <p class="text-lg leading-relaxed mb-6">
+        <strong class="text-green-600">Hurda araç alan</strong> en güvenilir firma! 
+        Eski, kullanım ömrü bitmiş araçlarınızı 
+        <strong class="text-orange-500">resmi hurda belgesi ile yasal olarak</strong> alıyoruz.
+        Çevre dostu geri dönüşüm garantisi.
+      </p>
+    `,
+    icon: 'FaRecycle',
+    features: [
+      'Çevre Dostu',
+      'Resmi Belge',
+      'Kilo Bazlı',
+      'Ücretsiz Taşıma',
+    ],
+    benefits: [
+      'Hurda Belgesi Düzenleme',
+      'Yasal Geri Dönüşüm',
+      'Adil Hurda Fiyatları',
+      'Ücretsiz Çekici Hizmeti',
+    ],
+    image: '/images/services/hurda-arac.jpg',
+    order: 8,
+    metaTitle: 'Hurda Araç Alan | Çevre Dostu Geri Dönüşüm • Premium Auto Expert',
+    metaDescription: 'Hurda araç alımında #1! Kullanım ömrü bitmiş, hurdaya çıkmış tüm araçlar için resmi belgeli işlem ve anında ödeme.',
+    published: true,
+  },
 ];

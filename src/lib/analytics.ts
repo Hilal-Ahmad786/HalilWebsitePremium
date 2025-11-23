@@ -2,12 +2,16 @@
 // ===== src/lib/analytics.ts =====
 declare global {
   interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     gtag?: (...args: any[]) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dataLayer?: any[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fbq?: (...args: any[]) => void;
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
   // Google Analytics 4
   if (typeof window !== 'undefined' && window.gtag) {

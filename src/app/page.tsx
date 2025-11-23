@@ -11,7 +11,7 @@ import CoverageArea from '@/components/sections/CoverageArea';
 
 export const metadata: Metadata = {
   title: 'Premium Auto Expert - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
-  description: 'İstanbul\'da En Güvenilir Araç Alım Merkezi. 30 dakikada nakit teklif, ücretsiz ekspertiz, 7/24 hizmet.',
+  description: 'İstanbul&apos;da En Güvenilir Araç Alım Merkezi. 30 dakikada nakit teklif, ücretsiz ekspertiz, 7/24 hizmet.',
 };
 
 export default function HomePage() {

@@ -1,7 +1,6 @@
 // src/app/iletisim/page.tsx
 'use client';
 
-import { Metadata } from 'next';
 import { useState } from 'react';
 import { siteConfig } from '@/config/site';
 import { trackFormSubmit, trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
@@ -27,7 +26,7 @@ export default function ContactPage() {
       setSubmitStatus('success');
       setIsSubmitting(false);
       setFormData({ name: '', phone: '', email: '', carInfo: '', message: '' });
-      
+
       setTimeout(() => setSubmitStatus('idle'), 5000);
     }, 1500);
   };
@@ -95,14 +94,14 @@ export default function ContactPage() {
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               7/24 Destek Hattı Aktif
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Size Nasıl
               <span className="block text-turuncu-400">Yardımcı Olabiliriz?</span>
             </h1>
-            
+
             <p className="text-xl text-blue-200 leading-relaxed">
-              Aracınız hakkında merak ettikleriniz için bize ulaşın. 
+              Aracınız hakkında merak ettikleriniz için bize ulaşın.
               Uzman ekibimiz en kısa sürede size dönüş yapacaktır.
             </p>
           </div>
@@ -336,7 +335,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Ofisimizi Ziyaret Edin</h2>
             <p className="text-gray-600">İstanbul merkez ofisimizden bize ulaşabilirsiniz</p>
           </div>
-          
+
           <div className="bg-gray-200 rounded-2xl overflow-hidden h-96 flex items-center justify-center border-4 border-white shadow-xl">
             <div className="text-center text-gray-500">
               <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

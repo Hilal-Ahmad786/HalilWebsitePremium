@@ -29,18 +29,18 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('Service Hero WhatsApp', );
+    trackCTAClick('Service Hero WhatsApp',);
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('Service Hero Phone', );
+    trackCTAClick('Service Hero Phone',);
   };
 
   const displayIcon = iconMap[icon] || '🚗';
 
   return (
-    <section className="relative bg-gradient-to-br from-turuncu-600 via-turuncu-500 to-turuncu-600 text-white py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-lacivert-800 via-lacivert-500 to-lacivert-800 text-white py-20 overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -76,15 +76,15 @@ export default function ServiceHero({
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               Profesyonel Hizmet
             </div>
-            
+
             <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm text-5xl mb-6 border border-white/30">
               {displayIcon}
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {title}
             </h1>
-            
+
             <p className="text-xl text-orange-100 leading-relaxed mb-8">
               {description}
             </p>
@@ -102,14 +102,14 @@ export default function ServiceHero({
                 </svg>
                 <span>Hemen Teklif Al</span>
               </a>
-              
+
               <a
                 href={`tel:${siteConfig.phone}`}
                 onClick={handlePhone}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold rounded-xl border border-white/30 transition-all"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
                 <span>Bizi Arayın</span>
               </a>
@@ -134,7 +134,7 @@ export default function ServiceHero({
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold mb-6">Bu Hizmette</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0">

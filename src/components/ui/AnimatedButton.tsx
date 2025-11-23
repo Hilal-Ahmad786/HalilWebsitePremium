@@ -29,24 +29,24 @@ export default function AnimatedButton({
   className = '',
 }: AnimatedButtonProps) {
   const baseClasses = 'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 relative overflow-hidden';
-  
+
   const variantClasses = {
     primary: 'bg-primary-500 text-white hover:bg-primary-600 shadow-lg hover:shadow-primary-500/50',
     secondary: 'bg-navy-900 text-white hover:bg-navy-800 shadow-lg hover:shadow-navy-900/50',
     gradient: 'bg-gradient-to-r from-primary-500 to-navy-900 text-white hover:from-primary-600 hover:to-navy-800 shadow-lg',
     glass: 'glass-card text-navy-900 hover:bg-white/90',
-    whatsapp: 'bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-green-500/50',
+    whatsapp: 'bg-whatsapp-500 text-white hover:bg-whatsapp-600 shadow-lg hover:shadow-whatsapp-500/50',
   };
-  
+
   const sizeClasses = {
     small: 'px-4 py-2 text-sm',
     medium: 'px-6 py-3 text-base',
     large: 'px-8 py-4 text-lg',
     full: 'w-full px-6 py-3 text-base',
   };
-  
+
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
-  
+
   const content = (
     <>
       {icon && <span className="text-xl">{icon}</span>}

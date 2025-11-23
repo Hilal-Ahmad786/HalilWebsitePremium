@@ -98,12 +98,12 @@ export default function IstanbulPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              İstanbul'un Her Yerinde Hasarlı Araç Alımı
+              İstanbul&apos;un Her Yerinde Hasarlı Araç Alımı
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-700">
-              <strong className="text-turuncu-600">İstanbul hasarlı araç alan</strong> firmalar arasında en güvenilir adresiz. 
-              Beylikdüzü'nden Kadıköy'e, Sarıyer'den Pendik'e kadar{' '}
-              <strong className="text-lacivert-700">İstanbul'un tüm ilçelerinde</strong> kazalı, hasarlı, pert ve hurda araç alımı yapıyoruz.
+              <strong className="text-turuncu-600">İstanbul hasarlı araç alan</strong> firmalar arasında en güvenilir adresiz.
+              Beylikdüzü&apos;nden Kadıköy&apos;e, Sarıyer&apos;den Pendik&apos;e kadar{' '}
+              <strong className="text-lacivert-700">İstanbul&apos;un tüm ilçelerinde</strong> kazalı, hasarlı, pert ve hurda araç alımı yapıyoruz.
             </p>
             <div className="bg-turuncu-50 border-l-4 border-turuncu-500 p-4 rounded-r-xl">
               <p className="text-turuncu-800 font-semibold">
@@ -128,7 +128,7 @@ export default function IstanbulPage() {
               Hizmet Verdiğimiz İlçeler
             </h2>
             <p className="text-xl text-gray-600">
-              İstanbul'un 39 ilçesinin tamamında aktif hizmet
+              İstanbul&apos;un 39 ilçesinin tamamında aktif hizmet
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function IstanbulPage() {
                     className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg hover:bg-turuncu-50 hover:border-turuncu-200 border border-gray-200 transition-all"
                   >
                     <svg className="w-4 h-4 text-turuncu-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-sm font-medium text-gray-700">{district}</span>
                   </div>
@@ -167,7 +167,7 @@ export default function IstanbulPage() {
                     className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg hover:bg-lacivert-50 hover:border-lacivert-200 border border-gray-200 transition-all"
                   >
                     <svg className="w-4 h-4 text-lacivert-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span className="text-sm font-medium text-gray-700">{district}</span>
                   </div>
@@ -179,7 +179,7 @@ export default function IstanbulPage() {
           <div className="mt-8 text-center">
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white rounded-xl font-semibold shadow-lg">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
               <span>Hangi ilçede olursanız olun, 2 saat içinde yanınızdayız!</span>
             </div>
@@ -198,17 +198,17 @@ export default function IstanbulPage() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              İstanbul'da Hasarlı Araç Alımı Hakkında
+              İstanbul&apos;da Hasarlı Araç Alımı Hakkında
             </h2>
-            
+
             <p className="text-gray-700 leading-relaxed mb-4">
-              İstanbul, Türkiye'nin en büyük şehri olarak hasarlı araç alım satımında da en hareketli piyasaya sahiptir. 
-              Premium Auto Expert olarak, <strong>İstanbul hasarlı araç alan</strong> firmalar arasında 15 yıllık tecrübemizle 
+              İstanbul, Türkiye&apos;nin en büyük şehri olarak hasarlı araç alım satımında da en hareketli piyasaya sahiptir.
+              Premium Auto Expert olarak, <strong>İstanbul hasarlı araç alan</strong> firmalar arasında 15 yıllık tecrübemizle
               sektörün öncüsüyüz.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
-              İstanbul'da Hangi İlçelerde Hizmet Veriyoruz?
+              İstanbul&apos;da Hangi İlçelerde Hizmet Veriyoruz?
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
               <strong>Avrupa Yakası:</strong> Beylikdüzü, Esenyurt, Avcılar, Başakşehir, Şişli, Beşiktaş, Sarıyer başta olmak üzere tüm ilçelerde...
@@ -218,19 +218,19 @@ export default function IstanbulPage() {
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
-              İstanbul'da Neden En İyi Fiyatı Veriyoruz?
+              İstanbul&apos;da Neden En İyi Fiyatı Veriyoruz?
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              İstanbul piyasasını yakından tanıyor, güncel fiyatları anlık takip ediyor ve geniş müşteri ağımız sayesinde 
-              araçları hemen satabiliyoruz. Bu sayede size <strong>İstanbul'daki en yüksek fiyatı</strong> verebiliyoruz.
+              İstanbul piyasasını yakından tanıyor, güncel fiyatları anlık takip ediyor ve geniş müşteri ağımız sayesinde
+              araçları hemen satabiliyoruz. Bu sayede size <strong>İstanbul&apos;daki en yüksek fiyatı</strong> verebiliyoruz.
             </p>
 
             <div className="bg-turuncu-50 border-l-4 border-turuncu-500 p-6 rounded-r-xl my-8">
               <h4 className="font-bold text-lg text-turuncu-800 mb-2">
-                📞 İstanbul'dan Hemen Arayın!
+                📞 İstanbul&apos;dan Hemen Arayın!
               </h4>
               <p className="text-turuncu-700">
-                {siteConfig.phoneDisplay} numaralı telefondan veya WhatsApp'tan ulaşın, 
+                {siteConfig.phoneDisplay} numaralı telefondan veya WhatsApp&apos;tan ulaşın,
                 2 saat içinde yerinizde ekspertiz yapalım!
               </p>
             </div>

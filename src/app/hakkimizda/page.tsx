@@ -68,14 +68,14 @@ export default function AboutPage() {
                 <span className="w-2 h-2 bg-turuncu-400 rounded-full animate-pulse" />
                 {businessInfo.foundedYear} Yılından Beri Hizmetinizdeyiz
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Türkiye'nin En Güvenilir
+                Türkiye&apos;nin En Güvenilir
                 <span className="block text-turuncu-400">Araç Alım Merkezi</span>
               </h1>
-              
+
               <p className="text-xl text-blue-200 leading-relaxed mb-8">
-                {businessInfo.experienceYears}+ yıllık deneyimimiz, {businessInfo.vehiclesPurchased} araç alım işlemi 
+                {businessInfo.experienceYears}+ yıllık deneyimimiz, {businessInfo.vehiclesPurchased} araç alım işlemi
                 ve {businessInfo.customerSatisfaction} müşteri memnuniyeti ile sektörün lideri olduk.
               </p>
 
@@ -136,7 +136,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Misyonumuz</h2>
               <p className="text-gray-700 leading-relaxed">
-                Araç alım satım sürecini müşterilerimiz için güvenli, hızlı ve şeffaf hale getirmek. 
+                Araç alım satım sürecini müşterilerimiz için güvenli, hızlı ve şeffaf hale getirmek.
                 Profesyonel hizmet anlayışımız ve deneyimli ekibimizle sektörde fark yaratmak.
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Vizyonumuz</h2>
               <p className="text-gray-700 leading-relaxed">
-                Türkiye'nin en güvenilir ve tercih edilen araç alım satım platformu olmak. 
+                Türkiye&apos;nin en güvenilir ve tercih edilen araç alım satım platformu olmak.
                 Teknoloji ve insan odaklı yaklaşımımızla sektöre yön vermek.
               </p>
             </div>

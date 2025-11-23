@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import typography from '@tailwindcss/typography';
 
 const config: Config = {
   content: [
@@ -40,6 +41,11 @@ const config: Config = {
           900: '#0A1220',
           950: '#050911',
         },
+        // WhatsApp Green
+        whatsapp: {
+          500: '#25D366',
+          600: '#20BA5A',
+        },
       },
 
       container: {
@@ -54,8 +60,8 @@ const config: Config = {
       },
 
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-geist-mono)', 'monospace'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['monospace'],
       },
 
       typography: {
@@ -81,7 +87,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    typography,
   ],
 };
 

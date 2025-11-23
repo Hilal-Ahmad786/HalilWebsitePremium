@@ -29,19 +29,19 @@ export default function CityHero({
   description,
   stats,
 }: CityHeroProps) {
-const handleWhatsApp = () => {
-  trackWhatsAppClick();
-  trackCTAClick('City Hero WhatsApp');
-};
+  const handleWhatsApp = () => {
+    trackWhatsAppClick();
+    trackCTAClick('City Hero WhatsApp');
+  };
 
-const handlePhone = () => {
-  trackPhoneClick();
-  trackCTAClick('City Hero Phone');
-};
+  const handlePhone = () => {
+    trackPhoneClick();
+    trackCTAClick('City Hero Phone');
+  };
 
 
   return (
-    <section className="relative bg-gradient-to-br from-lacivert-800 via-lacivert-700 to-lacivert-800 text-white py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-lacivert-800 via-lacivert-500 to-lacivert-800 text-white py-20 overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -71,12 +71,12 @@ const handlePhone = () => {
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               {tagline}
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {title}
               <span className="block text-turuncu-400 mt-2">{subtitle}</span>
             </h1>
-            
+
             <p className="text-xl text-blue-200 leading-relaxed mb-8">
               {description}
             </p>
@@ -94,14 +94,14 @@ const handlePhone = () => {
                 </svg>
                 <span>WhatsApp ile Teklif Al</span>
               </a>
-              
+
               <a
                 href={`tel:${siteConfig.phone}`}
                 onClick={handlePhone}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
                 <span>Hemen Ara</span>
               </a>
@@ -123,7 +123,7 @@ const handlePhone = () => {
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold mb-6">{cityName} İstatistikleri</h3>
-              
+
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                   <div className="text-3xl font-bold text-turuncu-400 mb-1">{stats.vehiclesBought}</div>

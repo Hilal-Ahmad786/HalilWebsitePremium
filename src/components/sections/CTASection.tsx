@@ -6,23 +6,25 @@ import { siteConfig } from '@/config/site';
 import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
 
 export default function CTASection() {
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const endOfDay = new Date(now);
+    endOfDay.setHours(23, 59, 59, 999);
+
+    const diff = endOfDay.getTime() - now.getTime();
+
+    return {
+      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((diff / 1000 / 60) % 60),
+      seconds: Math.floor((diff / 1000) % 60),
+    };
+  };
+
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const endOfDay = new Date(now);
-      endOfDay.setHours(23, 59, 59, 999);
-
-      const diff = endOfDay.getTime() - now.getTime();
-
-      return {
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / 1000 / 60) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      };
-    };
-
+    setMounted(true);
     setTimeLeft(calculateTimeLeft());
 
     const timer = setInterval(() => {
@@ -32,14 +34,18 @@ export default function CTASection() {
     return () => clearInterval(timer);
   }, []);
 
+  // If not mounted, return static content or null to avoid mismatch if needed, 
+  // but initializing with 0s is usually enough if the server also renders 0s.
+  // However, calculateTimeLeft was being called in useState initializer, which was the bug.
+
   const handleWhatsApp = () => {
     trackWhatsAppClick();
-    trackCTAClick('CTA WhatsApp', );
+    trackCTAClick('CTA WhatsApp',);
   };
 
   const handlePhone = () => {
     trackPhoneClick();
-    trackCTAClick('CTA Phone', );
+    trackCTAClick('CTA Phone',);
   };
 
   const benefits = [

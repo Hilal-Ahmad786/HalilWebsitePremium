@@ -14,7 +14,7 @@ export default function CoverageArea() {
             Hizmet Verdiğimiz Şehirler
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Türkiye'nin her yerinde 7/24 hizmetinizdeyiz
+            Türkiye&apos;nin her yerinde 7/24 hizmetinizdeyiz
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function CoverageArea() {
 
         <div className="text-center mt-8">
           <p className="text-gray-600">
-            + Türkiye'nin tüm illeri ve ilçeleri
+            + Türkiye&apos;nin tüm illeri ve ilçeleri
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import WhyUs from '@/components/sections/WhyUs';
 import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import ContactCTA from '@/components/sections/ContactCTA';
-import { cities, CityData } from '@/data/cities';
+import { cities } from '@/data/cities';
 import { siteConfig } from '@/config/site';
 
 interface CityPageProps {
@@ -86,12 +86,12 @@ export default async function CityPage({ params }: CityPageProps) {
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 {city.hero.tagline}
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 {city.hero.title}
                 <span className="block text-turuncu-400 mt-2">{city.hero.subtitle}</span>
               </h1>
-              
+
               <p className="text-xl text-blue-200 leading-relaxed mb-8">
                 {city.intro.content}
               </p>
@@ -108,13 +108,13 @@ export default async function CityPage({ params }: CityPageProps) {
                   </svg>
                   <span>WhatsApp ile Teklif Al</span>
                 </a>
-                
+
                 <a
                   href={`tel:${siteConfig.phone}`}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
                   <span>Hemen Ara</span>
                 </a>
@@ -136,7 +136,7 @@ export default async function CityPage({ params }: CityPageProps) {
             <div className="relative">
               <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
                 <h3 className="text-2xl font-bold mb-6">{city.name} İstatistikleri</h3>
-                
+
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                     <div className="text-3xl font-bold text-turuncu-400 mb-1">{city.stats.vehiclesBought}</div>
@@ -223,39 +223,35 @@ export default async function CityPage({ params }: CityPageProps) {
                 Hizmet Verdiğimiz İlçeler
               </h2>
               <p className="text-xl text-gray-600">
-                {city.name}'ın her köşesinde aktif hizmet
+                {city.name}&apos;ın her köşesinde aktif hizmet
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               {city.districts.map((district, idx) => (
-                <div 
+                <div
                   key={idx}
-                  className={`rounded-2xl p-8 border ${
-                    idx === 0 
-                      ? 'bg-gradient-to-br from-lacivert-50 to-blue-50 border-lacivert-200' 
-                      : 'bg-gradient-to-br from-turuncu-50 to-orange-50 border-turuncu-200'
-                  }`}
+                  className={`rounded-2xl p-8 border ${idx === 0
+                    ? 'bg-gradient-to-br from-lacivert-50 to-blue-50 border-lacivert-200'
+                    : 'bg-gradient-to-br from-turuncu-50 to-orange-50 border-turuncu-200'
+                    }`}
                 >
-                  <h3 className={`text-2xl font-bold mb-6 flex items-center gap-2 ${
-                    idx === 0 ? 'text-lacivert-700' : 'text-turuncu-700'
-                  }`}>
+                  <h3 className={`text-2xl font-bold mb-6 flex items-center gap-2 ${idx === 0 ? 'text-lacivert-700' : 'text-turuncu-700'
+                    }`}>
                     {district.title}
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {district.areas.map((area, areaIdx) => (
                       <div
                         key={areaIdx}
-                        className={`flex items-center gap-2 px-4 py-2 bg-white rounded-lg hover:border-2 border border-gray-200 transition-all ${
-                          idx === 0 
-                            ? 'hover:bg-lacivert-50 hover:border-lacivert-200' 
-                            : 'hover:bg-turuncu-50 hover:border-turuncu-200'
-                        }`}
+                        className={`flex items-center gap-2 px-4 py-2 bg-white rounded-lg hover:border-2 border border-gray-200 transition-all ${idx === 0
+                          ? 'hover:bg-lacivert-50 hover:border-lacivert-200'
+                          : 'hover:bg-turuncu-50 hover:border-turuncu-200'
+                          }`}
                       >
-                        <svg className={`w-4 h-4 flex-shrink-0 ${
-                          idx === 0 ? 'text-lacivert-500' : 'text-turuncu-500'
-                        }`} fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                        <svg className={`w-4 h-4 flex-shrink-0 ${idx === 0 ? 'text-lacivert-500' : 'text-turuncu-500'
+                          }`} fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
                         <span className="text-sm font-medium text-gray-700">{area}</span>
                       </div>
@@ -268,7 +264,7 @@ export default async function CityPage({ params }: CityPageProps) {
             <div className="mt-8 text-center">
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white rounded-xl font-semibold shadow-lg">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
                 <span>Hangi ilçede olursanız olun, {city.stats.responseTime} içinde yanınızdayız!</span>
               </div>
@@ -300,10 +296,10 @@ export default async function CityPage({ params }: CityPageProps) {
 
             <div className="bg-turuncu-50 border-l-4 border-turuncu-500 p-6 rounded-r-xl my-8">
               <h4 className="font-bold text-lg text-turuncu-800 mb-2">
-                📞 {city.name}'dan Hemen Arayın!
+                📞 {city.name}&apos;dan Hemen Arayın!
               </h4>
               <p className="text-turuncu-700">
-                {siteConfig.phoneDisplay} numaralı telefondan veya WhatsApp'tan ulaşın, 
+                {siteConfig.phoneDisplay} numaralı telefondan veya WhatsApp&apos;tan ulaşın,
                 {city.stats.responseTime} içinde yerinizde ekspertiz yapalım!
               </p>
             </div>

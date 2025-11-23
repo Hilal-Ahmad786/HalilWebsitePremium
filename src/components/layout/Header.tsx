@@ -9,11 +9,15 @@ import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 const serviceLinks = [
-  { href: '/kazali-arac-alim', label: 'Kazalı Araç Alımı' },
-  { href: '/hasarli-arac-alim', label: 'Hasarlı Araç Alımı' },
-  { href: '/pert-arac-alim', label: 'Pert Araç Alımı' },
-  { href: '/hurda-arac-alim', label: 'Hurda Araç Alımı' },
+  { href: '/hizmetler/kazali-arac-alim', label: 'Kazalı Araç Alımı' },
+  { href: '/hizmetler/hasarli-arac-alim', label: 'Hasarlı Araç Alımı' },
+  { href: '/hizmetler/pert-arac-alim', label: 'Pert Araç Alımı' },
+  { href: '/hizmetler/hurda-arac-alim', label: 'Hurda Araç Alımı' },
 ];
+
+// ... (cityLinks remains the same)
+
+
 
 const cityLinks = [
   { href: '/istanbul-hasarli-arac-alimi', label: 'İstanbul' },
@@ -21,6 +25,16 @@ const cityLinks = [
   { href: '/izmir-hasarli-arac-alimi', label: 'İzmir' },
   { href: '/bursa-hasarli-arac-alimi', label: 'Bursa' },
   { href: '/antalya-hasarli-arac-alimi', label: 'Antalya' },
+  { href: '/adana-hasarli-arac-alimi', label: 'Adana' },
+  { href: '/gaziantep-hasarli-arac-alimi', label: 'Gaziantep' },
+  { href: '/kocaeli-hasarli-arac-alimi', label: 'Kocaeli' },
+  { href: '/mersin-hasarli-arac-alimi', label: 'Mersin' },
+  { href: '/konya-hasarli-arac-alimi', label: 'Konya' },
+  { href: '/kayseri-hasarli-arac-alimi', label: 'Kayseri' },
+  { href: '/samsun-hasarli-arac-alimi', label: 'Samsun' },
+  { href: '/eskisehir-hasarli-arac-alimi', label: 'Eskişehir' },
+  { href: '/diyarbakir-hasarli-arac-alimi', label: 'Diyarbakır' },
+  { href: '/sanliurfa-hasarli-arac-alimi', label: 'Şanlıurfa' },
 ];
 
 export function Header() {
@@ -70,12 +84,10 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsApp}
-                className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+                className="flex items-center gap-2 px-3 py-1 bg-[#25D366] hover:bg-[#20BA5A] rounded-full transition-all shadow-sm"
               >
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white text-[#25D366]">
-                  <FaWhatsapp className="w-3.5 h-3.5" />
-                </span>
-                <span className="font-medium text-white">WhatsApp</span>
+                <FaWhatsapp className="w-3.5 h-3.5 text-white" />
+                <span className="font-medium text-white text-xs">WhatsApp</span>
               </a>
             </div>
           </div>
@@ -107,11 +119,10 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             <Link
               href="/"
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                pathname === '/'
-                  ? 'text-turuncu-500 bg-turuncu-50'
-                  : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${pathname === '/'
+                ? 'text-turuncu-500 bg-turuncu-50'
+                : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
+                }`}
             >
               Ana Sayfa
             </Link>
@@ -154,15 +165,13 @@ export function Header() {
             </div>
 
             {/* Cities Dropdown */}
-            <div className="relative">
+            <div className="relative group">
               <button
-                onMouseEnter={() => setCitiesOpen(true)}
-                onMouseLeave={() => setCitiesOpen(false)}
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50 rounded-lg transition-all flex items-center gap-1"
               >
                 Şehirler
                 <svg
-                  className={`w-4 h-4 transition-transform ${citiesOpen ? 'rotate-180' : ''}`}
+                  className="w-4 h-4 transition-transform group-hover:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -171,12 +180,11 @@ export function Header() {
                 </svg>
               </button>
 
-              {citiesOpen && (
-                <div
-                  onMouseEnter={() => setCitiesOpen(true)}
-                  onMouseLeave={() => setCitiesOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50"
-                >
+              {/* Dropdown Menu */}
+              <div
+                className="absolute top-full left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+              >
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 py-2 max-h-[400px] overflow-y-auto">
                   {cityLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -187,38 +195,35 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
 
             <Link
               href="/blog"
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                pathname.startsWith('/blog')
-                  ? 'text-turuncu-500 bg-turuncu-50'
-                  : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${pathname.startsWith('/blog')
+                ? 'text-turuncu-500 bg-turuncu-50'
+                : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
+                }`}
             >
               Blog
             </Link>
 
             <Link
               href="/hakkimizda"
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                pathname === '/hakkimizda'
-                  ? 'text-turuncu-500 bg-turuncu-50'
-                  : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${pathname === '/hakkimizda'
+                ? 'text-turuncu-500 bg-turuncu-50'
+                : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
+                }`}
             >
               Hakkımızda
             </Link>
 
             <Link
               href="/iletisim"
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                pathname === '/iletisim'
-                  ? 'text-turuncu-500 bg-turuncu-50'
-                  : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${pathname === '/iletisim'
+                ? 'text-turuncu-500 bg-turuncu-50'
+                : 'text-gray-700 hover:text-turuncu-500 hover:bg-turuncu-50'
+                }`}
             >
               İletişim
             </Link>

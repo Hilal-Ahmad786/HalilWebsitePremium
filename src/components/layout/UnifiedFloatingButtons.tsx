@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, type ReactNode } from 'react';
+import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import {
   trackCTAClick,
@@ -34,18 +35,18 @@ function FloatingIcon({
     variant === 'whatsapp'
       ? 'bg-[#25D366] text-white hover:bg-[#20BA5A] shadow-lg'
       : variant === 'chat'
-      ? 'bg-lacivert-600 text-white hover:bg-lacivert-700 shadow-lg'
-      : variant === 'call'
-      ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg'
-      : 'bg-white text-lacivert-700 border border-slate-200 hover:shadow-xl';
+        ? 'bg-lacivert-600 text-white hover:bg-lacivert-700 shadow-lg'
+        : variant === 'call'
+          ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-lg'
+          : 'bg-white text-lacivert-700 border border-slate-200 hover:shadow-xl';
 
   // 🔥 Glow animasyonu sadece call & whatsapp için
   const glowClasses =
     variant === 'whatsapp'
       ? 'before:absolute before:inset-0 before:rounded-full before:bg-[#25D366] before:opacity-40 before:blur-xl before:animate-pulse before:content-[""]'
       : variant === 'call'
-      ? 'before:absolute before:inset-0 before:rounded-full before:bg-orange-400 before:opacity-40 before:blur-xl before:animate-pulse before:content-[""]'
-      : '';
+        ? 'before:absolute before:inset-0 before:rounded-full before:bg-orange-400 before:opacity-40 before:blur-xl before:animate-pulse before:content-[""]'
+        : '';
 
   const showBadge = variant === 'chat';
 
@@ -305,13 +306,13 @@ export default function UnifiedFloatingButtons() {
                   <span>WhatsApp&apos;tan Yaz</span>
                 </a>
 
-                <a
+                <Link
                   href="/iletisim"
                   className="flex items-center justify-center gap-2 rounded-xl bg-slate-100 px-3 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-200 transition-colors"
                 >
                   <span>📨</span>
                   <span>İletişim Formunu Aç</span>
-                </a>
+                </Link>
               </div>
             </div>
 

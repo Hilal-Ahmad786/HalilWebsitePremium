@@ -13,7 +13,8 @@ export default function LiveStats() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    const timer = setTimeout(() => setIsClient(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const stats = [
@@ -85,7 +86,7 @@ export default function LiveStats() {
                 <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${stat.color} text-white text-3xl mb-4 group-hover:scale-110 transition-transform`}>
                   {stat.icon}
                 </div>
-                
+
                 <div className="text-4xl font-bold text-navy-900 mb-2">
                   {isClient && inView ? (
                     <>
@@ -97,7 +98,7 @@ export default function LiveStats() {
                     `${stat.prefix || ''}0${stat.suffix}`
                   )}
                 </div>
-                
+
                 <div className="text-gray-600 font-medium">
                   {stat.label}
                 </div>
