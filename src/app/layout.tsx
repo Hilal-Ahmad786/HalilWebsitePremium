@@ -19,11 +19,6 @@ export const metadata: Metadata = {
     default: 'Araban Nakit - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
     template: '%s | Araban Nakit',
   },
-  icons: {
-    icon: '/favicon.jpg?v=2',
-    shortcut: '/favicon.jpg?v=2',
-    apple: '/favicon.jpg?v=2',
-  },
   description: siteConfig.description,
   keywords: [
     'kazalı araç alan',
