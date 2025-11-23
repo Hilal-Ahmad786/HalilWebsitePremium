@@ -54,7 +54,7 @@ export default function RootLayout({
 
         <StructuredData />
         <Header />
-        <main className="pt-[120px] md:pt-[104px]">{children}</main>
+        <main className="pt-[60px] md:pt-[104px]">{children}</main>
         <Footer />
         <UnifiedFloatingButtons />
         <Analytics />
