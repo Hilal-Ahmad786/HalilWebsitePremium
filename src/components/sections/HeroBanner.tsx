@@ -44,7 +44,7 @@ export default function HeroBanner({
   const config = variantConfig[variant];
 
   return (
-    <section className={`relative bg-gradient-to-br ${config.gradient} text-white py-20 overflow-hidden`}>
+    <section className={`relative bg-gradient-to-br ${config.gradient} text-white py-10 overflow-hidden`}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
