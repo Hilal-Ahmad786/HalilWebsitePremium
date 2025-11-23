@@ -1,5 +1,5 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
@@ -62,6 +62,7 @@ export default function RootLayout({
         <main className="pt-[120px] md:pt-[104px]">{children}</main>
         <Footer />
         <UnifiedFloatingButtons />
+        <Analytics />
       </body>
     </html>
   );
