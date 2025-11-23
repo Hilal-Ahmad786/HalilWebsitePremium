@@ -4,11 +4,11 @@ import { SiteConfig } from './types';
 
 export const siteConfig: SiteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'Arabanakıt',
-  description: 'Türkiye\'da en iyi fiyatlarla araç alım satım hizmeti. Profesyonel ekspertiz ve güvenilir ödeme garantisi.',
+  description: 'Türkiye\'de en iyi fiyatlarla araç alım satım hizmeti. Profesyonel ekspertiz ve güvenilir ödeme garantisi.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://arabannakit.com',
-  phone: process.env.NEXT_PUBLIC_PHONE || '+905551234567',
-  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || '0555 123 45 67',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905551234567',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+905441702540',
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || '0544 170 25 40',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905441702540',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@arabannakit.com',
   address: 'Ankara, Türkiye',
   social: {

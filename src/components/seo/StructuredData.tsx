@@ -12,8 +12,8 @@ export function StructuredData() {
         address: {
             '@type': 'PostalAddress',
             streetAddress: 'Merkez',
-            addressLocality: 'İstanbul',
-            postalCode: '34000',
+            addressLocality: 'Ankara',
+            postalCode: '06170',
             addressCountry: 'TR',
         },
         geo: {
