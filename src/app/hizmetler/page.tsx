@@ -24,7 +24,7 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-lacivert-800 via-lacivert-700 to-lacivert-800 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-lacivert-800 via-lacivert-700 to-lacivert-800 text-white py-10 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -38,14 +38,14 @@ export default function ServicesPage() {
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               Profesyonel Araç Hizmetleri
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Tüm Hizmetlerimiz
               <span className="block text-turuncu-400">Tek Çatı Altında</span>
             </h1>
-            
+
             <p className="text-xl text-blue-200 leading-relaxed">
-              Araç alımından trafiğe çıkışa, ekspertizden takasa kadar 
+              Araç alımından trafiğe çıkışa, ekspertizden takasa kadar
               ihtiyacınız olan tüm hizmetler için yanınızdayız.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function ServicesPage() {
                 'from-blue-500 to-blue-600',
                 'from-green-500 to-green-600',
               ];
-              
+
               return (
                 <div key={service.id} className="group">
                   <Link href={`/hizmetler/${service.slug}`}>
@@ -72,7 +72,7 @@ export default function ServicesPage() {
                       <div className={`bg-gradient-to-r ${gradients[index % gradients.length]} p-8 text-white relative overflow-hidden`}>
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16" />
                         <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12" />
-                        
+
                         <div className="relative">
                           <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">
                             {iconMap[service.icon]}
@@ -181,7 +181,7 @@ export default function ServicesPage() {
           <p className="text-xl text-blue-200 mb-8">
             Uzman ekibimiz tüm sorularınızı yanıtlamak için hazır
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`https://wa.me/${siteConfig.whatsapp}`}
@@ -194,13 +194,13 @@ export default function ServicesPage() {
               </svg>
               WhatsApp ile Sorun
             </a>
-            
+
             <a
               href={`tel:${siteConfig.phone}`}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-turuncu-500 hover:bg-turuncu-600 text-white font-bold rounded-xl shadow-lg transition-all"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               Hemen Ara: {siteConfig.phoneDisplay}
             </a>
