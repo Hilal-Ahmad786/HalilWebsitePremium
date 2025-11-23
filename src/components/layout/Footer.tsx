@@ -47,13 +47,10 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-turuncu-500 to-turuncu-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">PA</span>
+              <div className="h-14 w-auto rounded-2xl flex items-center justify-center shadow-lg">
+                <img src="/logo.jpg" alt="Araban Nakit Logo" className="h-full w-auto object-contain" />
               </div>
-              <div>
-                <div className="text-xl font-bold">{siteConfig.name}</div>
-                <div className="text-sm text-blue-300">Güvenilir Araç Alımı</div>
-              </div>
+
             </div>
             <p className="text-blue-200 text-sm leading-relaxed mb-6">
               {siteConfig.description}. 7/24 hizmet, anında ödeme ve ücretsiz ekspertiz garantisi.

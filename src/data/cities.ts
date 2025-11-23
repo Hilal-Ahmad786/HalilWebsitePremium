@@ -52,7 +52,7 @@ export const cities: CityData[] = [
     id: 'istanbul',
     slug: 'istanbul-hasarli-arac-alimi',
     name: 'İstanbul',
-    metaTitle: 'İstanbul Hasarlı Araç Alımı | 7/24 En Yüksek Fiyat • Premium Auto Expert',
+    metaTitle: 'İstanbul Hasarlı Araç Alımı | 7/24 En Yüksek Fiyat • Araban Nakit',
     metaDescription: 'İstanbul\'da hasarlı, kazalı, pert ve hurda araç alımı. 30 dakikada nakit teklif, ücretsiz ekspertiz, aynı gün ödeme. Tüm ilçelerde hizmet.',
     keywords: ['istanbul hasarlı araç alan', 'istanbul kazalı araç', 'istanbul araç alım', 'istanbul pert araç'],
     hero: {
@@ -153,7 +153,7 @@ export const cities: CityData[] = [
       sections: [
         {
           title: 'İstanbul\'da Hasarlı Araç Alımı Hakkında',
-          content: 'İstanbul, Türkiye\'nin en büyük şehri olarak hasarlı araç alım satımında da en hareketli piyasaya sahiptir. Premium Auto Expert olarak, İstanbul hasarlı araç alan firmalar arasında 15 yıllık tecrübemizle sektörün öncüsüyüz.',
+          content: 'İstanbul, Türkiye\'nin en büyük şehri olarak hasarlı araç alım satımında da en hareketli piyasaya sahiptir. Araban Nakit olarak, İstanbul hasarlı araç alan firmalar arasında 15 yıllık tecrübemizle sektörün öncüsüyüz.',
         },
         {
           title: 'İstanbul\'da Hangi İlçelerde Hizmet Veriyoruz?',
@@ -171,7 +171,7 @@ export const cities: CityData[] = [
     id: 'ankara',
     slug: 'ankara-hasarli-arac-alimi',
     name: 'Ankara',
-    metaTitle: 'Ankara Hasarlı Araç Alımı | En Yüksek Fiyat Garantisi • Premium Auto Expert',
+    metaTitle: 'Ankara Hasarlı Araç Alımı | En Yüksek Fiyat Garantisi • Araban Nakit',
     metaDescription: 'Ankara\'da hasarlı, kazalı, pert ve hurda araç alımı. Ücretsiz ekspertiz, aynı gün ödeme. Tüm ilçelerde 7/24 hizmet.',
     keywords: ['ankara hasarlı araç alan', 'ankara kazalı araç', 'ankara araç alım', 'ankara pert araç'],
     hero: {
@@ -283,7 +283,7 @@ export const cities: CityData[] = [
     id: 'izmir',
     slug: 'izmir-hasarli-arac-alimi',
     name: 'İzmir',
-    metaTitle: 'İzmir Hasarlı Araç Alımı | Hızlı & Güvenilir Hizmet • Premium Auto Expert',
+    metaTitle: 'İzmir Hasarlı Araç Alımı | Hızlı & Güvenilir Hizmet • Araban Nakit',
     metaDescription: 'İzmir\'de hasarlı, kazalı, pert ve hurda araç alımı. Bornova, Karşıyaka, Konak ve tüm ilçelerde 7/24 hizmet.',
     keywords: ['izmir hasarlı araç alan', 'izmir kazalı araç', 'izmir araç alım', 'izmir pert araç'],
     hero: {
@@ -395,7 +395,7 @@ export const cities: CityData[] = [
     id: 'bursa',
     slug: 'bursa-hasarli-arac-alimi',
     name: 'Bursa',
-    metaTitle: 'Bursa Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Bursa Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Bursa\'da hasarlı, kazalı, pert ve hurda araç alımı. Nilüfer, Osmangazi, Yıldırım ve tüm ilçelerde hizmet.',
     keywords: ['bursa hasarlı araç alan', 'bursa kazalı araç', 'bursa araç alım'],
     hero: {
@@ -483,7 +483,7 @@ export const cities: CityData[] = [
     id: 'antalya',
     slug: 'antalya-hasarli-arac-alimi',
     name: 'Antalya',
-    metaTitle: 'Antalya Hasarlı Araç Alımı | Turizm Başkentinde #1 • Premium Auto Expert',
+    metaTitle: 'Antalya Hasarlı Araç Alımı | Turizm Başkentinde #1 • Araban Nakit',
     metaDescription: 'Antalya\'da hasarlı, kazalı, pert ve hurda araç alımı. Muratpaşa, Kepez, Konyaaltı ve tüm ilçelerde hizmet.',
     keywords: ['antalya hasarlı araç alan', 'antalya kazalı araç', 'antalya araç alım'],
     hero: {
@@ -575,7 +575,7 @@ export const cities: CityData[] = [
     id: 'adana',
     slug: 'adana-hasarli-arac-alimi',
     name: 'Adana',
-    metaTitle: 'Adana Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Adana Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Adana\'da hasarlı, kazalı, pert ve hurda araç alımı. Seyhan, Çukurova, Yüreğir ve tüm ilçelerde hizmet.',
     keywords: ['adana hasarlı araç alan', 'adana kazalı araç', 'adana araç alım'],
     hero: {
@@ -663,7 +663,7 @@ export const cities: CityData[] = [
     id: 'gaziantep',
     slug: 'gaziantep-hasarli-arac-alimi',
     name: 'Gaziantep',
-    metaTitle: 'Gaziantep Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Gaziantep Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Gaziantep\'te hasarlı, kazalı, pert ve hurda araç alımı. Şahinbey, Şehitkamil ve tüm ilçelerde hizmet.',
     keywords: ['gaziantep hasarlı araç alan', 'gaziantep kazalı araç', 'gaziantep araç alım'],
     hero: {
@@ -751,7 +751,7 @@ export const cities: CityData[] = [
     id: 'kocaeli',
     slug: 'kocaeli-hasarli-arac-alimi',
     name: 'Kocaeli',
-    metaTitle: 'Kocaeli Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Kocaeli Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Kocaeli\'de hasarlı, kazalı, pert ve hurda araç alımı. İzmit, Gebze, Darıca ve tüm ilçelerde hizmet.',
     keywords: ['kocaeli hasarlı araç alan', 'kocaeli kazalı araç', 'kocaeli araç alım'],
     hero: {
@@ -839,7 +839,7 @@ export const cities: CityData[] = [
     id: 'mersin',
     slug: 'mersin-hasarli-arac-alimi',
     name: 'Mersin',
-    metaTitle: 'Mersin Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Mersin Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Mersin\'de hasarlı, kazalı, pert ve hurda araç alımı. Yenişehir, Mezitli, Toroslar ve tüm ilçelerde hizmet.',
     keywords: ['mersin hasarlı araç alan', 'mersin kazalı araç', 'mersin araç alım'],
     hero: {
@@ -927,7 +927,7 @@ export const cities: CityData[] = [
     id: 'ankara',
     slug: 'ankara-hasarli-arac-alimi',
     name: 'Ankara',
-    metaTitle: 'Ankara Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Ankara Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Ankara\'da hasarlı, kazalı, pert ve hurda araç alımı. Çankaya, Keçiören, Yenimahalle ve tüm ilçelerde hizmet.',
     keywords: ['ankara hasarlı araç alan', 'ankara kazalı araç', 'ankara araç alım'],
     hero: {
@@ -1015,7 +1015,7 @@ export const cities: CityData[] = [
     id: 'izmir',
     slug: 'izmir-hasarli-arac-alimi',
     name: 'İzmir',
-    metaTitle: 'İzmir Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'İzmir Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'İzmir\'de hasarlı, kazalı, pert ve hurda araç alımı. Karşıyaka, Bornova, Buca ve tüm ilçelerde hizmet.',
     keywords: ['izmir hasarlı araç alan', 'izmir kazalı araç', 'izmir araç alım'],
     hero: {
@@ -1103,7 +1103,7 @@ export const cities: CityData[] = [
     id: 'bursa',
     slug: 'bursa-hasarli-arac-alimi',
     name: 'Bursa',
-    metaTitle: 'Bursa Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Bursa Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Bursa\'da hasarlı, kazalı, pert ve hurda araç alımı. Osmangazi, Nilüfer, Yıldırım ve tüm ilçelerde hizmet.',
     keywords: ['bursa hasarlı araç alan', 'bursa kazalı araç', 'bursa araç alım'],
     hero: {
@@ -1191,7 +1191,7 @@ export const cities: CityData[] = [
     id: 'antalya',
     slug: 'antalya-hasarli-arac-alimi',
     name: 'Antalya',
-    metaTitle: 'Antalya Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Antalya Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Antalya\'da hasarlı, kazalı, pert ve hurda araç alımı. Muratpaşa, Kepez, Konyaaltı ve tüm ilçelerde hizmet.',
     keywords: ['antalya hasarlı araç alan', 'antalya kazalı araç', 'antalya araç alım'],
     hero: {
@@ -1279,7 +1279,7 @@ export const cities: CityData[] = [
     id: 'konya',
     slug: 'konya-hasarli-arac-alimi',
     name: 'Konya',
-    metaTitle: 'Konya Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Konya Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Konya\'da hasarlı, kazalı, pert ve hurda araç alımı. Selçuklu, Meram, Karatay ve tüm ilçelerde hizmet.',
     keywords: ['konya hasarlı araç alan', 'konya kazalı araç', 'konya araç alım'],
     hero: {
@@ -1367,7 +1367,7 @@ export const cities: CityData[] = [
     id: 'sanliurfa',
     slug: 'sanliurfa-hasarli-arac-alimi',
     name: 'Şanlıurfa',
-    metaTitle: 'Şanlıurfa Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Şanlıurfa Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Şanlıurfa\'da hasarlı, kazalı, pert ve hurda araç alımı. Eyyübiye, Haliliye, Karaköprü ve tüm ilçelerde hizmet.',
     keywords: ['şanlıurfa hasarlı araç alan', 'urfa kazalı araç', 'şanlıurfa araç alım'],
     hero: {
@@ -1455,7 +1455,7 @@ export const cities: CityData[] = [
     id: 'kayseri',
     slug: 'kayseri-hasarli-arac-alimi',
     name: 'Kayseri',
-    metaTitle: 'Kayseri Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Kayseri Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Kayseri\'de hasarlı, kazalı, pert ve hurda araç alımı. Melikgazi, Kocasinan, Talas ve tüm ilçelerde hizmet.',
     keywords: ['kayseri hasarlı araç alan', 'kayseri kazalı araç', 'kayseri araç alım'],
     hero: {
@@ -1543,7 +1543,7 @@ export const cities: CityData[] = [
     id: 'samsun',
     slug: 'samsun-hasarli-arac-alimi',
     name: 'Samsun',
-    metaTitle: 'Samsun Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Samsun Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Samsun\'da hasarlı, kazalı, pert ve hurda araç alımı. İlkadım, Atakum, Canik ve tüm ilçelerde hizmet.',
     keywords: ['samsun hasarlı araç alan', 'samsun kazalı araç', 'samsun araç alım'],
     hero: {
@@ -1631,7 +1631,7 @@ export const cities: CityData[] = [
     id: 'eskisehir',
     slug: 'eskisehir-hasarli-arac-alimi',
     name: 'Eskişehir',
-    metaTitle: 'Eskişehir Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Eskişehir Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Eskişehir\'de hasarlı, kazalı, pert ve hurda araç alımı. Odunpazarı, Tepebaşı ve tüm ilçelerde hizmet.',
     keywords: ['eskişehir hasarlı araç alan', 'eskişehir kazalı araç', 'eskişehir araç alım'],
     hero: {
@@ -1719,7 +1719,7 @@ export const cities: CityData[] = [
     id: 'diyarbakir',
     slug: 'diyarbakir-hasarli-arac-alimi',
     name: 'Diyarbakır',
-    metaTitle: 'Diyarbakır Hasarlı Araç Alımı | En İyi Fiyat • Premium Auto Expert',
+    metaTitle: 'Diyarbakır Hasarlı Araç Alımı | En İyi Fiyat • Araban Nakit',
     metaDescription: 'Diyarbakır\'da hasarlı, kazalı, pert ve hurda araç alımı. Bağlar, Kayapınar, Yenişehir ve tüm ilçelerde hizmet.',
     keywords: ['diyarbakır hasarlı araç alan', 'diyarbakır kazalı araç', 'diyarbakır araç alım'],
     hero: {

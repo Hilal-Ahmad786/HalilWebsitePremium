@@ -16,8 +16,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Premium Auto Expert - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
-    template: '%s | Premium Auto Expert',
+    default: 'Araban Nakit - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
+    template: '%s | Araban Nakit',
+  },
+  icons: {
+    icon: '/favicon.jpg?v=2',
+    shortcut: '/favicon.jpg?v=2',
+    apple: '/favicon.jpg?v=2',
   },
   description: siteConfig.description,
   keywords: [

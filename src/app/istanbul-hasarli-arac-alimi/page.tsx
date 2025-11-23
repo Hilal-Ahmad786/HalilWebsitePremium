@@ -8,7 +8,7 @@ import ContactCTA from '@/components/sections/ContactCTA';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'İstanbul Hasarlı Araç Alımı | 7/24 En Yüksek Fiyat • Premium Auto Expert',
+  title: 'İstanbul Hasarlı Araç Alımı | 7/24 En Yüksek Fiyat • Araban Nakit',
   description: 'İstanbul\'da hasarlı, kazalı, pert ve hurda araç alımı. 30 dakikada nakit teklif, ücretsiz ekspertiz, aynı gün ödeme. Tüm ilçelerde hizmet.',
   keywords: ['istanbul hasarlı araç alan', 'istanbul kazalı araç', 'istanbul araç alım'],
 };
@@ -203,7 +203,7 @@ export default function IstanbulPage() {
 
             <p className="text-gray-700 leading-relaxed mb-4">
               İstanbul, Türkiye&apos;nin en büyük şehri olarak hasarlı araç alım satımında da en hareketli piyasaya sahiptir.
-              Premium Auto Expert olarak, <strong>İstanbul hasarlı araç alan</strong> firmalar arasında 15 yıllık tecrübemizle
+              Araban Nakit olarak, <strong>İstanbul hasarlı araç alan</strong> firmalar arasında 15 yıllık tecrübemizle
               sektörün öncüsüyüz.
             </p>
 

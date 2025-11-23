@@ -10,8 +10,8 @@ import TrustBadges from '@/components/sections/TrustBadges';
 import CoverageArea from '@/components/sections/CoverageArea';
 
 export const metadata: Metadata = {
-  title: 'Premium Auto Expert - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
-  description: 'İstanbul&apos;da En Güvenilir Araç Alım Merkezi. 30 dakikada nakit teklif, ücretsiz ekspertiz, 7/24 hizmet.',
+  title: 'Araban Nakit - Kazalı, Hasarlı, Pert & Hurda Araç Alımı',
+  description: 'Türkiye genelinde En Güvenilir Araç Alım Merkezi. 30 dakikada nakit teklif, ücretsiz ekspertiz, 7/24 hizmet.',
 };
 
 export default function HomePage() {
@@ -76,7 +76,7 @@ export default function HomePage() {
       <HeroSection />
       <TrustBadges />
       <WhyUs
-        title="Premium Auto'yu Seçin"
+        title="Araban Nakit'i Seçin"
         subtitle="30 Dakikada Teklif • Ücretsiz Ekspertiz • Ücretsiz Çekici • 7/24 Destek"
         items={whyUsItems}
       />

@@ -3,7 +3,7 @@
 import { SiteConfig } from './types';
 
 export const siteConfig: SiteConfig = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || 'Arabanakıt',
+  name: process.env.NEXT_PUBLIC_SITE_NAME || 'Araban Nakit',
   description: 'Türkiye\'de en iyi fiyatlarla araç alım satım hizmeti. Profesyonel ekspertiz ve güvenilir ödeme garantisi.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://arabannakit.com',
   phone: process.env.NEXT_PUBLIC_PHONE || '+905441702540',
@@ -17,7 +17,7 @@ export const siteConfig: SiteConfig = {
     twitter: 'https://twitter.com/arabannakit',
     linkedin: 'https://linkedin.com/company/arabannakit',
   },
-  metaTitle: 'Arabanakıt | Türkiye Araç Alım Satım',
+  metaTitle: 'Araban Nakit | Türkiye Araç Alım Satım',
   metaDescription: 'Türkiye\'da güvenilir araç alım satım hizmeti. Profesyonel ekspertiz, anında ödeme, tüm markalar. 7/24 hizmet.',
 };
 

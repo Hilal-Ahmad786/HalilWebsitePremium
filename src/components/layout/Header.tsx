@@ -100,19 +100,11 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMobile}>
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-lacivert-700 to-lacivert-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                <span className="text-white font-bold text-xl">PA</span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-5 h-5 bg-turuncu-500 rounded-full border-2 border-white"></div>
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-lg font-bold text-lacivert-700 leading-tight">
-                {siteConfig.name}
-              </div>
-              <div className="text-xs text-gray-500">
-                Güvenilir Araç Alımı
+              <div className="h-12 w-auto relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+                <img src="/logo.jpg" alt="Araban Nakit Logo" className="h-full w-auto object-contain" />
               </div>
             </div>
+
           </Link>
 
           {/* Desktop Navigation */}

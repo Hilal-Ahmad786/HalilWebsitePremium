@@ -38,7 +38,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/arac-alim.jpg',
     order: 1,
-    metaTitle: 'Araç Alım Hizmeti | Premium Auto Expert',
+    metaTitle: 'Araç Alım Hizmeti | Araban Nakit',
     metaDescription: 'İstanbul\'da en iyi fiyatlarla araç alım hizmeti. Anında nakit ödeme, ücretsiz ekspertiz.',
     published: true,
   },
@@ -79,7 +79,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/ekspertiz.jpg',
     order: 2,
-    metaTitle: 'Ekspertiz Hizmeti | Premium Auto Expert',
+    metaTitle: 'Ekspertiz Hizmeti | Araban Nakit',
     metaDescription: 'Profesyonel araç ekspertiz hizmeti. Detaylı rapor, güvenli alım satım.',
     published: true,
   },
@@ -118,7 +118,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/trafige-cikis.jpg',
     order: 3,
-    metaTitle: 'Trafiğe Çıkış İşlemleri | Premium Auto Expert',
+    metaTitle: 'Trafiğe Çıkış İşlemleri | Araban Nakit',
     metaDescription: 'Araç trafiğe çıkış işlemleri. Hızlı ve güvenli tescil hizmeti.',
     published: true,
   },
@@ -157,7 +157,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/arac-degisim.jpg',
     order: 4,
-    metaTitle: 'Araç Değişim ve Takas | Premium Auto Expert',
+    metaTitle: 'Araç Değişim ve Takas | Araban Nakit',
     metaDescription: 'Araç takas hizmeti. Eski aracınızı yenisiyle değiştirin.',
     published: true,
   },
@@ -168,7 +168,7 @@ export const services: Service[] = [
     shortDescription: 'Kazalı araç alan lider firma! Türkiye\'nin her yerinde 30 dakikada ücretsiz ekspertiz ve anında nakit ödeme.',
     fullDescription: `
       <p class="text-lg leading-relaxed mb-6">
-        Premium Auto Expert olarak İstanbul genelinde <strong class="text-primary">7/24 kazalı araç alan yerler</strong> ve 
+        Araban Nakit olarak İstanbul genelinde <strong class="text-primary">7/24 kazalı araç alan yerler</strong> ve 
         <strong class="text-primary">kazalı araç alan firmalar</strong> arasında öne çıkıyoruz.
         Ücretsiz ekspertiz, noter onaylı işlem ve <strong class="text-orange-500">30 dakikada nakit teklif</strong> garantisiyle
         "<em>Kazalı aracımı satmak istiyorum</em>" diyen herkesi hemen yönlendiriyoruz.
@@ -189,7 +189,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/kazali-arac.jpg',
     order: 5,
-    metaTitle: 'Kazalı Araç Alan | 30 Dakikada Nakit Teklif • Premium Auto Expert',
+    metaTitle: 'Kazalı Araç Alan | 30 Dakikada Nakit Teklif • Araban Nakit',
     metaDescription: 'Kazalı araç alan lider firma! Türkiye\'nin her yerinde 30 dakikada ücretsiz ekspertiz ve anında nakit ödeme.',
     published: true,
   },
@@ -220,7 +220,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/hasarli-arac.jpg',
     order: 6,
-    metaTitle: 'Hasarlı Araç Alan | En Yüksek Fiyat Garantisi • Premium Auto Expert',
+    metaTitle: 'Hasarlı Araç Alan | En Yüksek Fiyat Garantisi • Araban Nakit',
     metaDescription: 'Hasarlı araç alımında #1! Motor, şanzıman, kaporta hasarı olan tüm araçlar için en iyi fiyat. Ücretsiz ekspertiz ve anında ödeme.',
     published: true,
   },
@@ -251,7 +251,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/pert-arac.jpg',
     order: 7,
-    metaTitle: 'Pert Araç Alan | Sigorta Çıkışlı Araçlar • Premium Auto Expert',
+    metaTitle: 'Pert Araç Alan | Sigorta Çıkışlı Araçlar • Araban Nakit',
     metaDescription: 'Pert (sigorta çıkışlı) araç alımında uzman! Kasko pert kayıtlı tüm araçlar için en iyi fiyat ve yasal işlem garantisi.',
     published: true,
   },
@@ -283,7 +283,7 @@ export const services: Service[] = [
     ],
     image: '/images/services/hurda-arac.jpg',
     order: 8,
-    metaTitle: 'Hurda Araç Alan | Çevre Dostu Geri Dönüşüm • Premium Auto Expert',
+    metaTitle: 'Hurda Araç Alan | Çevre Dostu Geri Dönüşüm • Araban Nakit',
     metaDescription: 'Hurda araç alımında #1! Kullanım ömrü bitmiş, hurdaya çıkmış tüm araçlar için resmi belgeli işlem ve anında ödeme.',
     published: true,
   },
