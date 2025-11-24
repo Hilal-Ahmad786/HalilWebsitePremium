@@ -84,8 +84,8 @@ export function TestimonialsSection() {
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all ${activeCategory === cat.id
-                  ? 'bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white shadow-lg scale-105'
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+                ? 'bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white shadow-lg scale-105'
+                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
                 }`}
             >
               <span className="mr-2">{cat.icon}</span>
@@ -152,7 +152,7 @@ export function TestimonialsSection() {
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">Siz de bu mutlu müşterilerimize katılın!</p>
           <a
-            href="https://wa.me/905551234567"
+            href="https://wa.me/905441702540"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all"

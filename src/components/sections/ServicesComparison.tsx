@@ -125,11 +125,10 @@ export default function ServicesComparison() {
             <button
               key={service.id}
               onClick={() => setActiveTab(index)}
-              className={`relative px-6 py-4 rounded-xl font-semibold text-sm transition-all ${
-                activeTab === index
-                  ? 'bg-white text-gray-900 shadow-xl scale-105'
-                  : 'bg-white/50 text-gray-600 hover:bg-white/80'
-              }`}
+              className={`relative px-6 py-4 rounded-xl font-semibold text-sm transition-all ${activeTab === index
+                ? 'bg-white text-gray-900 shadow-xl scale-105'
+                : 'bg-white/50 text-gray-600 hover:bg-white/80'
+                }`}
             >
               {activeTab === index && (
                 <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl bg-gradient-to-r ${service.color}`} />
@@ -152,10 +151,10 @@ export default function ServicesComparison() {
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                   <defs>
                     <pattern id="service-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
                     </pattern>
                   </defs>
-                  <rect width="100" height="100" fill="url(#service-pattern)"/>
+                  <rect width="100" height="100" fill="url(#service-pattern)" />
                 </svg>
               </div>
 
@@ -215,7 +214,7 @@ export default function ServicesComparison() {
                         className="flex items-center gap-2 px-4 py-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
                       >
                         <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
                         <span className="text-sm font-medium text-gray-700">{feature}</span>
                       </div>
@@ -254,13 +253,13 @@ export default function ServicesComparison() {
                       {activeService.title} için özel fiyat
                     </div>
                     <a
-                      href="tel:+905551234567"
+                      href="tel:+905441702540"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-turuncu-500 hover:bg-turuncu-600 text-white font-bold rounded-xl transition-all w-full justify-center"
                     >
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                       </svg>
-                      <span>0555 751 22 20</span>
+                      <span>0544 170 25 40</span>
                     </a>
                   </div>
                 </div>
