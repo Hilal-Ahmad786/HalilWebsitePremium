@@ -1,4 +1,5 @@
 // src/components/layout/Footer.tsx
+'use client';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick } from '@/lib/analytics';

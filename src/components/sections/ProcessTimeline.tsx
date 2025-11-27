@@ -1,4 +1,5 @@
 // src/components/sections/ProcessTimeline.tsx
+'use client';
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick } from '@/lib/analytics';
 
