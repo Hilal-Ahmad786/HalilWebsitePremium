@@ -12,7 +12,7 @@ export const trackingConfig = {
     // NOTE: '819-982-7246' looks like a phone number. 
     // A Google Ads ID usually looks like 'AW-123456789'. 
     // Please verify this in your Google Ads account settings.
-    id: process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || '819-982-7246',
+    id: process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || '630198311',
     phoneLabel: process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL || '',
     whatsappLabel: process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL || '',
     formLabel: process.env.NEXT_PUBLIC_GOOGLE_ADS_FORM_LABEL || '',
