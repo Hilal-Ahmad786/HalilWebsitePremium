@@ -1,5 +1,6 @@
 // src/components/sections/ProcessTimeline.tsx
 import { siteConfig } from '@/config/site';
+import { trackPhoneClick } from '@/lib/analytics';
 
 interface ProcessStep {
   icon: string;
@@ -21,7 +22,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
             <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100" height="100" fill="url(#grid)" />
@@ -62,9 +63,8 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
               return (
                 <div
                   key={index}
-                  className={`relative flex flex-col lg:flex-row items-center gap-8 ${
-                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  }`}
+                  className={`relative flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                    }`}
                 >
                   {/* Content Card */}
                   <div className="flex-1 w-full lg:w-auto">
@@ -91,7 +91,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
                   </div>
 
                   {/* Center Circle Indicator */}
-                  <div 
+                  <div
                     className={`hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 ${color.border} shadow-xl items-center justify-center z-10`}
                   >
                     <span className="text-2xl"><i className={step.icon} /></span>
@@ -114,10 +114,11 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
             </div>
             <a
               href={`tel:${siteConfig.phone}`}
+              onClick={trackPhoneClick}
               className="flex-shrink-0 px-8 py-4 bg-turuncu-500 hover:bg-turuncu-600 text-white font-bold rounded-xl shadow-lg transition-all flex items-center gap-2"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               <span>{siteConfig.phoneDisplay}</span>
             </a>

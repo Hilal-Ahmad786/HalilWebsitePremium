@@ -5,7 +5,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { trackCalculatorUse } from '@/lib/analytics';
+import { trackCalculatorUse, trackPhoneClick } from '@/lib/analytics';
 
 
 
@@ -25,11 +25,11 @@ export default function PriceCalculator() {
     const yearFactor = (2024 - parseInt(formData.year)) * 5000;
     const damageFactor = formData.damage === 'heavy' ? 50000 : formData.damage === 'medium' ? 30000 : 10000;
     const mileageFactor = parseInt(formData.mileage) * 0.1;
-    
 
-const price = Math.max(basePrice - yearFactor - damageFactor - mileageFactor, 20000);
-setEstimatedPrice(price);
-trackCalculatorUse('Price Calculator Used');
+
+    const price = Math.max(basePrice - yearFactor - damageFactor - mileageFactor, 20000);
+    setEstimatedPrice(price);
+    trackCalculatorUse('Price Calculator Used');
 
 
   };
@@ -59,7 +59,7 @@ trackCalculatorUse('Price Calculator Used');
                 onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-200 focus:border-primary-500 focus:outline-none transition-all"
               />
-              
+
               <input
                 type="text"
                 placeholder="Model"
@@ -67,7 +67,7 @@ trackCalculatorUse('Price Calculator Used');
                 onChange={(e) => setFormData({ ...formData, model: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-200 focus:border-primary-500 focus:outline-none transition-all"
               />
-              
+
               <input
                 type="number"
                 placeholder="Yıl"
@@ -75,7 +75,7 @@ trackCalculatorUse('Price Calculator Used');
                 onChange={(e) => setFormData({ ...formData, year: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-200 focus:border-primary-500 focus:outline-none transition-all"
               />
-              
+
               <input
                 type="number"
                 placeholder="Kilometre"
@@ -83,7 +83,7 @@ trackCalculatorUse('Price Calculator Used');
                 onChange={(e) => setFormData({ ...formData, mileage: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-200 focus:border-primary-500 focus:outline-none transition-all"
               />
-              
+
               <select
                 value={formData.damage}
                 onChange={(e) => setFormData({ ...formData, damage: e.target.value })}
@@ -124,6 +124,7 @@ trackCalculatorUse('Price Calculator Used');
                   <AnimatedButton
                     variant="glass"
                     href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}
+                    onClick={() => trackPhoneClick()}
                   >
                     Hemen Ara
                   </AnimatedButton>

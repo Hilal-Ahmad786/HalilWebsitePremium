@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import { testimonials } from '@/data/testimonials';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export function TestimonialsSection() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -155,6 +156,7 @@ export function TestimonialsSection() {
             href="https://wa.me/905441702540"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppClick}
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all"
           >
             <span>Hemen Teklif Al</span>
