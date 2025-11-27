@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackCTAClick } from '@/lib/analytics';
+import { trackCTAClick, trackPhoneClick } from '@/lib/analytics';
 
 export default function UrgentCTABanner() {
   const calculateTimeLeft = () => {
@@ -31,7 +31,8 @@ export default function UrgentCTABanner() {
   }, []);
 
   const handleClick = () => {
-    trackCTAClick('Urgent Banner CTA',);
+    trackPhoneClick();
+    trackCTAClick('Urgent Banner CTA');
   };
 
   return (

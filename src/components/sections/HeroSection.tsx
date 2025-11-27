@@ -3,11 +3,27 @@
 
 import { useState } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
+import { trackCTAClick, trackWhatsAppClick, trackPhoneClick, trackFormSubmit } from '@/lib/analytics';
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 export function HeroSection() {
   const [activeFeature, setActiveFeature] = useState(0);
+  const [vehicleType, setVehicleType] = useState('Kazalı Araç');
+  const [phone, setPhone] = useState('');
+
+  const handleFormSubmit = () => {
+    if (!phone) {
+      alert('Lütfen telefon numaranızı giriniz.');
+      return;
+    }
+
+    trackFormSubmit('Hero Form');
+
+    const message = `Merhaba, ${vehicleType} satmak istiyorum. Telefon numaram: ${phone}. Teklif alabilir miyim?`;
+    const url = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
+  };
 
   const features = [
     {
@@ -179,11 +195,15 @@ export function HeroSection() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Araç Tipi
                     </label>
-                    <select className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-turuncu-500">
-                      <option>Kazalı Araç</option>
-                      <option>Hasarlı Araç</option>
-                      <option>Pert Araç</option>
-                      <option>Hurda Araç</option>
+                    <select
+                      value={vehicleType}
+                      onChange={(e) => setVehicleType(e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-turuncu-500"
+                    >
+                      <option value="Kazalı Araç">Kazalı Araç</option>
+                      <option value="Hasarlı Araç">Hasarlı Araç</option>
+                      <option value="Pert Araç">Pert Araç</option>
+                      <option value="Hurda Araç">Hurda Araç</option>
                     </select>
                   </div>
 
@@ -193,12 +213,17 @@ export function HeroSection() {
                     </label>
                     <input
                       type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       placeholder="0555 751 22 20"
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-turuncu-500"
                     />
                   </div>
 
-                  <button className="w-full py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
+                  <button
+                    onClick={handleFormSubmit}
+                    className="w-full py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  >
                     Ücretsiz Teklif Al
                   </button>
                 </div>
