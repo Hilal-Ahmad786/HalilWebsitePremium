@@ -1,4 +1,3 @@
-
 // ===== src/lib/analytics.ts =====
 declare global {
   interface Window {
@@ -13,17 +12,17 @@ declare global {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
-  // Google Analytics 4
+  // 1. Google Analytics 4 (via GTM or Direct)
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, parameters);
   }
 
-  // Facebook Pixel
+  // 2. Facebook Pixel
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('trackCustom', eventName, parameters);
   }
 
-  // Console log in development
+  // 3. Console Log (Development only)
   if (process.env.NODE_ENV === 'development') {
     console.log('📊 Event Tracked:', eventName, parameters);
   }
@@ -34,13 +33,6 @@ export const trackPhoneClick = () => {
     event_category: 'contact',
     event_label: 'phone_button',
   });
-
-  // Google Ads Conversion
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      'send_to': `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL}`,
-    });
-  }
 };
 
 export const trackWhatsAppClick = () => {
@@ -48,13 +40,6 @@ export const trackWhatsAppClick = () => {
     event_category: 'contact',
     event_label: 'whatsapp_button',
   });
-
-  // Google Ads Conversion
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      'send_to': `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL}`,
-    });
-  }
 };
 
 export const trackFormSubmit = (formName: string) => {
@@ -63,14 +48,7 @@ export const trackFormSubmit = (formName: string) => {
     event_label: formName,
   });
 
-  // Google Ads Conversion
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      'send_to': `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${process.env.NEXT_PUBLIC_GOOGLE_ADS_FORM_LABEL}`,
-    });
-  }
-
-  // Facebook Lead Event
+  // Facebook Standard Event for Leads
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Lead');
   }

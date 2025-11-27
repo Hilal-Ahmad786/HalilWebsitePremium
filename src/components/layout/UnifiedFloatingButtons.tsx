@@ -1,4 +1,4 @@
-// src/components/layout/UnifiedFloatingButtons.tsx
+// ===== src/components/layout/UnifiedFloatingButtons.tsx =====
 'use client';
 
 import { useState, type ReactNode } from 'react';

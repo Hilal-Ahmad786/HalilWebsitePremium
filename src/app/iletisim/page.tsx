@@ -1,4 +1,4 @@
-// src/app/iletisim/page.tsx
+// ===== src/app/iletisim/page.tsx =====
 'use client';
 
 import { useState } from 'react';
@@ -20,15 +20,28 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      trackFormSubmit('contact_page_form');
-      setSubmitStatus('success');
-      setIsSubmitting(false);
-      setFormData({ name: '', phone: '', email: '', carInfo: '', message: '' });
+    // 1. Track the conversion event
+    trackFormSubmit('contact_page_form');
 
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    }, 1500);
+    // 2. Prepare WhatsApp Message
+    const text = `Merhaba, iletişim formundan yazıyorum.
+    
+Ad Soyad: ${formData.name}
+Telefon: ${formData.phone}
+E-posta: ${formData.email}
+Araç Bilgisi: ${formData.carInfo}
+Mesaj: ${formData.message}`;
+
+    // 3. Redirect to WhatsApp
+    const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
+
+    // 4. Reset Form UI
+    setSubmitStatus('success');
+    setIsSubmitting(false);
+    setFormData({ name: '', phone: '', email: '', carInfo: '', message: '' });
+
+    setTimeout(() => setSubmitStatus('idle'), 5000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -155,7 +168,7 @@ export default function ContactPage() {
                     Hızlı Teklif Formu
                   </h2>
                   <p className="text-gray-600">
-                    Formu doldurun, size en kısa sürede dönüş yapalım
+                    Formu doldurun, bilgileriniz doğrudan WhatsApp destek hattımıza iletilsin.
                   </p>
                 </div>
 
@@ -237,15 +250,8 @@ export default function ContactPage() {
                     disabled={isSubmitting}
                     className="w-full py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 hover:from-turuncu-600 hover:to-turuncu-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Gönderiliyor...' : 'Teklif Al'}
+                    {isSubmitting ? 'WhatsApp\'a Yönlendiriliyor...' : 'WhatsApp ile Teklif Al'}
                   </button>
-
-                  {submitStatus === 'success' && (
-                    <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                      <p className="text-green-700 font-semibold">✓ Mesajınız başarıyla gönderildi!</p>
-                      <p className="text-green-600 text-sm mt-1">En kısa sürede size dönüş yapacağız.</p>
-                    </div>
-                  )}
 
                   <div className="text-center text-sm text-gray-500 pt-4 border-t">
                     🔒 Bilgileriniz güvende • SSL korumalı

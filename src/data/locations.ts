@@ -9,7 +9,7 @@ export const serviceLocations: Location[] = [
     districts: ['Beylikdüzü', 'Esenyurt', 'Avcılar', 'Küçükçekmece', 'Bağcılar', 'Başakşehir'],
     coordinates: [41.0082, 28.9784],
     isActive: true,
-    phone: '+905551234567',
+    phone: '+905441702540',
     address: 'Beylikdüzü Merkez',
   },
   {
