@@ -681,6 +681,577 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Kazalı araba alım satımında güvenilir adres. Araban Nakit ile kazalı aracınızı değerinde ve hızlı bir şekilde satın.',
     published: true,
   },
+  {
+    id: 'hasarli-arac-81-il-hizmet',
+    slug: 'hasarli-arac-alim-satim-81-ilde-hizmetinizde',
+    title: 'Hasarlı Araç Alım Satım - 81 İlde Hizmetinizde!',
+    excerpt: 'Hasarlı araç alım satım işlemleri, günümüzde giderek popüler hale gelen bir pazar haline geldi. İster küçük hasarlı ister büyük hasarlı olsun, araçlarınızı değerinde alıp satmanın en güvenilir adresi olarak 81 ilde hizmet veriyoruz.',
+    content: `
+      <p><strong>Hasarlı Araç Alım Satım - 81 İlde Hizmetinizde!</strong></p>
+      <p><strong>Hasarlı Araçlarınızı Değerinde Alıyor, Satıyoruz!</strong></p>
+      <p>Hasarlı araç alım satım işlemleri, günümüzde giderek popüler hale gelen bir pazar haline geldi. İster küçük hasarlı ister büyük hasarlı olsun, araçlarınızı değerinde alıp satmanın en güvenilir adresi olarak 81 ilde hizmet veriyoruz.</p>
+
+      <h2>İl İl Hasarlı Araç Pazarı</h2>
+      <ul>
+        <li><strong>İstanbul Hasarlı Araç Alım Satım:</strong> Türkiye'nin en büyük pazarında en iyi fiyat garantisi!</li>
+        <li><strong>Ankara Hasarlı Araç Alım Satım:</strong> Başkent'te güvenilir alım satım deneyimi</li>
+        <li><strong>İzmir Hasarlı Araç Alım Satım:</strong> Ege'nin incisinde profesyonel hizmet</li>
+      </ul>
+
+      <h2>Neden Hasarlı Araç Alım Satım Tercih Ediliyor?</h2>
+      <ul>
+        <li><strong>Ekonomik Çözüm:</strong> Yeni araç fiyatlarına kıyasla çok daha uygun maliyetler</li>
+        <li><strong>Yatırım Fırsatı:</strong> Tamir edilerek değer kazandırma imkanı</li>
+        <li><strong>Çevre Dostu:</strong> Geri dönüşüme katkı sağlayarak sürdürülebilirlik</li>
+      </ul>
+
+      <h2>Hangi Tür Hasarlı Araçları Değerlendiriyoruz?</h2>
+      <ul>
+        <li>Trafik kazası geçirmiş araçlar</li>
+        <li>Doğal afet hasarlı araçlar (sel, dolu, yangın)</li>
+        <li>Mekanik arızalı araçlar</li>
+        <li>Hurda durumdaki araçlar</li>
+        <li>Hafif ve ağır hasarlı tüm araçlar</li>
+      </ul>
+
+      <h2>81 İlde Hizmet Kalitemiz</h2>
+      <ul>
+        <li><strong>Bursa Hasarlı Araç Alım Satım:</strong> Otomotiv sanayinin kalbinde</li>
+        <li><strong>Antalya Hasarlı Araç Alım Satım:</strong> Turizmin başkentinde</li>
+        <li><strong>Adana Hasarlı Araç Alım Satım:</strong> Çukurova'nın güvenilir adresi</li>
+      </ul>
+
+      <h2>Süreç Nasıl İşliyor?</h2>
+      <ol>
+        <li><strong>Ücretsiz Ekspertiz:</strong> Aracınızın bulunduğu ilde ücretsiz ekspertiz hizmeti</li>
+        <li><strong>Anlık Değerleme:</strong> Piyasa koşullarına uygun anlık fiyat teklifi</li>
+        <li><strong>Hızlı Ödeme:</strong> Anlaşma sağlandığı anda nakit ödeme</li>
+        <li><strong>Resmi İşlemler:</strong> Tüm noter ve trafik işlemlerinde destek</li>
+      </ol>
+
+      <h2>Avantajlarımız</h2>
+      <ul>
+        <li>81 ilin tamamında hizmet</li>
+        <li>Anlık nakit ödeme</li>
+        <li>Ücretsiz ekspertiz</li>
+        <li>Yasal işlem desteği</li>
+        <li>Güvenilir ve şeffaf süreç</li>
+      </ul>
+
+      <h2>Önemli İllerde Hasarlı Araç Alım Satım</h2>
+      <p>Konya, Trabzon, Diyarbakır, Erzurum ve daha birçok ilde hizmetinizdeyiz.</p>
+
+      <h2>Sık Sorulan Sorular</h2>
+      <p><strong>Hasarlı aracım için nasıl fiyat alabilirim?</strong><br>
+      Size en yakın ildeki temsilcimizle iletişime geçerek ücretsiz ekspertiz randevusu oluşturabilirsiniz.</p>
+
+      <p><strong>Ödemeyi ne zaman alıyorum?</strong><br>
+      Anlaşma sağlandığı anda nakit veya banka havalesi ile ödemenizi alırsınız.</p>
+
+      <p><strong>Resmi işlemler ne kadar sürüyor?</strong><br>
+      Tüm resmi işlemler ortalama 1-3 iş günü içerisinde tamamlanmaktadır.</p>
+
+      <h2>Sonuç</h2>
+      <p>Hasarlı araç alım satım işlemlerinde 81 ilde güvenilir çözüm ortağınız olarak hizmet veriyoruz. Hasarlı Araç Alım Satım konusunda uzman ekibimizle, aracınızın değerini en doğru şekilde belirliyor ve size en uygun çözümü sunuyoruz.</p>
+      <p>Unutmayın, hangi ilde olursanız olun - ister Samsun Hasarlı Araç Alım Satım ister Van Hasarlı Araç Alım Satım - tek yapmanız gereken bizimle iletişime geçmek!</p>
+    `,
+    author: 'Araban Nakit Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Genel',
+    tags: ['Hasarlı Araç', '81 İl', 'Hizmet'],
+    image: '/images/blog/hasarli-arac-81-il.jpg',
+    readTime: 4,
+    metaTitle: 'Hasarlı Araç Alım Satım - 81 İlde Hizmetinizde!',
+    metaDescription: 'Hasarlı araçlarınızı 81 ilde değerinde alıyor ve satıyoruz. Ücretsiz ekspertiz ve anında nakit ödeme imkanı.',
+    published: true,
+  },
+  {
+    id: 'hasarli-arac-bolgesel-hizmet',
+    slug: 'hasarli-arac-alim-satim-turkiyenin-her-ilinde-hizmet',
+    title: 'Hasarlı Araç Alım Satım - Türkiye\'nin Her İlinde Hizmet!',
+    excerpt: 'Anadolu\'nun tüm illerinde, bölgesel koşullara uygun hasarlı araç alım satım hizmeti. Karadeniz\'den Akdeniz\'e güvenilir çözüm.',
+    content: `
+      <p><strong>Hasarlı Araç Alım Satım - Türkiye'nin Her İlinde Hizmet!</strong></p>
+      <p><strong>Bölgesel Hasarlı Araç Pazarı: Anadolu'nun Tüm İllerinde</strong></p>
+
+      <h2>Karadeniz ve Doğu Anadolu</h2>
+      <ul>
+        <li><strong>Trabzon Hasarlı Araç Alım Satım:</strong> Karadeniz'in zorlu coğrafyasında hasar görmüş araçlarınız için en doğru adres! Bölgenin iklim koşullarına bağlı hasarları iyi biliyoruz.</li>
+        <li><strong>Erzurum Hasarlı Araç Alım Satım:</strong> Soğuk hava koşullarının yol açtığı hasarlarda uzmanlaşmış ekibimizle hizmetinizdeyiz. Kış şartlarının verdiği hasarları değerlendiriyoruz.</li>
+        <li><strong>Diyarbakır Hasarlı Araç Alım Satım:</strong> Güneydoğu Anadolu bölgesinde hasarlı araç pazarının lideri! Bölgeye özgü iklim ve yol koşullarının neden olduğu hasarları değerlendiriyoruz.</li>
+      </ul>
+
+      <h2>Ege Bölgesi'nde Hasarlı Araç Pazarı</h2>
+      <ul>
+        <li><strong>Manisa Hasarlı Araç Alım Satım:</strong> Tarım ve sanayi bölgesinde hasar gören araçlarınız için özel çözümler sunuyoruz.</li>
+        <li><strong>Aydın Hasarlı Araç Alım Satım:</strong> Turizm ve tarımın kesiştiği noktada, her türlü hasarlı aracınızı değerinde alıyoruz.</li>
+        <li><strong>Muğla Hasarlı Araç Alım Satım:</strong> Sahil bölgesinde tuzlu havanın neden olduğu pas ve korozyon hasarlarını uzman gözüyle değerlendiriyoruz.</li>
+      </ul>
+
+      <h2>Akdeniz'de Hasarlı Araç Ticareti</h2>
+      <ul>
+        <li><strong>Mersin Hasarlı Araç Alım Satım:</strong> Liman kentinde deniz etkisine maruz kalmış araçlar için özel değerlendirme kriterleri uyguluyoruz.</li>
+        <li><strong>Hatay Hasarlı Araç Alım Satım:</strong> Sınır ticaretinin yoğun olduğu bölgede, hasarlı araç alım satımında güvenilir çözüm ortağınız.</li>
+        <li><strong>Adana Hasarlı Araç Alım Satım:</strong> Çukurova'nın tarım arazilerinde kullanılan araçlardaki özel hasarları iyi tanıyoruz.</li>
+      </ul>
+
+      <h2>İç Anadolu'nun Öne Çıkan İlleri</h2>
+      <ul>
+        <li><strong>Kayseri Hasarlı Araç Alım Satım:</strong> Sanayi ve ticaretin merkezinde, hasarlı ticari araç pazarında uzmanız.</li>
+        <li><strong>Sivas Hasarlı Araç Alım Satım:</strong> Sert kış koşullarının neden olduğu hasarlarda deneyimli ekibimizle hizmetinizdeyiz.</li>
+        <li><strong>Konya Hasarlı Araç Alım Satım:</strong> Türkiye'nin en büyük yüzölçümüne sahip ilinde, her türlü arazi aracı hasarlarını değerlendiriyoruz.</li>
+      </ul>
+
+      <h2>Karadeniz'in Zorlu Coğrafyası</h2>
+      <ul>
+        <li><strong>Samsun Hasarlı Araç Alım Satım:</strong> Karadeniz'in en büyük ilinde, yağmurlu havanın neden olduğu elektrik ve elektronik hasarlarını iyi biliyoruz.</li>
+        <li><strong>Rize Hasarlı Araç Alım Satım:</strong> Yoğun yağışın yol açtığı sel ve su hasarlarında uzman değerlendirme.</li>
+        <li><strong>Giresun Hasarlı Araç Alım Satım:</strong> Engebeli arazi koşullarının neden olduğu mekanik hasarları değerlendiriyoruz.</li>
+      </ul>
+
+      <h2>Doğu Anadolu'da Güvenilir Çözüm</h2>
+      <ul>
+        <li><strong>Van Hasarlı Araç Alım Satım:</strong> Göl etkisindeki iklimin neden olduğu özel hasar türlerini iyi tanıyoruz.</li>
+        <li><strong>Malatya Hasarlı Araç Alım Satım:</strong> Kayısı bahçelerinde kullanılan araçların maruz kaldığı özel hasarları değerlendiriyoruz.</li>
+        <li><strong>Elazığ Hasarlı Araç Alım Satım:</strong> Madencilik bölgesinde çalışan araçların hasar değerlendirmesinde uzmanız.</li>
+      </ul>
+
+      <h2>Marmara'nın Sanayi İlleri</h2>
+      <ul>
+        <li><strong>Kocaeli Hasarlı Araç Alım Satım:</strong> Sanayi bölgesinde kullanılan ağır vasıta hasarlarında özel bilgi birikimi.</li>
+        <li><strong>Bursa Hasarlı Araç Alım Satım:</strong> Otomotiv sanayinin merkezinde, hasarlı araç değerlendirmesinde teknolojik çözümler.</li>
+        <li><strong>Tekirdağ Hasarlı Araç Alım Satım:</strong> Trakya bölgesinde tarım araçları hasarlarında uzman değerlendirme.</li>
+      </ul>
+
+      <h2>Bölgesel Hizmet Avantajlarımız</h2>
+      <ul>
+        <li><strong>Yerel Ekipler:</strong> Her ilde bölge koşullarını iyi bilen uzman ekipler</li>
+        <li><strong>Bölgesel Hasarları Tanıma:</strong> İklim, yol ve kullanım koşullarına bağlı hasarları iyi tanıyoruz</li>
+        <li><strong>Hızlı Müdahale:</strong> Bulunduğunuz ilde hızlı ekspertiz hizmeti</li>
+        <li><strong>Yerel Piyasa Bilgisi:</strong> Bölgeye özgü pazar koşullarını yakından takip</li>
+      </ul>
+
+      <h2>Neden İlinizdeki Hasarlı Araç Uzmanını Seçmelisiniz?</h2>
+      <ul>
+        <li>Yerel iklim koşullarının neden olduğu hasarları iyi tanır</li>
+        <li>Bölgedeki tamirci ve yedek parça fiyatlarını iyi bilir</li>
+        <li>Yerel trafik ve yol koşullarına hakimdir</li>
+        <li>Bölgeye özgü araç kullanım alışkanlıklarını bilir</li>
+      </ul>
+
+      <h2>İlinizde Hasarlı Araç Değerlendirme</h2>
+      <p>Hangi ilde olursanız olun - ister Gaziantep Hasarlı Araç Alım Satım ister Şanlıurfa Hasarlı Araç Alım Satım - size en yakın uzman ekibimizle hizmetinizdeyiz.</p>
+      <p>Balıkesir, Çanakkale, Edirne ve diğer tüm illerde profesyonel hizmet!</p>
+      <p>Türkiye'nin 81 ilinde hasarlı araç alım satım işlemleriniz için güvenilir çözüm ortağınız olmaya devam ediyoruz. Size en yakın il temsilcimizle iletişime geçin, aracınızın değerini öğrenin!</p>
+    `,
+    author: 'Araban Nakit Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Genel',
+    tags: ['Hasarlı Araç', 'Bölgesel', 'Türkiye'],
+    image: '/images/blog/hasarli-arac-turkiye-geneli.jpg',
+    readTime: 5,
+    metaTitle: 'Hasarlı Araç Alım Satım - Türkiye\'nin Her İlinde Hizmet!',
+    metaDescription: 'Türkiye\'nin 81 ilinde bölgesel koşullara uygun hasarlı araç alım satım hizmeti. Yerel uzmanlık ve güvenilir çözüm.',
+    published: true,
+  },
+  {
+    id: 'hasarli-arac-aninda-nakit',
+    slug: 'hasarli-arac-alim-satim-81-ilinde-aninda-nakit-odeme',
+    title: 'Hasarlı Araç Alım Satım - Türkiye\'nin 81 İlinde Anında Nakit Ödeme!',
+    excerpt: 'Türkiye\'nin her noktasında hasarlı araçlarınız için anında nakit ödeme, ücretsiz ekspertiz ve yasal işlem desteği.',
+    content: `
+      <p><strong>Hasarlı Araç Alım Satım - Türkiye'nin 81 İlinde Anında Nakit Ödeme!</strong></p>
+
+      <h2>Ege ve Akdeniz'de Hasarlı Araç Pazarı</h2>
+      <ul>
+        <li><strong>İzmir Hasarlı Araç Alım Satım:</strong> Ege'nin incisinde hurda, hasarlı, trafik kazalı araçlarınız için anında nakit ödeme! Bornova, Karşıyaka, Çiğli ve tüm ilçelerde ücretsiz ekspertiz hizmeti.</li>
+        <li><strong>Antalya Hasarlı Araç Alım Satım:</strong> Turizm başkentinde sel, dolu, kaza hasarlı araçlarınızı değerinde alıyoruz. Lara, Konyaaltı, Muratpaşa ve tüm bölgelerde hizmet.</li>
+        <li><strong>Muğla Hasarlı Araç Alım Satım:</strong> Marmaris, Fethiye, Bodrum'da yazlıkçıların hasarlı araçları için özel çözümler. Deniz kenarındaki pas ve korozyon hasarlarını iyi biliyoruz.</li>
+      </ul>
+
+      <h2>İç Anadolu'da Hasarlı Araç Ticareti</h2>
+      <ul>
+        <li><strong>Ankara Hasarlı Araç Alım Satım:</strong> Başkent'in tüm semtlerinde Çankaya, Keçiören, Mamak'ta profesyonel hizmet. Resmi kurumlarla yakın çalışma deneyimi.</li>
+        <li><strong>Konya Hasarlı Araç Alım Satım:</strong> Türkiye'nin en büyük yüzölçümlü ilinde, tarım araçları hasarlarında uzman değerlendirme. Meram, Selçuklu, Karatay'da hizmet.</li>
+        <li><strong>Kayseri Hasarlı Araç Alım Satım:</strong> Sanayi kentinde hasarlı ticari araçlar, kamyonet, panelvan alım satımında bölge lideri.</li>
+      </ul>
+
+      <h2>Karadeniz'de Güvenilir Hasarlı Araç Alımı</h2>
+      <ul>
+        <li><strong>Samsun Hasarlı Araç Alım Satım:</strong> Karadeniz'in en büyük ilinde İlkadım, Atakum, Canik'te yağmur ve nem hasarlarında uzman ekip.</li>
+        <li><strong>Trabzon Hasarlı Araç Alım Satım:</strong> Dik yokuş ve virajlı yolların neden olduğu hasarları iyi tanıyan yerel ekip.</li>
+        <li><strong>Ordu Hasarlı Araç Alım Satım:</strong> Fındık bahçelerinde kullanılan araçların özel hasarlarını değerlendiriyoruz.</li>
+      </ul>
+
+      <h2>Güneydoğu Anadolu Bölgesi</h2>
+      <ul>
+        <li><strong>Gaziantep Hasarlı Araç Alım Satım:</strong> Sanayi ve ticaretin merkezinde hasarlı hafif ticari araç pazarında uzman.</li>
+        <li><strong>Şanlıurfa Hasarlı Araç Alım Satım:</strong> Tarım arazilerinde çalışan araçların özel hasar değerlendirmesi.</li>
+        <li><strong>Diyarbakır Hasarlı Araç Alım Satım:</strong> Bölgenin en güvenilir hasarlı araç alım satım merkezi.</li>
+      </ul>
+
+      <h2>Marmara'nın Önemli İlleri</h2>
+      <ul>
+        <li><strong>Bursa Hasarlı Araç Alım Satım:</strong> Otomotiv sanayinin kalbinde Osmangazi, Nilüfer, Yıldırım'da uzman ekip.</li>
+        <li><strong>Balıkesir Hasarlı Araç Alım Satım:</strong> Hem sanayi hem tarım hem de turizm hasarlarında deneyimli.</li>
+        <li><strong>Çanakkale Hasarlı Araç Alım Satım:</strong> Asya ve Avrupa arasında hasarlı araç ticaretinde köprü görevi.</li>
+      </ul>
+
+      <h2>Hizmetlerimiz ve Avantajlarımız</h2>
+      <h3>✅ 81 İl 365 Gün Hizmet</h3>
+      <ul>
+        <li>İster Edirne Hasarlı Araç Alım Satım ister Hakkari Hasarlı Araç Alım Satım</li>
+        <li>Türkiye'nin her noktasında aynı kaliteli hizmet</li>
+      </ul>
+
+      <h3>✅ Anında Nakit Ödeme</h3>
+      <ul>
+        <li>Ekspertiz sonrası 30 dakikada ödeme</li>
+        <li>Banka havalesi veya nakit seçeneği</li>
+      </ul>
+
+      <h3>✅ Ücretsiz Ekspertiz</h3>
+      <ul>
+        <li>Bulunduğunuz yerde ücretsiz değerlendirme</li>
+        <li>Detaylı hasar analizi raporu</li>
+      </ul>
+
+      <h3>✅ Yasal İşlem Desteği</h3>
+      <ul>
+        <li>Trafik işlemleri takibi</li>
+        <li>Noter devir işlemleri</li>
+        <li>Ruhsat işlemleri</li>
+      </ul>
+
+      <h2>Özel Durumlar İçin Çözümler</h2>
+      <ul>
+        <li><strong>Sel Hasarlı Araç Alım Satım:</strong> Tüm illerde su basması hasarlı araçlarınızı değerlendiriyoruz.</li>
+        <li><strong>Dolu Hasarlı Araç Alım Satım:</strong> Hangi ilde olursa olsun dolu hasarlı araçlarınız için çözüm üretiyoruz.</li>
+        <li><strong>Trafik Kazalı Araç Alım Satım:</strong> Kaza geçirmiş araçlarınızı değerinde alıyoruz.</li>
+      </ul>
+
+      <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+      <ul>
+        <li><strong>📍 Yerel Bilgi:</strong> Her ilde o bölgeye özgü hasar türlerini iyi biliyoruz</li>
+        <li><strong>💰 En İyi Fiyat:</strong> 81 ilde rekabetçi fiyat politikası</li>
+        <li><strong>⚡ Hızlı Çözüm:</strong> Aynı gün ödeme garantisi</li>
+        <li><strong>📋 Şeffaf Süreç:</strong> Tüm işlemlerde açık ve net iletişim</li>
+      </ul>
+
+      <h2>İletişim ve Ulaşım</h2>
+      <p>Hangi ilde olursanız olun - Aydın, Tekirdağ, Erzurum - tek yapmanız gereken bizi aramak!</p>
+      <p>Van, Mardin, Siirt ve diğer tüm illerde hizmet veriyoruz.</p>
+      <p><strong>Türkiye'nin 81 İlinde Hasarlı Araçlarınız İçin Tek Adres! Hemen iletişime geçin, aracınızın değerini öğrenin! 📞</strong></p>
+    `,
+    author: 'Araban Nakit Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Genel',
+    tags: ['Nakit Ödeme', '81 İl', 'Hızlı Satış'],
+    image: '/images/blog/hasarli-arac-nakit-odeme.jpg',
+    readTime: 5,
+    metaTitle: 'Hasarlı Araç Alım Satım - Anında Nakit Ödeme!',
+    metaDescription: 'Türkiye\'nin 81 ilinde hasarlı araçlarınızı anında nakit ödeme ile alıyoruz. Ücretsiz ekspertiz ve yerel hizmet.',
+    published: true,
+  },
+  {
+    id: 'istanbul-hasarli-arac',
+    slug: 'istanbul-hasarli-arac-alim-satim-araban-nakit',
+    title: 'İstanbul Hasarlı Araç Alım Satım',
+    excerpt: 'İstanbul\'da hasarlı araç satmak zorlu olabilir. Araban Nakit, İstanbul\'un 39 ilçesinde güvenli, hızlı ve kurumsal hasarlı araç alım satım hizmeti sunar.',
+    content: `
+      <p><strong>İstanbul Hasarlı Araç Alım Satım: Araban Nakit ile Metropolde Güvenli ve Hızlı Çözüm Rehberi</strong></p>
+      <p>İstanbul'un devasa coğrafyası, yoğun trafiği ve lojistik karmaşası içinde hasarlı araç alım satım yapmak, sayısız bürokratik engelle karşılaşmak demektir. Aracınız ister Fatih'in dar sokaklarında küçük bir kaza yapsın, isterse TEM Otoyolu'nda büyük bir hasar alsın, hasarlı araç satışı nasıl yapılır endişesi sizi yorabilir. Araban Nakit, İstanbul'da hasarlı oto alım satım işlemlerini kökten değiştirerek, size hem hız hem de kurumsal güvence sunar.</p>
+      <p>İstanbul'daki diğer ağır hasar kayıtlı araç alan firmaların aksine, biz sadece alıcı değiliz; aynı zamanda tüm süreci yöneten çözüm ortağınızız. Motor arızalı araç alım satım ve hurda araç alım satım potansiyelindeki tüm araçlarınızı İstanbul'un 39 ilçesinden (Avrupa ve Anadolu Yakası) yerinde teslim alıyoruz. Pert aracımı satmak istiyorum diyen müşterilerimiz için en kritik konu olan anında nakit ödeme ve yasal devir garantisi, Araban Nakit'in temel vaadidir. İstanbul'daki hasarlı araç alan yerler arasında zaman kaybetmek yerine, bize ulaşın ve metropolün en hızlı nakit çözümünü deneyimleyin.</p>
+
+      <h2>💰 İstanbul Pert Araba Alan Yerler ve Fiyatlandırma: Piyasa Değerleme Kriterleri</h2>
+      <p>İstanbul'da pert araba alan yerler size farklı fiyatlar sunuyorsa, bu fiyatların hangi kriterlere göre belirlendiğini anlamanız gerekir. Aracınızın ağır hasar kayıtlı olması, değerinin tamamen sıfırlandığı anlamına gelmez. Bu makale, İstanbul piyasasında hasarlı araç alım satım sürecine finansal açıdan ışık tutar.</p>
+      <p>Araban Nakit'in analitik sistemi, İstanbul'daki pert araç fiyatlarını belirlerken sadece onarım maliyetini düşmekle kalmaz. Kazalı araç alım satım sürecinde, aracın sağlam kalan motor, şanzıman, kaporta ve iç aksamının güncel yedek parça piyasa değerini baz alır. Özellikle, motor arızalı araç alım satım işlemlerinde, motorun tamir edilebilirlik potansiyeli dahi fiyata yansıtılır. Pert aracımı satmak istiyorum diyen müşterilerimiz, şeffaflıkla sunulan fiyatımızın, İstanbul piyasasının en rekabetçi teklifi olduğunu görecektir. İstanbul'da hurda araç alım satım işlemlerinde dahi aracınızın nihai değerini maksimize ediyoruz.</p>
+
+      <h2>🛡️ İstanbul Ağır Hasar Kayıtlı Araç Alan Firmalar Arasında Yasal Güvenlik Rehberi</h2>
+      <p>İstanbul'da ağır hasar kayıtlı araç alan firmalar arasında seçim yaparken dikkat etmeniz gereken en önemli nokta, satış sonrası hukuki sorumluluğunuzun sona ermesidir. Hasarlı araç satışı nasıl yapılır sürecinde en büyük tehlike, noter satışından sonra gizli ayıp veya yasal eksiklikler nedeniyle dava edilmektir.</p>
+      <p>Araban Nakit, İstanbul'daki kazalı araç alım satım ve motor arızalı araç alım satım işlemlerinde bu riski tamamen üstlenir. Pert aracımı satmak istiyorum diyen müşterilerimiz için noter devri anı, tüm hukuki ve finansal sorumluluğun bize geçtiği andır. Yasal mevzuatlara ve hurda araç alım satım prosedürlerine hakim ekibimiz, İstanbul'un yoğun noter sisteminde dahi işlemleri hızla ve eksiksiz tamamlar. Hasarlı araç alan yerler arasında, size sadece nakit ödeme değil, aynı zamanda tam bir yasal güvence sunuyoruz.</p>
+
+      <h2>🔧 İstanbul Hurda Araç Alım Satım ve Motor Arızalı Araç Satışının Teknik Analizi</h2>
+      <p>İstanbul'da aracınızın motoru yolda kaldıysa, şanzımanı arızalandıysa veya bir kaza sonucu teknik olarak onarılamayacak durumdaysa, aracınız hurda araç alım satım potansiyeline girmiş demektir. Motor arızalı araç alım satım süreci, yüzeysel bir hasar değerlendirmesinden farklı olarak, mühendislik bilgisi gerektirir.</p>
+      <p>Araban Nakit, İstanbul'daki kazalı araç alım satım ve teknik arıza uzmanıdır. Hasarlı araç satışı nasıl yapılır sorusuna teknik cevaplar sunarız: Aracınızın şasi bütünlüğü, elektronik sistemleri ve sağlam kalan tüm aksamları detaylı incelenir. İstanbul'da ağır hasar kayıtlı araç alan firmalar ve pert araba alan yerlerden farklı olarak, teknik uzmanlığımızla, arızanın en kârlı bertaraf yolunu (yedek parça değeri veya hurda değeri) hesaplarız.</p>
+
+      <h2>📍 İstanbul Hasarlı Araç Alan Yerler: 39 İlçe İçin En Yakın Alım ve Teslimat Noktaları</h2>
+      <p>İstanbul'un 39 ilçesinde hasarlı araç alan yerler arayanlar için Araban Nakit tek ve güvenilir adrestir. Avrupa Yakası'nda Avcılar'dan Anadolu Yakası'nda Pendik'e kadar her noktadan hizmet sunuyoruz. Pert aracımı satmak istiyorum diyenler için yerel alım ağımız, lojistik süresini minimuma indirir.</p>
+      <p><strong>Bölgelerimiz:</strong> Kazalı araç alım satım işlemleri için Maslak, Gebze, Tuzla gibi sanayi bölgelerine özel çekici desteği sunarız.</p>
+      <p><strong>Hizmet Sözü:</strong> Ağır hasar kayıtlı araç alan firmalar arasında en hızlı hizmeti ve motor arızalı araç alım satım işlemlerini kapınızda tamamlama kolaylığını garanti ediyoruz. Hasarlı araç satışı nasıl yapılır endişesini bize bırakın, sadece ödemenizi alın.</p>
+    `,
+    author: 'Araban Nakit İstanbul Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Şehir Rehberleri',
+    tags: ['İstanbul', 'Hasarlı Araç', 'Pert Araç'],
+    image: '/images/blog/istanbul-hasarli-arac.jpg',
+    readTime: 6,
+    metaTitle: 'İstanbul Hasarlı Araç Alım Satım - Araban Nakit',
+    metaDescription: 'İstanbul\'da hasarlı, kazalı ve pert araçlarınızı değerinde alıyoruz. 39 ilçede ücretsiz ekspertiz ve nakit ödeme garantisi.',
+    published: true,
+  },
+  {
+    id: 'istanbul-kazali-arac',
+    slug: 'istanbul-kazali-arac-alim-satim',
+    title: 'İstanbul Kazalı Araç Alım Satım – Araban Nakit ile Hızlı ve Güvenli Satış',
+    excerpt: 'İstanbul genelinde kazalı aracınızı en hızlı şekilde değerlendirin. Profesyonel ekspertiz ve aynı gün nakit ödeme ile zahmetsiz satış.',
+    content: `
+      <p><strong>İstanbul Kazalı Araç Alım Satım – Araban Nakit ile Hızlı ve Güvenli Satış</strong></p>
+      <p>İstanbul gibi trafiğin yoğun, araç sirkülasyonunun yüksek olduğu bir şehirde kazalı araç alım satım süreci hem zahmetli hem de zaman kaybettiren bir işlemdir. Aracını satmak isteyen çoğu kişi doğru alıcıyı bulmakta zorlanır, günlerce eksper süreciyle uğraşır ve düşük fiyat teklifleriyle karşılaşır. Araban Nakit, İstanbul genelinde bu süreci tamamen kolaylaştırarak kazalı aracınızı en hızlı şekilde değerlendirmenizi sağlar.</p>
+
+      <h2>İstanbul’da Kazalı Araç Alan Firmalar Arasında Neden Araban Nakit?</h2>
+      <ul>
+        <li>Araban Nakit, İstanbul’un tüm ilçelerinde profesyonel olarak kazalı araç alan kurumsal bir yapıya sahiptir.</li>
+        <li>Hızlı eksper, şeffaf değerlendirme ve aynı gün nakit ödeme ile kazalı araç alan firmalar arasında tüm işlem adımlarını güvenilir şekilde yürütür.</li>
+      </ul>
+
+      <h2>Kazalı Araç Alan Yerler – İstanbul Genelinde 81 İl Hizmeti</h2>
+      <p>İstanbul’un Avrupa ve Anadolu yakasında, özellikle trafiğin yoğun olduğu bölgelerde çok sayıda kazalı araç alan yerler bulunur. Ancak çoğu bireysel alıcı düşük fiyat politikasıyla ilerler. Araban Nakit ise hem yüksek piyasa değeri sunar hem de satış işlemini tek bir görüşmede tamamlar.</p>
+      <p><strong>İstanbul’un tüm noktalarında hizmet veriyoruz:</strong> Beşiktaş, Şişli, Kağıthane, Sarıyer, Avcılar, Küçükçekmece, Bağcılar, Esenler, Sultangazi, Eyüpsultan, Ataşehir, Ümraniye, Pendik, Tuzla ve diğer tüm ilçelerde kazalı araç alanlar arasında ilk tercih konumundayız.</p>
+
+      <h2>Kazalı Araç Alımı – Şeffaf Ekspertiz ve Aynı Gün Ödeme</h2>
+      <p>Aracınız ister ağır hasarlı, ister yürür durumda olsun İstanbul genelinde kazalı araç alımı işlemini şu şekilde yapıyoruz:</p>
+      <ol>
+        <li>WhatsApp üzerinden hızlı ön değerlendirme</li>
+        <li>Yerinde ücretsiz ekspertiz</li>
+        <li>Aracın tüm hasar kayıtlarının incelenmesi</li>
+        <li>Net fiyat teklifinin sunulması</li>
+        <li>Aynı gün nakit ödeme ve noter işlemleri</li>
+      </ol>
+      <p>Bu süreçte satıcı hiçbir masraf ödemez; çekici, eksper ve noter dahil tüm prosedür tarafımızdan karşılanır.</p>
+
+      <h2>Kazalı Araba Alım – 2010 Üstü Tüm Modeller Değerlendirilir</h2>
+      <p>Araban Nakit, İstanbul’da özellikle 2010 model ve üzeri tüm marka modeller için kazalı araba alım hizmeti sunar. Motor arızalı, hava yastığı açmış, pert kayıtlı veya ağır hasarlı tüm otomobiller kısa sürede alınır.</p>
+
+      <h2>Sonuç: İstanbul’da Kazalı Araç Alan Kurumsal Adres – Araban Nakit</h2>
+      <p>Kazalı aracınızı satmak için güvenilir bir firma arıyorsanız, İstanbul genelinde kazalı araç alan, kazalı araç alan yerler ve kazalı araç alımı konusunda uzman ekibimizle yanınızdayız. Tek bir görüşmede fiyatlandırma, ekspertiz ve ödeme sürecini tamamlayarak sizi uğraştırmadan aracınızı değerinde satın alıyoruz.</p>
+    `,
+    author: 'Araban Nakit İstanbul Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Araç Alım',
+    tags: ['İstanbul', 'Kazalı Araç', 'Hızlı Satış'],
+    image: '/images/blog/istanbul-kazali-arac.jpg',
+    readTime: 4,
+    metaTitle: 'İstanbul Kazalı Araç Alım Satım - Hızlı Satış',
+    metaDescription: 'İstanbul\'da kazalı aracınızı en iyi fiyata satın. Araban Nakit ile ücretsiz ekspertiz ve anında nakit ödeme.',
+    published: true,
+  },
+  {
+    id: 'ankara-kazali-arac',
+    slug: 'ankara-kazali-arac-alim-satim',
+    title: 'Ankara Kazalı Araç Alım Satım – Araban Nakit ile Hızlı Değerlendirme',
+    excerpt: 'Ankara genelinde kazalı aracınızı satmak artık çok kolay. Başkent\'in tüm semtlerinde profesyonel kazalı araç alım satım hizmeti.',
+    content: `
+      <p><strong>Ankara Kazalı Araç Alım Satım – Araban Nakit ile Hızlı Değerlendirme</strong></p>
+      <p>Ankara’da kazalı bir aracı satmak, özellikle alıcı bulmanın zor olduğu dönemlerde ciddi zaman kaybettirir. Trafiğin yoğun olduğu Ümitköy, Çayyolu, Keçiören, Mamak ve Sincan gibi bölgelerde araç sahipleri çoğu zaman değerinin altında teklifler almakla karşılaşır. Araban Nakit, Ankara genelinde profesyonel ve güvenilir yapısıyla bu süreci hızlandırarak kazalı aracınızı kolayca satmanızı sağlar.</p>
+
+      <h2>Ankara’da Kazalı Araç Alan Firmalar İçinde Neden Tercih Ediliyoruz?</h2>
+      <ul>
+        <li>Araban Nakit, başkentte uzun süredir kazalı araç değerlendirmesi yapan kurumsal bir firmadır.</li>
+        <li>Ankara’nın tüm ilçelerinde aynı gün hizmet vererek kazalı araç alan firmalar arasında hızlı, güvenilir ve net fiyat sunan yapısıyla öne çıkar.</li>
+      </ul>
+      <p>Eksper ücreti, çekici veya noter masrafı olmadan, aracınızın durumuna göre anında teklif oluştururuz. Bu nedenle kazalı araç alan firmalar içinde satıcı için en pratik süreç bizde bulunur.</p>
+
+      <h2>Kazalı Araç Alan Yerler – Ankara’nın Tüm Semtlerinde Hizmet</h2>
+      <p>Ankara genelinde bireysel alıcı bulmak zordur; verilen teklifler çoğunlukla düşük tutulur. Araban Nakit ise hem şeffaf ekspertiz sağlar hem de hızlı ödeme yaparak satışı kolaylaştırır.</p>
+      <p><strong>Aşağıdaki bölgelerde aktif olarak kazalı araç alan yerler arasında ilk sıralardayız:</strong> Şaşmaz Oto Sanayi, İvedik Oto Sanayi, Ostim, Eryaman – Sincan, Yenimahalle – Demetevler, Keçiören – Etlik, Mamak – Natoyolu, Çankaya – Balgat – Söğütözü, Gölbaşı – İncek.</p>
+      <p>Bu noktaların tamamında ekiplerimiz aynı gün inceleme ve fiyatlandırma yapar.</p>
+
+      <h2>Kazalı Araç Alımı – Ankara’da En Hızlı Süreç</h2>
+      <p>Ankara’da kazalı araç alımı sürecimiz tamamen satıcıyı yormadan ilerler:</p>
+      <ol>
+        <li>WhatsApp’tan ön bilgi</li>
+        <li>Araç başında ücretsiz ekspertiz</li>
+        <li>Hasar detaylarının incelenmesi</li>
+        <li>Piyasa değerine uygun net fiyat verilmesi</li>
+        <li>Aynı gün nakit ödeme</li>
+        <li>Noterde hızlı devir</li>
+      </ol>
+      <p>Satıcı hiçbir şekilde masraf ödemez; çekici, ekspertiz ve devir işlemleri tamamen firmamız tarafından karşılanır.</p>
+
+      <h2>Kazalı Araba Alım – 2010 ve Üzeri Tüm Modeller Değerlendirilir</h2>
+      <p>Araban Nakit, Ankara genelinde 2010 model ve üstü tüm araçlar için kazalı araba alım hizmeti sunar. Ağır hasarlı, motor arızalı, yürür durumda veya pert kayıtlı araçlar kısa sürede değerlendirilir.</p>
+
+      <h2>Sonuç: Ankara’da Kazalı Araç Alan Kurumsal Adres – Araban Nakit</h2>
+      <p>Başkentte aracını hızlıca satmak isteyenler için Araban Nakit, kazalı araç alan, kazalı araç alanlar, kazalı araç alan yerler ve kazalı araç alımı alanlarında profesyonel çözüm sunar. Net fiyat, ücretsiz ekspertiz ve aynı gün ödeme avantajıyla Ankara’nın tüm ilçelerinde hizmet veriyoruz.</p>
+    `,
+    author: 'Araban Nakit Ankara Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Şehir Rehberleri',
+    tags: ['Ankara', 'Kazalı Araç', 'Araç Alım'],
+    image: '/images/blog/ankara-kazali-arac.jpg',
+    readTime: 4,
+    metaTitle: 'Ankara Kazalı Araç Alım Satım - Hızlı ve Güvenilir',
+    metaDescription: 'Ankara\'da kazalı araç satışı için en doğru adres. Ücretsiz ekspertiz, anında nakit teklif ve yerinde alım hizmeti.',
+    published: true,
+  },
+  {
+    id: 'hurda-arac-sozlesmesi-2025',
+    slug: 'hurda-arac-satis-sozlesmesi-ornegi-2025',
+    title: 'Hurda Araç Satış Sözleşmesi Örneği – 2025 Güncel Rehber',
+    excerpt: 'Hurda, çekme belgeli veya pert araç satışında kullanılacak güncel sözleşme örneği ve dikkat edilmesi gerekenler.',
+    content: `
+      <p><strong>Hurda Araç Satış Sözleşmesi Örneği – 2025 Güncel Rehber</strong></p>
+      <p>Hurda araçların alım satımı, diğer araç satışlarına göre daha farklı prosedürler içerir. Özellikle çekme belgeli, hurda belgeli veya pert kayıtlı araçların devrinde doğru bir sözleşme kullanmak hem satıcı hem de alıcı için yasal güvence sağlar. Bu nedenle hurda araç satış sözleşmesi düzenlenirken açık, net ve tarafların haklarını koruyan bir metin hazırlanmalıdır.</p>
+      <p>Bu makalede hurda araç satışında dikkat edilmesi gerekenler, satış sürecindeki yasal durumlar ve kullanılabilecek hurda araç satış sözleşmesi örneği yer almaktadır.</p>
+
+      <h2>Hurda Araç Satışında Dikkat Edilmesi Gerekenler</h2>
+      <p>Hurda araç devri yapılırken aşağıdaki noktalara dikkat edilmelidir:</p>
+      <ol>
+        <li><strong>Araç Ruhsat Durumu:</strong> Araç çekme belgeli, hurda belgeli veya pert kayıtlı olabilir. Bu durum sözleşmede mutlaka belirtilmelidir.</li>
+        <li><strong>Satış Bedelinin Açık Yazılması:</strong> Alıcı ve satıcı arasında anlaşılan tutar net şekilde yazılmalı, elden veya banka yoluyla ödemenin nasıl yapılacağı belirtilmelidir.</li>
+        <li><strong>Aracın Durumu Açıkça Yazılmalı:</strong> Motor arızası, ağır hasar, eksik parçalar, yürür/yürümez durumu gibi bilgiler sözleşmede açık olmalıdır.</li>
+        <li><strong>Taraf Bilgileri Eksiksiz Olmalı:</strong> TC kimlik numarası, adres, telefon gibi bilgiler eksiksiz ve doğru yazılmalıdır.</li>
+        <li><strong>Araç Üzerindeki Vergi / Ceza Sorumlulukları:</strong> Trafik cezası, vergi borcu vb. durumların kime ait olduğu belirtilmelidir.</li>
+      </ol>
+
+      <h2>Hurda Araç Satış Sözleşmesi Örneği (Kopyala – Yapıştır Hazır)</h2>
+      <pre>
+HURDA ARAÇ SATIŞ SÖZLEŞMESİ
+
+Taraflar:
+
+1. Satıcı
+Adı Soyadı: ......................................................
+T.C. Kimlik No: ................................................
+Adres: ..................................................................
+Telefon: ............................................................
+
+2. Alıcı
+Adı Soyadı / Ünvan: ............................................
+T.C. Kimlik No / Vergi No: ......................................
+Adres: ..................................................................
+Telefon: ............................................................
+
+Madde 1 – Sözleşmenin Konusu
+İşbu sözleşme, aşağıdaki bilgileri bulunan hurda/çekme belgeli/pert kayıtlı aracın satış ve devrine ilişkin hükümleri kapsar.
+
+Araç Bilgileri:
+Plaka: .....................................................
+Marka – Model: ..........................................
+Model Yılı: .................................................
+Şasi No: .....................................................
+Motor No: ...................................................
+Araç Durumu: (Hurda Belgeli / Çekme Belgeli / Pert Kayıtlı / Parçalanmış / Yürür–Yürümez)
+
+Madde 2 – Satış Bedeli
+Araç, alıcıya ..................... TL bedelle satılmıştır.
+Ödeme şekli: ( ) Elden ( ) Banka Havalesi
+Ödeme tarihi: ....................................................
+
+Madde 3 – Aracın Durumu
+Satıcı, yukarıda bilgileri yazılı aracın hurda niteliğinde olduğunu, mevcut arızaların ve eksik parçaların kendisi tarafından alıcıya bildirildiğini kabul eder. Alıcı, aracı mevcut durumu ile görerek satın aldığını kabul eder.
+
+Madde 4 – Sorumluluklar
+Satıcı, aracın kendisine ait olduğunu ve üzerinde rehin, haciz vb. kısıtlayıcı işlem olmadığını beyan eder.
+Araç üzerindeki geçmiş vergi ve cezalardan satıcı, satış tarihinden sonraki tüm işlemlerden alıcı sorumludur.
+Araç devri sırasında gerekli belgeler taraflarca temin edilir.
+
+Madde 5 – Teslim
+Araç, işbu sözleşmenin imzalandığı tarihte alıcıya teslim edilmiştir.
+
+Madde 6 – Yürürlük
+Bu sözleşme 2 nüsha olarak hazırlanmış olup, taraflarca okunarak imzalanmış ve yürürlüğe girmiştir.
+
+Tarih: …… / …… / 2025
+
+Satıcı İmza: _________________
+Alıcı İmza: __________________
+      </pre>
+
+      <h2>Hurda Araç Satışında Sözleşme Yapmanın Faydaları</h2>
+      <ul>
+        <li>Taraflar arasındaki fiyat ve şartları netleştirir.</li>
+        <li>Araç durumu ile ilgili sonradan çıkabilecek anlaşmazlıkların önüne geçer.</li>
+        <li>Hukuki açıdan satıcıyı ve alıcıyı güvence altına alır.</li>
+        <li>Noter devri gerekmeyen hurda belgeli araçlarda resmi kayıt oluşturur.</li>
+      </ul>
+
+      <h2>Sonuç</h2>
+      <p>Hurda, çekme belgeli veya pert araç satışı yaparken doğru sözleşme kullanmak güvenli bir işlemin temelidir. Yukarıdaki hurda araç satış sözleşmesi örneği, hem bireysel alımlar hem de firmalar için kullanılabilecek güncel ve geçerli bir taslaktır.</p>
+    `,
+    author: 'Araban Nakit Hukuk Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Yasal İşlemler',
+    tags: ['Sözleşme Örneği', 'Hurda Araç', 'Yasal Rehber'],
+    image: '/images/blog/hurda-arac-sozlesmesi.jpg',
+    readTime: 5,
+    metaTitle: 'Hurda Araç Satış Sözleşmesi Örneği - 2025',
+    metaDescription: 'Hurda ve çekme belgeli araç satışı için kullanabileceğiniz 2025 güncel satış sözleşmesi örneği ve rehberi.',
+    published: true,
+  },
+  {
+    id: 'trafikten-cekme-belgesi-2025',
+    slug: 'trafikten-cekme-belgesi-nasil-alinir-2025',
+    title: 'Trafikten Çekme Belgesi Nasıl Alınır? – 2025 Güncel Rehber',
+    excerpt: 'Trafikten çekme belgesi nedir, nasıl alınır? Aracınızı trafikten çekmek ve vergi yükünden kurtulmak için 2025 güncel rehberimiz.',
+    content: `
+      <p><strong>Trafikten Çekme Belgesi Nasıl Alınır? – 2025 Güncel Rehber</strong></p>
+      <p>Trafikten çekme belgesi, ekonomik ömrünü tamamlamış, ağır hasarlı, hurda durumundaki veya uzun süre kullanılmayacak araçların resmi olarak trafiğe kapatılmasını sağlayan bir belgedir. Bu belge sayesinde araç aktif trafik kaydından çıkarılır ve vergi/ceza gibi yükümlülükleri büyük ölçüde sona erer. Peki trafikten çekme belgesi nasıl alınır?, hangi aşamalardan geçilir ve hangi evraklar gerekir? İşte ayrıntılı rehber.</p>
+
+      <h2>Trafikten Çekme Belgesi Nedir?</h2>
+      <p>Trafikten çekme belgesi, aracın tamamen hurdaya ayrılması veya uzun süre kullanılmaması nedeniyle trafiğe kapatıldığını gösteren resmi belgedir. Bu işlem sayesinde:</p>
+      <ul>
+        <li>Trafik tescil kaydı pasif hale gelir,</li>
+        <li>Araç vergisi durdurulur,</li>
+        <li>Zorunlu trafik sigortası yaptırma yükümlülüğü kalkar,</li>
+        <li>Araç artık trafikte kullanılmaz ve yeniden trafiğe çıkarılmadıkça satışı sadece “hurda/çekme belgeli” olarak yapılır.</li>
+      </ul>
+
+      <h2>Trafikten Çekme Belgesi Nasıl Alınır? – Adım Adım İşlem Süreci</h2>
+      <p>Aşağıdaki süreç 2025 yılı güncel prosedürlerine uygundur:</p>
+      <ol>
+        <li><strong>Noterden Çekme Belgesi İşlemi Yapılır:</strong> Araç sahibi, herhangi bir notere giderek “trafikten çekme” başvurusu yapar. Noter sistem üzerinden aracın durumunu kontrol eder ve işlem başlatılır. Bu aşamada aracın üzerinde rehin, haciz, ceza veya vergi borcu varsa önce bunların kapatılması gerekir.</li>
+        <li><strong>Plakalar ve Ruhsat Teslim Edilir:</strong> Trafikten çekme işlemi tamamlanırken aracın plakaları ve ruhsat belgesi notere teslim edilir. Plakalar bir daha kullanılmaz.</li>
+        <li><strong>Noter Tarafından Trafik Tescile Bildirim Yapılır:</strong> Noter, işlemi aynı gün Trafik Tescil Sistemine (AKBS) iletir. Sistem aracın kaydını pasif hale getirir ve araç artık trafikten çekilmiş araç statüsüne geçer.</li>
+        <li><strong>Trafikten Çekme Belgesi Düzenlenir:</strong> İşlem sonunda noter tarafından resmi çekme belgesi düzenlenir. Bu belge, aracın artık trafiğe çıkamayacağını gösteren yasal belgedir. Belgede araç plakası, şasi ve motor numarası, aracın statüsü (çekme belgeli), çekme tarihi ve sahibinin kimlik bilgileri yer alır.</li>
+        <li><strong>Araç Hurdaya Verilecekse Ek İşlemler Yapılır:</strong> Araç tamamen hurda olacaksa Makine ve Kimya Endüstrisi (MKE) veya lisanslı hurda işletmeleri tarafından hurda kabul belgesi düzenlenir. (Not: Bu aşama isteğe bağlıdır. Araç hurda değil de sadece “çekme belgeli” olarak da kalabilir.)</li>
+      </ol>
+
+      <h2>Trafikten Çekme Belgesi Almak İçin Gerekli Evraklar</h2>
+      <p>Başvuru için aşağıdaki evraklar yeterlidir:</p>
+      <ul>
+        <li>Araç ruhsatı</li>
+        <li>Plakalar</li>
+        <li>Araç sahibinin kimlik kartı</li>
+        <li>Noter başvuru formu</li>
+        <li>Varsa vekaletname</li>
+      </ul>
+      <p>Ek olarak, araç üzerinde rehin veya borç varsa ilgili belgelerin kapatıldığına dair kayıt gerekir.</p>
+
+      <h2>Trafikten Çekme Belgesinin Avantajları</h2>
+      <ul>
+        <li>Motorlu Taşıtlar Vergisi durur</li>
+        <li>Zorunlu trafik sigortası zorunluluğu kalkar</li>
+        <li>Araç kullanılmadığı sürede yükümlülük oluşmaz</li>
+        <li>İstenirse hurdaya ayrılarak ek teşviklerden yararlanılabilir</li>
+        <li>Satış işlemi çekme belgeli olarak yapılabilir (Özellikle hurda araç alımı yapan firmalar açısından önemlidir)</li>
+      </ul>
+
+      <h2>Trafikten Çekme Belgeli Araç Satışı Nasıl Yapılır?</h2>
+      <p>Çekme belgeli araçlar noter satışı yapılmadan, yazılı sözleşme ile alıcı ve satıcı arasında devredilebilir. Bu nedenle hurda araç alımı yapan firmalarda bu belge önemli bir rol oynar.</p>
+
+      <h2>Sonuç: Trafikten Çekme Belgesi Alma Süreci Basittir</h2>
+      <p>Özetle; noter üzerinden yapılan başvuru ile plakalar teslim edilir, sistem güncellenir ve araç trafikten çekilmiş statüsüne alınır. İşlem ortalama 5–10 dakika içinde tamamlanabilir. Trafikten çekme belgesi, hem vergi yükünden kurtarır hem de aracı hurdaya ayırma veya satma sürecinde yasal güvence sağlar.</p>
+    `,
+    author: 'Araban Nakit Hukuk Ekibi',
+    authorImage: '/images/logo.png',
+    date: '2025-12-11',
+    category: 'Yasal İşlemler',
+    tags: ['Çekme Belgesi', 'Trafikten Çekme', 'Yasal Rehber'],
+    image: '/images/blog/trafikten-cekme-belgesi.jpg',
+    readTime: 5,
+    metaTitle: 'Trafikten Çekme Belgesi Nasıl Alınır? - 2025 Rehber',
+    metaDescription: 'Araç trafikten çekme işlemi nasıl yapılır? Gerekli evraklar ve 2025 güncel prosedürler hakkında detaylı rehber.',
+    published: true,
+  },
 ];
 
 export const blogCategories = [
