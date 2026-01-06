@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/config/site';
-import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 const serviceLinks = [
@@ -43,13 +43,9 @@ export function Header() {
   const [citiesOpen, setCitiesOpen] = useState(false);
   const pathname = usePathname();
 
-  const handlePhone = () => {
-    trackPhoneClick();
-  };
 
-  const handleWhatsApp = () => {
-    trackWhatsAppClick();
-  };
+
+
 
   const closeMobile = () => {
     setMobileOpen(false);
@@ -70,9 +66,8 @@ export function Header() {
             </div>
             <div className="flex items-center gap-4">
               <a
-                href={`tel:${siteConfig.phone}`}
-                onClick={handlePhone}
-                className="flex items-center gap-2 hover:opacity-85 transition-opacity"
+                href="#"
+                onClick={(e) => e.preventDefault()}
               >
                 <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/15">
                   <FaPhoneAlt className="w-3.5 h-3.5 text-white" />
@@ -80,10 +75,10 @@ export function Header() {
                 <span className="font-medium text-white">{siteConfig.phoneDisplay}</span>
               </a>
               <a
-                href={`https://wa.me/${siteConfig.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleWhatsApp}
+                href="#"
+                // target="_blank"
+                // rel="noopener noreferrer"
+                onClick={(e) => e.preventDefault()}
                 className="flex items-center gap-2 px-3 py-1 bg-[#25D366] hover:bg-[#20BA5A] rounded-full transition-all shadow-sm"
               >
                 <FaWhatsapp className="w-3.5 h-3.5 text-white" />
@@ -224,10 +219,10 @@ export function Header() {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:block">
             <a
-              href={`https://wa.me/${siteConfig.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleWhatsApp}
+              href="#"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              onClick={(e) => e.preventDefault()}
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-semibold text-sm shadow-lg hover:shadow-xl hover:bg-[#20BA5A] transition-all"
             >
               <FaWhatsapp className="w-5 h-5" />
@@ -356,10 +351,10 @@ export function Header() {
 
             {/* Mobile CTA */}
             <a
-              href={`https://wa.me/${siteConfig.whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleWhatsApp}
+              href="#"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              onClick={(e) => e.preventDefault()}
               className="mt-4 flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full font-semibold shadow-lg"
             >
               <FaWhatsapp className="w-5 h-5" />

@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { trackWhatsAppClick } from '@/lib/analytics';
+
 
 interface WhyUsItem {
   icon: string;
@@ -123,10 +123,10 @@ export default function WhyUs({ title, subtitle, items }: WhyUsProps) {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="https://wa.me/905441702540"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={trackWhatsAppClick}
+            href="#"
+            // target="_blank"
+            // rel="noopener noreferrer"
+            onClick={(e) => e.preventDefault()}
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-turuncu-500 to-turuncu-600 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

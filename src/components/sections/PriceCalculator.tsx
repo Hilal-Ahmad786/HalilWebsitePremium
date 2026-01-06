@@ -5,7 +5,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { trackCalculatorUse, trackPhoneClick } from '@/lib/analytics';
+
 
 
 
@@ -29,7 +29,6 @@ export default function PriceCalculator() {
 
     const price = Math.max(basePrice - yearFactor - damageFactor - mileageFactor, 20000);
     setEstimatedPrice(price);
-    trackCalculatorUse('Price Calculator Used');
 
 
   };
@@ -123,8 +122,8 @@ export default function PriceCalculator() {
                 <div className="mt-4">
                   <AnimatedButton
                     variant="glass"
-                    href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}
-                    onClick={() => trackPhoneClick()}
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
                   >
                     Hemen Ara
                   </AnimatedButton>

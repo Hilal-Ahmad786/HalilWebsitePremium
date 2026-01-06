@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackFormSubmit, trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,28 +18,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // 1. Track the conversion event
-    trackFormSubmit('contact_page_form');
-
-    // 2. Prepare WhatsApp Message
-    const text = `Merhaba, iletişim formundan yazıyorum.
-    
-Ad Soyad: ${formData.name}
-Telefon: ${formData.phone}
-E-posta: ${formData.email}
-Araç Bilgisi: ${formData.carInfo}
-Mesaj: ${formData.message}`;
-
-    // 3. Redirect to WhatsApp
-    const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, '_blank');
-
-    // 4. Reset Form UI
-    setSubmitStatus('success');
-    setIsSubmitting(false);
-    setFormData({ name: '', phone: '', email: '', carInfo: '', message: '' });
+    alert("Bu özellik demo sürümünde devre dışıdır.");
 
     setTimeout(() => setSubmitStatus('idle'), 5000);
   };
@@ -58,7 +37,7 @@ Mesaj: ${formData.message}`;
       value: siteConfig.phoneDisplay,
       href: `tel:${siteConfig.phone}`,
       color: 'from-turuncu-500 to-turuncu-600',
-      onClick: trackPhoneClick,
+
     },
     {
       icon: '💬',
@@ -66,7 +45,7 @@ Mesaj: ${formData.message}`;
       value: 'Mesaj Gönder',
       href: `https://wa.me/${siteConfig.whatsapp}`,
       color: 'from-green-500 to-green-600',
-      onClick: trackWhatsAppClick,
+
     },
     {
       icon: '📧',
@@ -132,7 +111,7 @@ Mesaj: ${formData.message}`;
                     href={method.href}
                     target={method.href.startsWith('http') ? '_blank' : undefined}
                     rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    onClick={method.onClick}
+
                     className="block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-6 border border-gray-100 hover:border-turuncu-200"
                   >
                     <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${method.color} text-white text-3xl mb-4 group-hover:scale-110 transition-transform`}>

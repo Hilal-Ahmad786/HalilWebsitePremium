@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
-import { trackPhoneClick } from '@/lib/analytics';
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -119,8 +119,6 @@ export function Footer() {
                 <ul className="space-y-4">
                   <li>
                     <a
-                      href={`tel:${siteConfig.phone}`}
-                      onClick={trackPhoneClick}
                       className="flex items-start gap-3 text-blue-200 hover:text-turuncu-400 transition-colors group"
                     >
                       <span className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-turuncu-500/20">
@@ -134,7 +132,8 @@ export function Footer() {
                   </li>
                   <li>
                     <a
-                      href={`mailto:${siteConfig.email}`}
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
                       className="flex items-start gap-3 text-blue-200 hover:text-turuncu-400 transition-colors group"
                     >
                       <span className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-turuncu-500/20">

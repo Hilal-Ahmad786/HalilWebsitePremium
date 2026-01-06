@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
 import UnifiedFloatingButtons from "@/components/layout/UnifiedFloatingButtons";
-import { GoogleTagManager, GoogleAnalytics, FacebookPixel } from "@/components/tracking";
+import DemoGuard from "@/components/demo/DemoGuard";
+
 import { StructuredData } from "@/components/seo/StructuredData";
 import { siteConfig } from '@/config/site';
 
@@ -43,21 +44,20 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${inter.variable} font-sans`}>
+        <DemoGuard />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossOrigin="anonymous"
         />
-        <GoogleTagManager />
-        <GoogleAnalytics />
-        <FacebookPixel />
+
 
         <StructuredData />
         <Header />
         <main className="pt-[120px] md:pt-[104px]">{children}</main>
         <Footer />
         <UnifiedFloatingButtons />
-        <Analytics />
+
       </body>
     </html>
   );

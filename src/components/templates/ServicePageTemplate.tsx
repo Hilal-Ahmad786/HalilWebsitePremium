@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { Service } from '@/data/types';
-import { trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
+
 import CTASection from '@/components/sections/CTASection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { FaCar, FaClipboardCheck, FaFileAlt, FaExchangeAlt, FaCarCrash, FaTools, FaExclamationTriangle, FaRecycle, FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
@@ -82,7 +82,7 @@ export default function ServicePageTemplate({ service, otherServices }: ServiceP
                                     href={`https://wa.me/${siteConfig.whatsapp}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    onClick={trackWhatsAppClick}
+                                    onClick={() => { }}
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold rounded-xl shadow-lg transition-all"
                                 >
                                     <FaWhatsapp className="w-5 h-5" />
@@ -91,7 +91,7 @@ export default function ServicePageTemplate({ service, otherServices }: ServiceP
 
                                 <a
                                     href={`tel:${siteConfig.phone}`}
-                                    onClick={trackPhoneClick}
+                                    onClick={() => { }}
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all"
                                 >
                                     <FaPhoneAlt className="w-5 h-5" />
@@ -205,7 +205,7 @@ export default function ServicePageTemplate({ service, otherServices }: ServiceP
                                             href={`https://wa.me/${siteConfig.whatsapp}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            onClick={trackWhatsAppClick}
+                                            onClick={() => { }}
                                             className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold rounded-xl transition-all"
                                         >
                                             <FaWhatsapp className="w-5 h-5" />
@@ -214,7 +214,7 @@ export default function ServicePageTemplate({ service, otherServices }: ServiceP
 
                                         <a
                                             href={`tel:${siteConfig.phone}`}
-                                            onClick={trackPhoneClick}
+                                            onClick={() => { }}
                                             className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-turuncu-500 hover:bg-turuncu-600 text-white font-bold rounded-xl transition-all"
                                         >
                                             <FaPhoneAlt className="w-5 h-5" />

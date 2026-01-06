@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
+
 
 export default function ContactCTA() {
   const calculateTimeLeft = () => {
@@ -31,13 +31,9 @@ export default function ContactCTA() {
   }, []);
 
   const handleWhatsApp = () => {
-    trackWhatsAppClick();
-    trackCTAClick('CTA WhatsApp',);
   };
 
   const handlePhone = () => {
-    trackPhoneClick();
-    trackCTAClick('CTA Phone',);
   };
 
   const benefits = [
@@ -180,10 +176,8 @@ export default function ContactCTA() {
               {/* Quick Contact Options */}
               <div className="space-y-3">
                 <a
-                  href={`https://wa.me/${siteConfig.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleWhatsApp}
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
                   className="group block w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl p-4 transition-all shadow-lg hover:shadow-xl"
                 >
                   <div className="flex items-center justify-between">
@@ -208,8 +202,8 @@ export default function ContactCTA() {
                 </a>
 
                 <a
-                  href={`tel:${siteConfig.phone}`}
-                  onClick={handlePhone}
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
                   className="group block w-full bg-gradient-to-r from-turuncu-500 to-turuncu-600 hover:from-turuncu-600 hover:to-turuncu-700 text-white rounded-xl p-4 transition-all shadow-lg hover:shadow-xl"
                 >
                   <div className="flex items-center justify-between">

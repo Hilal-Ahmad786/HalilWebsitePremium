@@ -1,7 +1,7 @@
 // src/components/sections/ProcessTimeline.tsx
 'use client';
 import { siteConfig } from '@/config/site';
-import { trackPhoneClick } from '@/lib/analytics';
+
 
 interface ProcessStep {
   icon: string;
@@ -115,7 +115,7 @@ export default function ProcessTimeline({ title, subtitle, steps }: ProcessTimel
             </div>
             <a
               href={`tel:${siteConfig.phone}`}
-              onClick={trackPhoneClick}
+              onClick={() => { }}
               className="flex-shrink-0 px-8 py-4 bg-turuncu-500 hover:bg-turuncu-600 text-white font-bold rounded-xl shadow-lg transition-all flex items-center gap-2"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">

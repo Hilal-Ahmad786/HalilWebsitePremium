@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { trackPhoneClick } from '@/lib/analytics';
+
 
 export default function ServicesComparison() {
   const [activeTab, setActiveTab] = useState(0);
@@ -254,8 +254,8 @@ export default function ServicesComparison() {
                       {activeService.title} için özel fiyat
                     </div>
                     <a
-                      href="tel:+905441702540"
-                      onClick={trackPhoneClick}
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-turuncu-500 hover:bg-turuncu-600 text-white font-bold rounded-xl transition-all w-full justify-center"
                     >
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
