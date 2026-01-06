@@ -6,9 +6,9 @@ export const siteConfig: SiteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'Araban Nakit',
   description: 'Türkiye\'de en iyi fiyatlarla araç alım satım hizmeti. Profesyonel ekspertiz ve güvenilir ödeme garantisi.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://demo-galeri.com',
-  phone: process.env.NEXT_PUBLIC_PHONE || '+905555555555',
-  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || '0555 555 55 55',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905555555555',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+905557512220',
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || '0555 751 22 20',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905557512220',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@demo-galeri.com',
   address: 'Türkiye',
   social: {
