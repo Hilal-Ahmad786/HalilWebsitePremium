@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
 import UnifiedFloatingButtons from "@/components/layout/UnifiedFloatingButtons";
-import DemoGuard from "@/components/demo/DemoGuard";
+import ThemeOptimizer from "@/components/providers/ThemeOptimizer";
 
 import { StructuredData } from "@/components/seo/StructuredData";
 import { siteConfig } from '@/config/site';
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${inter.variable} font-sans`}>
-        <DemoGuard />
+        <ThemeOptimizer />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
