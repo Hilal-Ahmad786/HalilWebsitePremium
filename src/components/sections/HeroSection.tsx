@@ -215,7 +215,7 @@ export function HeroSection() {
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="0555 751 22 20"
+                      placeholder="05XX XXX XX XX"
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-turuncu-500"
                     />
                   </div>
