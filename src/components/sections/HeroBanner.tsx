@@ -2,7 +2,7 @@
 'use client';
 
 import { siteConfig } from '@/config/site';
-
+import { trackCTAClick, trackWhatsAppClick, trackPhoneClick } from '@/lib/analytics';
 
 interface HeroBannerProps {
   variant?: 'default' | 'kazali' | 'hasarli' | 'pert' | 'hurda';
@@ -20,9 +20,13 @@ export default function HeroBanner({
   highlight
 }: HeroBannerProps) {
   const handlePhoneClick = () => {
+    trackPhoneClick();
+    trackCTAClick('Hero Phone',);
   };
 
   const handleWhatsAppClick = () => {
+    trackWhatsAppClick();
+    trackCTAClick('Hero WhatsApp',);
   };
 
 
@@ -79,10 +83,10 @@ export default function HeroBanner({
 
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href="#"
-                // target="_blank"
-                // rel="noopener noreferrer"
-                onClick={(e) => e.preventDefault()}
+                href={`https://wa.me/${siteConfig.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-whatsapp-500 hover:bg-whatsapp-600 text-white font-bold rounded-xl shadow-lg transition-all"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -92,8 +96,8 @@ export default function HeroBanner({
               </a>
 
               <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href={`tel:${siteConfig.phone}`}
+                onClick={handlePhoneClick}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

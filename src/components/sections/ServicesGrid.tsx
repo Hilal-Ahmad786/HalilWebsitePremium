@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import { services } from '@/data/services';
-
+import { trackCTAClick } from '@/lib/analytics';
 
 export function ServicesGrid() {
   const publishedServices = services.filter(s => s.published);
@@ -38,14 +38,14 @@ export function ServicesGrid() {
               <h3 className="text-xl font-bold text-lacivert-700 mb-3 group-hover:text-turuncu-500 transition-colors">
                 {service.title}
               </h3>
-
+              
               <p className="text-gray-600 mb-4">
                 {service.shortDescription}
               </p>
 
               <Link
                 href={`/hizmetler/${service.slug}`}
-
+                onClick={() => trackCTAClick(`service_${service.slug}`)}
                 className="inline-flex items-center text-turuncu-500 font-semibold group-hover:gap-2 transition-all"
               >
                 Detaylı Bilgi

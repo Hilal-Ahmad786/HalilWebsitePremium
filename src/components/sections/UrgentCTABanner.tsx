@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { siteConfig } from '@/config/site';
-
+import { trackCTAClick, trackPhoneClick } from '@/lib/analytics';
 
 export default function UrgentCTABanner() {
   const calculateTimeLeft = () => {
@@ -31,6 +31,8 @@ export default function UrgentCTABanner() {
   }, []);
 
   const handleClick = () => {
+    trackPhoneClick();
+    trackCTAClick('Urgent Banner CTA');
   };
 
   return (
@@ -72,8 +74,8 @@ export default function UrgentCTABanner() {
             </div>
 
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href={`tel:${siteConfig.phone}`}
+              onClick={handleClick}
               className="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all shadow-lg hover:scale-105 whitespace-nowrap flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

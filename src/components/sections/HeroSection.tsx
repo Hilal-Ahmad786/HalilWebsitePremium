@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { siteConfig } from '@/config/site';
-
+import { trackCTAClick, trackWhatsAppClick, trackPhoneClick, trackFormSubmit } from '@/lib/analytics';
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 export function HeroSection() {
@@ -12,7 +12,17 @@ export function HeroSection() {
   const [phone, setPhone] = useState('');
 
   const handleFormSubmit = () => {
-    alert("Bu özellik demo sürümünde devre dışıdır.");
+    if (!phone) {
+      alert('Lütfen telefon numaranızı giriniz.');
+      return;
+    }
+
+    trackFormSubmit('Hero Form');
+
+    const message = `Merhaba, ${vehicleType} satmak istiyorum. Telefon numaram: ${phone}. Teklif alabilir miyim?`;
+    const url = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
   };
 
   const features = [
@@ -45,9 +55,13 @@ export function HeroSection() {
   ];
 
   const handleWhatsApp = () => {
+    trackWhatsAppClick();
+    trackCTAClick('Hero WhatsApp');
   };
 
   const handlePhone = () => {
+    trackPhoneClick();
+    trackCTAClick('Hero Phone');
   };
 
   return (
@@ -125,10 +139,10 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               {/* WhatsApp CTA - Original WhatsApp style */}
               <a
-                href="#"
-                // target="_blank"
-                // rel="noopener noreferrer"
-                onClick={(e) => e.preventDefault()}
+                href={`https://wa.me/${siteConfig.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleWhatsApp}
                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20BA5A] rounded-xl font-bold text-lg shadow-2xl hover:shadow-green-500/60 transition-all overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform" />
@@ -140,8 +154,8 @@ export function HeroSection() {
 
               {/* Phone CTA */}
               <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href={`tel:${siteConfig.phone}`}
+                onClick={handlePhone}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
               >
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">

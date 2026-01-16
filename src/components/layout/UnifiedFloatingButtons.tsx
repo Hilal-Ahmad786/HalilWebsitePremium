@@ -4,7 +4,11 @@
 import { useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
-
+import {
+  trackCTAClick,
+  trackWhatsAppClick,
+  trackPhoneClick,
+} from '@/lib/analytics';
 import { FaPhone, FaWhatsapp, FaComments } from 'react-icons/fa';
 
 type FloatingIconProps = {
@@ -12,7 +16,7 @@ type FloatingIconProps = {
   label: string;
   description?: string;
   href?: string;
-  onClick?: (e?: any) => void;
+  onClick?: () => void;
   variant?: 'call' | 'whatsapp' | 'chat';
 };
 
@@ -106,27 +110,35 @@ export default function UnifiedFloatingButtons() {
     'Merhaba, aracımı satmak istiyorum. Marka/Model/Yıl ve hasar durumunu sizinle paylaşmak isterim.';
 
   const quickQuestions = [
-    'Demo Soru 1',
-    'Demo Soru 2',
-    'Demo Soru 3',
+    'Aracım farklı şehirde, yine de alım yapıyor musunuz?',
+    'Pert kayıtlı aracım için de teklif verebilir misiniz?',
+    'Ödemeyi nasıl ve ne zaman alacağım?',
   ];
 
-
-
   const handlePhone = () => {
-    // Disabled
+    trackPhoneClick();
+    trackCTAClick('Floating Call');
   };
 
   const handleWhatsApp = () => {
-    // Disabled
+    trackWhatsAppClick();
+    trackCTAClick('Floating WhatsApp');
   };
 
   const handleChatToggle = () => {
-    // Disabled
+    setShowChat((prev) => !prev);
+    trackCTAClick(showChat ? 'Floating Chat Close' : 'Floating Chat Open');
   };
 
   const handleQuickQuestion = (q: string) => {
-    // Disabled
+    const url = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+      q,
+    )}`;
+    trackWhatsAppClick();
+    trackCTAClick('Floating WhatsApp Quick Question');
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -137,8 +149,8 @@ export default function UnifiedFloatingButtons() {
           icon={<FaPhone className="h-6 w-6" />}
           label="Hemen Ara"
           description={siteConfig.phoneDisplay}
-          href="#"
-          onClick={(e) => e.preventDefault()}
+          href={`tel:${siteConfig.phone}`}
+          onClick={handlePhone}
           variant="call"
         />
 
@@ -146,8 +158,10 @@ export default function UnifiedFloatingButtons() {
           icon={<FaWhatsapp className="h-6 w-6" />}
           label="WhatsApp"
           description="Fotoğraf göndererek teklif alın"
-          href="#"
-          onClick={(e) => e.preventDefault()}
+          href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+            whatsappMessage,
+          )}`}
+          onClick={handleWhatsApp}
           variant="whatsapp"
         />
 
@@ -165,8 +179,8 @@ export default function UnifiedFloatingButtons() {
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-2.5 gap-2">
           {/* Ara */}
           <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
+            href={`tel:${siteConfig.phone}`}
+            onClick={handlePhone}
             className="relative flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-3 py-2.5 text-xs font-semibold text-white hover:bg-orange-600 transition-colors overflow-visible"
           >
             {/* Glow */}
@@ -191,10 +205,12 @@ export default function UnifiedFloatingButtons() {
 
           {/* WhatsApp */}
           <a
-            href="#"
-            // target="_blank"
-            // rel="noopener noreferrer"
-            onClick={(e) => e.preventDefault()}
+            href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+              whatsappMessage,
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleWhatsApp}
             className="relative flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 py-2.5 text-xs font-semibold text-white hover:bg-[#20BA5A] transition-colors overflow-visible"
           >
             {/* Glow */}

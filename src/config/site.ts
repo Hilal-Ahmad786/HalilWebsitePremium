@@ -2,17 +2,18 @@
 export const siteConfig = {
   name: 'Araban Nakit',
   description: 'Türkiye\'de Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir Merkezi',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://demo-galeri.com',
-  phone: '+905555555555',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://arabannakit.com',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+905441702540',
 
-  phoneDisplay: '0555 555 55 55',
-  whatsapp: '905555555555',
-  email: 'info@demo-galeri.com',
+  phoneDisplay: '0544 170 25 40',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905441702540',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'info@arabannakit.com',
 
-  address: 'Türkiye',
+  address: process.env.NEXT_PUBLIC_ADDRESS
+    || 'Türkiye',
   social: {
-    facebook: '#',
-    instagram: '#',
+    facebook: 'https://www.facebook.com/arabannakit/',
+    instagram: 'https://www.instagram.com/arabannakit/',
   },
   services: [
     {
