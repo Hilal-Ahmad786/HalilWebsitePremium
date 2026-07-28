@@ -75,7 +75,18 @@ export default async function CityPage({ params }: CityPageProps) {
               {city.intro.title}
             </h2>
             <p className="text-lg leading-relaxed mb-6 text-gray-700">
-              {city.intro.content}
+              {city.intro.content} Ayrıca Türkiye genelinde{' '}
+              <a
+                href="https://hasarliaracalan.com/"
+                target="_blank"
+                rel="noopener"
+                title="Hasarlı Araç Alan"
+                className="font-semibold text-turuncu-600 hover:text-turuncu-500 underline"
+              >
+                hasarlı araç alan
+              </a>{' '}
+              güvenilir partner ağımız sayesinde {city.name} dışındaki aracınız için de
+              en yüksek fiyat teklifini alabilirsiniz.
             </p>
             <div className="space-y-3">
               {city.intro.highlights.map((highlight, index) => (

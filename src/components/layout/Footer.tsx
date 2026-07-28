@@ -107,6 +107,18 @@ export function Footer() {
                       </Link>
                     </li>
                   ))}
+                  <li>
+                    <a
+                      href="https://hasarliaracalan.com/"
+                      target="_blank"
+                      rel="noopener"
+                      title="Hasarlı Araç Alan - Hasarlı Araç Alım Satım"
+                      className="text-blue-200 hover:text-turuncu-400 transition-colors flex items-center gap-2 group"
+                    >
+                      <span className="w-0 group-hover:w-2 h-2 bg-turuncu-400 rounded-full transition-all"></span>
+                      <span className="text-sm">Hasarlı Araç Alan</span>
+                    </a>
+                  </li>
                 </ul>
               </div>
 

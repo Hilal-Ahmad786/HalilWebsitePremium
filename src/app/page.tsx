@@ -74,6 +74,24 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <HeroSection />
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <p className="max-w-4xl mx-auto text-center text-lg leading-relaxed text-gray-700">
+            Türkiye genelinde{' '}
+            <a
+              href="https://hasarliaracalan.com/"
+              target="_blank"
+              rel="noopener"
+              title="Hasarlı Araç Alan"
+              className="font-semibold text-turuncu-600 hover:text-turuncu-500 underline"
+            >
+              hasarlı araç alan
+            </a>{' '}
+            uzman ekibimizle kazalı, pert ve hurda aracınız için 30 dakikada nakit
+            teklif veriyor, noter devrinin ardından aynı gün ödeme yapıyoruz.
+          </p>
+        </div>
+      </section>
       <TrustBadges />
       <WhyUs
         title="Araban Nakit'i Seçin"

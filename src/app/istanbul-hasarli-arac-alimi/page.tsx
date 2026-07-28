@@ -104,6 +104,17 @@ export default function IstanbulPage() {
               <strong className="text-turuncu-600">İstanbul hasarlı araç alan</strong> firmalar arasında en güvenilir adresiz.
               Beylikdüzü&apos;nden Kadıköy&apos;e, Sarıyer&apos;den Pendik&apos;e kadar{' '}
               <strong className="text-lacivert-700">İstanbul&apos;un tüm ilçelerinde</strong> kazalı, hasarlı, pert ve hurda araç alımı yapıyoruz.
+              Türkiye çapında{' '}
+              <a
+                href="https://hasarliaracalan.com/"
+                target="_blank"
+                rel="noopener"
+                title="Hasarlı Araç Alan"
+                className="font-semibold text-turuncu-600 hover:text-turuncu-500 underline"
+              >
+                hasarlı araç alan
+              </a>{' '}
+              partner ağımızla şehir dışındaki araçlarınız için de anında teklif sunuyoruz.
             </p>
             <div className="bg-turuncu-50 border-l-4 border-turuncu-500 p-4 rounded-r-xl">
               <p className="text-turuncu-800 font-semibold">

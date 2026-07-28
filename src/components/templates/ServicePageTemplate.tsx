@@ -152,6 +152,20 @@ export default function ServicePageTemplate({ service, otherServices }: ServiceP
                     <div className="grid lg:grid-cols-3 gap-12">
                         <div className="lg:col-span-2">
                             <div className="prose prose-lg max-w-none">
+                                <p className="text-lg text-gray-700 leading-relaxed">
+                                    Aracınızın durumu ne olursa olsun, Türkiye&apos;nin dört bir yanında{' '}
+                                    <a
+                                        href="https://hasarliaracalan.com/"
+                                        target="_blank"
+                                        rel="noopener"
+                                        title="Hasarlı Araç Alan"
+                                        className="font-semibold text-turuncu-600 hover:text-turuncu-500 underline"
+                                    >
+                                        hasarlı araç alan
+                                    </a>{' '}
+                                    güvenilir çözüm ortağı ağımız sayesinde ücretsiz ekspertiz ve aynı gün
+                                    nakit ödeme ile aracınızı kolayca satabilirsiniz.
+                                </p>
                                 <div dangerouslySetInnerHTML={{ __html: service.fullDescription }} />
                             </div>
 
