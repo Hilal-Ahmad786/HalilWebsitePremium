@@ -253,6 +253,12 @@ Mesaj: ${formData.message}`;
                     {isSubmitting ? 'WhatsApp\'a Yönlendiriliyor...' : 'WhatsApp ile Teklif Al'}
                   </button>
 
+                  {submitStatus === 'success' && (
+                    <p role="status" className="text-center text-sm font-medium text-green-700">
+                      WhatsApp açıldı. Mesajınızı göndererek teklif talebinizi tamamlayabilirsiniz.
+                    </p>
+                  )}
+
                   <div className="text-center text-sm text-gray-500 pt-4 border-t">
                     🔒 Bilgileriniz güvende • SSL korumalı
                   </div>

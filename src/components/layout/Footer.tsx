@@ -1,5 +1,6 @@
 // src/components/layout/Footer.tsx
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { trackPhoneClick } from '@/lib/analytics';
@@ -50,7 +51,13 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-14 w-auto rounded-2xl flex items-center justify-center shadow-lg">
-                <img src="/logo.jpg" alt="Araban Nakit Logo" className="h-full w-auto object-contain" />
+                <Image
+                  src="/logo.jpg"
+                  alt="Araban Nakit Logo"
+                  width={814}
+                  height={294}
+                  className="h-full w-auto object-contain"
+                />
               </div>
 
             </div>

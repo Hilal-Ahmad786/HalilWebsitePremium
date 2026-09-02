@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '@/config/site';
@@ -101,7 +102,14 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMobile}>
             <div className="relative">
               <div className="h-12 w-auto relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
-                <img src="/logo.jpg" alt="Araban Nakit Logo" className="h-full w-auto object-contain" />
+                <Image
+                  src="/logo.jpg"
+                  alt="Araban Nakit Logo"
+                  width={814}
+                  height={294}
+                  priority
+                  className="h-full w-auto object-contain"
+                />
               </div>
             </div>
 

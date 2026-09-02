@@ -3,10 +3,10 @@ export const siteConfig = {
   name: 'Araban Nakit',
   description: 'Türkiye\'de Kazalı, Hasarlı, Pert ve Hurda Araç Alımında Türkiye\'nin En Güvenilir Merkezi',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://arabannakit.com',
-  phone: process.env.NEXT_PUBLIC_PHONE || '+905441702540',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+905525677164',
 
-  phoneDisplay: '0544 170 25 40',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905441702540',
+  phoneDisplay: '0552 567 71 64',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || '905525677164',
   email: process.env.NEXT_PUBLIC_EMAIL || 'info@arabannakit.com',
 
   address: process.env.NEXT_PUBLIC_ADDRESS

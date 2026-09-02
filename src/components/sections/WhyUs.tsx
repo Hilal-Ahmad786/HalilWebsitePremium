@@ -123,7 +123,7 @@ export default function WhyUs({ title, subtitle, items }: WhyUsProps) {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="https://wa.me/905441702540"
+            href="https://wa.me/905525677164"
             target="_blank"
             rel="noopener noreferrer"
             onClick={trackWhatsAppClick}

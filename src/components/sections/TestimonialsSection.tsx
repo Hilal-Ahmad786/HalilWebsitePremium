@@ -153,7 +153,7 @@ export function TestimonialsSection() {
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">Siz de bu mutlu müşterilerimize katılın!</p>
           <a
-            href="https://wa.me/905441702540"
+            href="https://wa.me/905525677164"
             target="_blank"
             rel="noopener noreferrer"
             onClick={trackWhatsAppClick}

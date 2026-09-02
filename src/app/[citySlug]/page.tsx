@@ -1,7 +1,6 @@
 // src/app/[citySlug]/page.tsx - COMPLETE REPLACEMENT
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import CityHero from '@/components/sections/CityHero';
 import WhyUs from '@/components/sections/WhyUs';
 import ProcessTimeline from '@/components/sections/ProcessTimeline';

@@ -21,22 +21,18 @@ export default function CTASection() {
   };
 
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    setTimeLeft(calculateTimeLeft());
+    const updateTimeLeft = () => setTimeLeft(calculateTimeLeft());
+    const animationFrame = requestAnimationFrame(updateTimeLeft);
 
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+    const timer = setInterval(updateTimeLeft, 1000);
 
-    return () => clearInterval(timer);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      clearInterval(timer);
+    };
   }, []);
-
-  // If not mounted, return static content or null to avoid mismatch if needed, 
-  // but initializing with 0s is usually enough if the server also renders 0s.
-  // However, calculateTimeLeft was being called in useState initializer, which was the bug.
 
   const handleWhatsApp = () => {
     trackWhatsAppClick();

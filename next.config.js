@@ -1,10 +1,11 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactCompiler: true,
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
+        protocol: 'http',
         hostname: 'localhost',
       },
       {
@@ -54,12 +55,28 @@ const nextConfig = {
       }
     ];
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap'
-      }
+        source: '/kazali-arac-alim',
+        destination: '/hizmetler/kazali-arac-alim',
+        permanent: false,
+      },
+      {
+        source: '/hasarli-arac-alim',
+        destination: '/hizmetler/hasarli-arac-alim',
+        permanent: false,
+      },
+      {
+        source: '/pert-arac-alim',
+        destination: '/hizmetler/pert-arac-alim',
+        permanent: false,
+      },
+      {
+        source: '/hurda-arac-alim',
+        destination: '/hizmetler/hurda-arac-alim',
+        permanent: false,
+      },
     ];
   }
 };
