@@ -3,43 +3,32 @@ import { siteConfig } from '@/config/site';
 export function StructuredData() {
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'AutoDealer',
+        '@graph': [
+          {
+        '@type': 'Organization',
         name: siteConfig.name,
-        image: `${siteConfig.url}/og-image.jpg`,
-        '@id': siteConfig.url,
+        image: `${siteConfig.url}/Newimages/accident/damaged-front.jpg`,
+        logo: `${siteConfig.url}/favicon.jpg`,
+        '@id': `${siteConfig.url}/#organization`,
         url: siteConfig.url,
         telephone: siteConfig.phone,
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Merkez',
-            addressLocality: 'Ankara',
-            postalCode: '06170',
-            addressCountry: 'TR',
-        },
-        geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 41.0082,
-            longitude: 28.9784,
-        },
-        openingHoursSpecification: {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: [
-                'Monday',
-                'Tuesday',
-                'Wednesday',
-                'Thursday',
-                'Friday',
-                'Saturday',
-                'Sunday',
-            ],
-            opens: '00:00',
-            closes: '23:59',
-        },
+        email: siteConfig.email,
         sameAs: [
+            siteConfig.social.facebook,
+            siteConfig.social.instagram,
             `https://wa.me/${siteConfig.whatsapp}`,
         ],
-        priceRange: '₺₺₺',
         description: siteConfig.description,
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${siteConfig.url}/#website`,
+            url: siteConfig.url,
+            name: siteConfig.name,
+            inLanguage: 'tr-TR',
+            publisher: { '@id': `${siteConfig.url}/#organization` },
+          },
+        ],
     };
 
     return (

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { services } from '@/data/services';
 import { siteConfig } from '@/config/site';
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate';
+import { ServiceStructuredData } from '@/components/seo/PageStructuredData';
 
 interface ServicePageProps {
   params: Promise<{
@@ -30,8 +31,16 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   return {
-    title: service.metaTitle || `${service.title} | ${siteConfig.name}`,
+    title: { absolute: service.metaTitle || `${service.title} | ${siteConfig.name}` },
     description: service.metaDescription || service.shortDescription,
+    alternates: { canonical: `/hizmetler/${service.slug}` },
+    openGraph: {
+      title: service.metaTitle || service.title,
+      description: service.metaDescription || service.shortDescription,
+      url: `/hizmetler/${service.slug}`,
+      type: 'website',
+      images: [{ url: '/Newimages/accident/damaged-front.jpg', width: 1800, height: 1200, alt: service.title }],
+    },
   };
 }
 
@@ -45,5 +54,5 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   const otherServices = services.filter(s => s.published && s.id !== service.id);
 
-  return <ServicePageTemplate service={service} otherServices={otherServices} />;
+  return <><ServiceStructuredData service={service} /><ServicePageTemplate service={service} otherServices={otherServices} /></>;
 }

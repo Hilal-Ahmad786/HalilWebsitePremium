@@ -1,47 +1,7 @@
-
-// ===== src/app/blog/page.tsx =====
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { FaArrowRight } from 'react-icons/fa';
 import { blogPosts } from '@/data/blog-posts';
-import { BlogCard } from '@/components/blog';
 import { siteConfig } from '@/data/site';
-
-export const metadata: Metadata = {
-  title: `Blog | ${siteConfig.name}`,
-  description: 'Araç alım satım, ekspertiz ve otomotiv sektörü hakkında faydalı bilgiler ve rehberler.',
-};
-
-export default function BlogPage() {
-  const publishedPosts = blogPosts.filter(post => post.published);
-
-  return (
-    <div className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-lacivert-700 mb-4">
-            Blog
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Araç alım satım sürecinde bilmeniz gereken her şey, uzman yazılarımızda.
-          </p>
-        </div>
-
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {publishedPosts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </div>
-
-        {/* Empty State */}
-        {publishedPosts.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
-              Henüz blog yazısı bulunmamaktadır.
-            </p>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
+export const metadata: Metadata={title:{absolute:`Blog | ${siteConfig.name}`},description:'Hasarlı araç satışı, ekspertiz ve araç alım süreçleri hakkında rehberler.',alternates:{canonical:'/blog'},openGraph:{url:'/blog',images:[{url:'/Newimages/accident/damaged-front.jpg',width:1800,height:1200,alt:'Araban Nakit rehberleri'}]}};
+export default function BlogPage(){const posts=blogPosts.filter(p=>p.published);const featured=posts[0];return <><section className="border-b border-line bg-surface"><div className="site-container py-16 sm:py-24"><p className="eyebrow">ARABAN NAKİT REHBER</p><h1 className="display mt-5 text-5xl sm:text-7xl">Araç sahipleri için net bilgiler.</h1></div></section><main className="site-container section-space">{featured&&<Link href={`/blog/${featured.slug}`} className="group grid overflow-hidden border border-line bg-surface md:grid-cols-2"><div className="min-h-60 bg-soft"/><div className="p-8"><p className="eyebrow">ÖNE ÇIKAN YAZI</p><h2 className="display mt-4 text-3xl">{featured.title}</h2><p className="mt-4 leading-7 text-muted">{featured.excerpt}</p><span className="mt-8 inline-flex items-center gap-2 font-bold">Yazıyı oku <FaArrowRight className="transition group-hover:translate-x-1"/></span></div></Link>}<div className="mt-8 grid gap-5 md:grid-cols-3">{posts.slice(1).map(post=><Link key={post.id} href={`/blog/${post.slug}`} className="border border-line bg-surface p-6"><p className="eyebrow">{post.category}</p><h2 className="display mt-4 text-xl">{post.title}</h2><p className="mt-4 text-sm leading-6 text-muted">{post.excerpt}</p></Link>)}</div></main></>;}

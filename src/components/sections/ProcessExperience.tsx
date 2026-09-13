@@ -1,0 +1,10 @@
+import { FaFileSignature, FaPhoneAlt, FaSearch, FaWallet } from 'react-icons/fa';
+
+const steps = [
+  { icon: FaPhoneAlt, number: '01', title: 'Bize Ulaşın', copy: '7/24 çağrı merkezi veya WhatsApp üzerinden araç bilgilerinizi paylaşın.', note: 'Fotoğraf ve temel araç bilgisi yeterli.' },
+  { icon: FaSearch, number: '02', title: 'Ücretsiz Ekspertiz', copy: 'Yerinde inceleme ve rapor ile aracınızın durumunu birlikte değerlendirelim.', note: 'Ekspertiz ve değerlendirme ücretsizdir.' },
+  { icon: FaFileSignature, number: '03', title: 'Teklif & Onay', copy: 'Değerlendirme sonrası size net teklifimizi iletelim; karar tamamen sizin.', note: 'Şeffaf, anlaşılır teklif süreci.' },
+  { icon: FaWallet, number: '04', title: 'Noter & Nakit', copy: 'Noter devrinin ardından ödeme adımını aynı gün tamamlayalım.', note: 'Güvenli, noter onaylı işlem.' },
+];
+
+export function ProcessExperience() { return <section id="nasil-calisir" className="border-y border-line bg-surface"><div className="site-container section-space"><div className="grid gap-8 lg:grid-cols-[.75fr_1.25fr]"><div><p className="eyebrow">BASİT & HIZLI SÜREÇ</p><h2 className="display mt-4 text-4xl leading-tight sm:text-5xl">4 Adımda Araç Satışı</h2><p className="mt-5 max-w-md text-lg leading-8 text-muted">Kazalı, Hasarlı, Pert & Hurda araçlar için tüm aşamalar.</p><p className="mt-8 border-l-2 border-accent pl-4 text-sm leading-6 text-muted">Hemen başlayın: aracınız için teklif almak sadece 2 dakika sürer.</p></div><ol className="border-t border-line">{steps.map(({ icon: Icon, number, title, copy, note }) => <li key={number} className="grid gap-4 border-b border-line py-6 sm:grid-cols-[52px_1fr_auto] sm:items-start"><span className="display text-xl text-muted">{number}</span><div><div className="flex items-center gap-3"><Icon className="text-lg"/><h3 className="display text-xl">{title}</h3></div><p className="mt-3 max-w-xl leading-7 text-muted">{copy}</p></div><span className="text-xs font-bold text-muted sm:pt-1">{note}</span></li>)}</ol></div></div></section>; }

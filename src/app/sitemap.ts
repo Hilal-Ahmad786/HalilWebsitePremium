@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { services } from '@/data/services';
 import { cities } from '@/data/cities';
+import { blogPosts } from '@/data/blog-posts';
 import { siteConfig } from '@/config/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -31,12 +32,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }));
 
     // City routes
-    const cityRoutes = cities.map((city) => ({
+    const cityRoutes = cities.filter((city) => city.published).map((city) => ({
         url: `${baseUrl}/${city.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
     }));
 
-    return [...routes, ...serviceRoutes, ...cityRoutes];
+    const blogRoutes = blogPosts
+        .filter((post) => post.published)
+        .map((post) => ({
+            url: `${baseUrl}/blog/${post.slug}`,
+            lastModified: new Date(post.date),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        }));
+
+    return [...routes, ...serviceRoutes, ...cityRoutes, ...blogRoutes];
 }
