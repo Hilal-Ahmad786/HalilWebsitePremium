@@ -30,6 +30,16 @@ export interface NavigationItem {
   children?: NavigationItem[];
 }
 
+export interface ServiceInfoCard {
+  title: string;
+  description: string;
+}
+
+export interface ServiceFaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface Service {
   id: string;
   slug: string;
@@ -44,6 +54,18 @@ export interface Service {
   metaTitle?: string;
   metaDescription?: string;
   published: boolean;
+  /** "Hangi araçları alıyoruz" — concrete examples of vehicle condition this service covers. */
+  vehicleTypes?: ServiceInfoCard[];
+  /** "Değer nasıl belirlenir" — factors considered during valuation (never a formula/guarantee). */
+  valuationFactors?: ServiceInfoCard[];
+  /** "Satış için neler gerekir" — documents/process requirements. */
+  documents?: string[];
+  /** Common real-world scenarios sellers ask about for this service. */
+  scenarios?: ServiceInfoCard[];
+  /** Service-specific FAQ, preferred over the generic sitewide FAQ set when present. */
+  serviceFaqs?: ServiceFaqItem[];
+  /** Slugs of the most relevant related services, in priority order. */
+  relatedServiceSlugs?: string[];
 }
 
 export interface BlogPost {

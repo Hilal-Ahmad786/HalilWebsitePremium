@@ -1,8 +1,82 @@
 'use client';
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 import { BrandMark } from '@/components/ui/BrandMark';
 import { siteConfig } from '@/config/site';
+import { cities } from '@/data/cities';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
-const services=[['kazali-arac-alim','Kazalı Araç Alımı'],['hasarli-arac-alim','Hasarlı Araç Alımı'],['pert-arac-alim','Pert Araç Alımı'],['hurda-arac-alim','Hurda Araç Alımı']];
-export function Footer(){return <footer className="border-t border-line bg-bg"><div className="site-container section-space grid gap-10 md:grid-cols-2 lg:grid-cols-4"><div><BrandMark/><p className="mt-5 max-w-xs text-sm leading-6 text-muted">{siteConfig.description}. 7/24 hizmet, anında ödeme ve ücretsiz ekspertiz garantisi.</p><div className="mt-5 flex gap-3"><a aria-label="Facebook" href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center border border-line"><FaFacebookF/></a><a aria-label="Instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center border border-line"><FaInstagram/></a></div></div><div><h2 className="display text-base">Hızlı Erişim</h2><div className="mt-5 grid gap-3 text-sm text-muted"><Link href="/">Ana Sayfa</Link><Link href="/hakkimizda">Hakkımızda</Link><Link href="/blog">Blog</Link><Link href="/iletisim">İletişim</Link></div></div><div><h2 className="display text-base">Hizmetlerimiz</h2><div className="mt-5 grid gap-3 text-sm text-muted">{services.map(([slug,label])=><Link key={slug} href={`/hizmetler/${slug}`}>{label}</Link>)}</div></div><div><h2 className="display text-base">İletişim</h2><div className="mt-5 grid gap-4 text-sm text-muted"><a href={`tel:${siteConfig.phone}`} onClick={trackPhoneClick} className="inline-flex items-center gap-2 font-bold text-ink"><FaPhoneAlt/>{siteConfig.phoneDisplay}</a><a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className="inline-flex items-center gap-2 font-bold text-ink"><FaWhatsapp/>WhatsApp</a><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div></div></div><div className="border-t border-line"><div className="site-container flex flex-col items-center justify-between gap-4 py-5 text-xs text-muted sm:flex-row"><span>© {new Date().getFullYear()} Araban Nakit. Tüm hakları saklıdır.</span><a href="https://paksoft.com.tr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-ink px-3 py-2 text-sm font-bold text-ink transition hover:bg-ink hover:text-white"><span className="text-muted">Geliştiren</span><span>PakSoft</span></a><span>Gizlilik ve KVKK bilgileri için bizimle iletişime geçebilirsiniz.</span></div></div></footer>}
+
+const services = [
+  ['kazali-arac-alim', 'Kazalı Araç Alımı'],
+  ['hasarli-arac-alim', 'Hasarlı Araç Alımı'],
+  ['pert-arac-alim', 'Pert Araç Alımı'],
+  ['hurda-arac-alim', 'Hurda Araç Alımı'],
+];
+const publishedCities = cities.filter((city) => city.published);
+
+export function Footer() {
+  return (
+    <footer className="border-t border-line bg-bg pb-24 md:pb-0">
+      <div className="site-container section-space grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <BrandMark />
+          <p className="mt-5 max-w-xs text-sm leading-6 text-muted">{siteConfig.description}. 7/24 hizmet, anında ödeme ve ücretsiz ekspertiz garantisi.</p>
+          <div className="mt-5 flex flex-wrap gap-2 text-xs font-bold text-ink">
+            <span className="border border-line px-3 py-1.5">6+ Yıl Tecrübe</span>
+            <span className="border border-line px-3 py-1.5">5000+ Araç Alımı</span>
+            <span className="border border-line px-3 py-1.5">%98 Memnuniyet</span>
+          </div>
+          <div className="mt-5 flex gap-3">
+            <a aria-label="Facebook" href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center border border-line"><FaFacebookF /></a>
+            <a aria-label="Instagram" href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center border border-line"><FaInstagram /></a>
+          </div>
+        </div>
+        <div>
+          <h2 className="display text-base">Hızlı Erişim</h2>
+          <div className="mt-5 grid gap-3 text-sm text-muted">
+            <Link href="/">Ana Sayfa</Link>
+            <Link href="/hakkimizda">Hakkımızda</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/iletisim">İletişim</Link>
+          </div>
+        </div>
+        <div>
+          <h2 className="display text-base">Hizmetlerimiz</h2>
+          <div className="mt-5 grid gap-3 text-sm text-muted">
+            {services.map(([slug, label]) => <Link key={slug} href={`/hizmetler/${slug}`}>{label}</Link>)}
+            <a href="https://hasarliaracalan.com/" target="_blank" rel="noopener" title="Hasarlı Araç Alan - Hasarlı Araç Alım Satım">Hasarlı Araç Alan</a>
+          </div>
+        </div>
+        <div>
+          <h2 className="display text-base">İletişim</h2>
+          <div className="mt-5 grid gap-4 text-sm text-muted">
+            <a href={`tel:${siteConfig.phone}`} onClick={trackPhoneClick} className="inline-flex items-center gap-2 font-bold text-ink"><FaPhoneAlt />{siteConfig.phoneDisplay}</a>
+            <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className="inline-flex items-center gap-2 font-bold text-ink"><FaWhatsapp />WhatsApp</a>
+            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-line">
+        <div className="site-container py-10">
+          <h2 className="display text-base">Hizmet Verdiğimiz Şehirler</h2>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {publishedCities.map((city) => (
+              <Link key={city.slug} href={`/${city.slug}`} className="inline-flex items-center gap-1.5 border border-line px-3 py-1.5 text-xs font-semibold text-muted transition hover:border-ink hover:text-ink">
+                <FaMapMarkerAlt className="text-[10px]" aria-hidden />{city.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-line">
+        <div className="site-container flex flex-col items-center justify-between gap-4 py-5 text-xs text-muted sm:flex-row">
+          <span>© {new Date().getFullYear()} Araban Nakit. Tüm hakları saklıdır.</span>
+          <a href="https://paksoft.com.tr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-ink px-3 py-2 text-sm font-bold text-ink transition hover:bg-ink hover:text-white">
+            <span className="text-muted">Geliştiren</span><span>PakSoft</span>
+          </a>
+          <span>Gizlilik ve KVKK bilgileri için bizimle iletişime geçebilirsiniz.</span>
+        </div>
+      </div>
+    </footer>
+  );
+}

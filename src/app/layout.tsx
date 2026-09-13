@@ -7,6 +7,7 @@ import UnifiedFloatingButtons from "@/components/layout/UnifiedFloatingButtons";
 import { GoogleTagManager, GoogleAnalytics, FacebookPixel } from "@/components/tracking";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { siteConfig } from '@/config/site';
+import { heroImage } from '@/data/media';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,9 +37,9 @@ export const metadata: Metadata = {
     locale: 'tr_TR',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: '/Newimages/accident/damaged-front.jpg', width: 1800, height: 1200, alt: 'Hasarlı araç alımı - Araban Nakit' }],
+    images: [{ url: heroImage, width: 1800, height: 1125, alt: 'Hasarlı araç alımı - Araban Nakit' }],
   },
-  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: ['/Newimages/accident/damaged-front.jpg'] },
+  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: [heroImage] },
 };
 
 export default function RootLayout({

@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { services } from '@/data/services';
 import { siteConfig } from '@/config/site';
+import { getServiceImage } from '@/data/media';
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate';
 import { ServiceStructuredData } from '@/components/seo/PageStructuredData';
 
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       description: service.metaDescription || service.shortDescription,
       url: `/hizmetler/${service.slug}`,
       type: 'website',
-      images: [{ url: '/Newimages/accident/damaged-front.jpg', width: 1800, height: 1200, alt: service.title }],
+      images: [{ url: getServiceImage(service.slug), width: 1600, height: 1200, alt: service.title }],
     },
   };
 }

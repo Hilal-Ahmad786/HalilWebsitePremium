@@ -3,9 +3,6 @@
 const nextConfig = {
   reactCompiler: true,
   images: {
-    // Client-supplied images currently use a compatibility route while their final
-    // WebP/AVIF pack is being prepared; direct delivery keeps those assets visible.
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'http',

@@ -15,7 +15,9 @@ function Script({ value }: { value: Record<string, unknown> }) {
 
 export function ServiceStructuredData({ service }: { service: Service }) {
   const url = `${siteConfig.url}/hizmetler/${service.slug}`;
-  const questions = faqs.filter((faq) => faq.category === 'Genel' || faq.category === 'Hizmetler').slice(0, 5);
+  const questions = service.serviceFaqs && service.serviceFaqs.length > 0
+    ? service.serviceFaqs
+    : faqs.filter((faq) => faq.category === 'Genel' || faq.category === 'Hizmetler').slice(0, 5);
   return <Script value={{
     '@context': 'https://schema.org',
     '@graph': [
