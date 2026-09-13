@@ -4,6 +4,8 @@
 
 export const heroImage = '/images/araban-nakit-2026/hero/hero-damaged-vehicle.webp';
 export const ctaImage = '/images/araban-nakit-2026/cta/cta-automotive-detail.webp';
+/** 1200x630 — the aspect ratio Facebook/LinkedIn/Twitter actually crop social previews to. */
+export const ogImage = '/images/araban-nakit-2026/og/og-default.jpg';
 
 export const serviceImages: Record<string, string> = {
   'arac-alim': '/images/araban-nakit-2026/services/ekspertiz.webp',

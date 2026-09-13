@@ -4,10 +4,11 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
 import UnifiedFloatingButtons from "@/components/layout/UnifiedFloatingButtons";
-import { GoogleTagManager, GoogleAnalytics, FacebookPixel } from "@/components/tracking";
+import { ConsentGate } from "@/components/tracking";
 import { StructuredData } from "@/components/seo/StructuredData";
+import { ScrollRevealInit } from "@/components/ui/ScrollRevealInit";
 import { siteConfig } from '@/config/site';
-import { heroImage } from '@/data/media';
+import { ogImage } from '@/data/media';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
     locale: 'tr_TR',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: heroImage, width: 1800, height: 1125, alt: 'Hasarlı araç alımı - Araban Nakit' }],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: 'Hasarlı araç alımı - Araban Nakit' }],
   },
-  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: [heroImage] },
+  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: [ogImage] },
 };
 
 export default function RootLayout({
@@ -50,9 +51,8 @@ export default function RootLayout({
   return (
     <html lang="tr" suppressHydrationWarning>
       <body className={`${inter.variable} ${manrope.variable} font-sans`} suppressHydrationWarning>
-        <GoogleTagManager />
-        <GoogleAnalytics />
-        <FacebookPixel />
+        <ConsentGate />
+        <ScrollRevealInit />
 
         <StructuredData />
         <Header />

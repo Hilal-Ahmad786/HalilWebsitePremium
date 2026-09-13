@@ -4,6 +4,11 @@ import { cities } from '@/data/cities';
 import { blogPosts } from '@/data/blog-posts';
 import { siteConfig } from '@/config/site';
 
+// Set to the date content actually changed — NOT `new Date()`. Sitemap lastModified
+// should be a real freshness signal; recomputing "now" on every build tells Google
+// every page changed every day, which dilutes the signal instead of helping it.
+const CONTENT_UPDATED = new Date('2026-09-13');
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = siteConfig.url;
 
@@ -16,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/blog',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
-        lastModified: new Date(),
+        lastModified: CONTENT_UPDATED,
         changeFrequency: 'monthly' as const,
         priority: route === '' ? 1 : 0.8,
     }));
@@ -26,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .filter((service) => service.published)
         .map((service) => ({
             url: `${baseUrl}/hizmetler/${service.slug}`,
-            lastModified: new Date(),
+            lastModified: CONTENT_UPDATED,
             changeFrequency: 'weekly' as const,
             priority: 0.9,
         }));
@@ -34,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // City routes
     const cityRoutes = cities.filter((city) => city.published).map((city) => ({
         url: `${baseUrl}/${city.slug}`,
-        lastModified: new Date(),
+        lastModified: CONTENT_UPDATED,
         changeFrequency: 'weekly' as const,
         priority: 0.8,
     }));
