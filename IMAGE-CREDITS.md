@@ -49,7 +49,7 @@ All sourced from Wikimedia Commons only.
 | `cities/adana.webp` | Sabancı Merkez Camii (Sabancı Central Mosque) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Adana_Sabanc%C4%B1_Central_Mosque_-_Sabanc%C4%B1_Merkez_Camii_02.JPG) | Zeynel Cebeci | CC BY-SA 4.0 |
 | `cities/gaziantep.webp` | Gaziantep Kalesi (Gaziantep Castle) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gaziantep_Castle_view_from_outside_east_side_in_2025_9517.jpg) | Dosseman (Dick Osseman) | CC BY-SA 4.0 |
 | `cities/kocaeli.webp` | İzmit Marina | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%C4%B0zmit_Marina.jpg) | Ucandairebaskani | CC BY-SA 4.0 |
-| `cities/mersin.webp` | Mersin Marina Tower | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mersin_Tower.jpg) | Emir Doski | CC BY-SA 4.0 |
+| `cities/mersin.webp` | Mersin Marina | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mersin_Marina_-_panoramio.jpg) | Korkut Tas | CC BY-SA 3.0 |
 | `cities/konya.webp` | Mevlana Museum (Türbe/green dome) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mevlana_Museum,_Konya_04.jpg) | Murat Özsoy 1958 | CC BY-SA 4.0 |
 | `cities/sanliurfa.webp` | Balıklıgöl (Pool of Abraham) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bal%C4%B1kl%C4%B1g%C3%B6l_Urfa2.jpg) | Anadolu | CC BY-SA 3.0 |
 | `cities/kayseri.webp` | Kayseri Kalesi (Kayseri Castle) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kayseri_Castle_(Kayseri_Kalesi).jpg) | Boubacar Amadou Cisse | CC BY-SA 4.0 |

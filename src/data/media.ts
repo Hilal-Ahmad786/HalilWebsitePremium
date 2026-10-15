@@ -49,7 +49,7 @@ export const cityImageAlt: Record<string, string> = {
   adana: 'Sabancı Merkez Camii, Adana',
   gaziantep: 'Gaziantep Kalesi',
   kocaeli: 'İzmit Marina, Kocaeli',
-  mersin: 'Mersin Marina Kulesi',
+  mersin: 'Mersin Marina',
   konya: 'Mevlana Müzesi, Konya',
   sanliurfa: 'Balıklıgöl, Şanlıurfa',
   kayseri: 'Kayseri Kalesi',
