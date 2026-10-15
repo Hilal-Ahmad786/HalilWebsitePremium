@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { FaArrowRight, FaCheck, FaClock, FaHandHoldingUsd, FaMapMarkerAlt, FaPhoneAlt, FaShieldAlt, FaTruck, FaWhatsapp } from 'react-icons/fa';
+import { FaArrowRight, FaCheck, FaCheckCircle, FaClock, FaHandHoldingUsd, FaMapMarkerAlt, FaShieldAlt, FaTruck } from 'react-icons/fa';
 import { cities } from '@/data/cities';
 import { faqs } from '@/data/faq';
 import { services } from '@/data/services';
 import { siteConfig } from '@/config/site';
 import { OfferForm } from '@/components/ui/OfferForm';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
+import { HeroCtaButtons, FullCtaButtons } from '@/components/ui/CtaButtons';
 import { CityStructuredData } from '@/components/seo/PageStructuredData';
 import { getCityImage, getCityImageAlt } from '@/data/media';
 
@@ -43,13 +44,13 @@ export default async function CityPage({ params }: Props) {
   ];
   return <>
     <CityStructuredData city={city} />
-    <section className="border-b border-line bg-surface"><div className="site-container grid gap-10 py-12 lg:grid-cols-[1.2fr_.8fr]"><div><nav aria-label="Sayfa yolu" className="text-sm text-muted"><Link href="/">Ana Sayfa</Link><span className="px-2">/</span><span>{city.name}</span></nav><p className="eyebrow mt-10">TÜRKİYE GENELİ ARAÇ ALIM HİZMETİ</p><h1 className="display mt-4 text-4xl leading-tight sm:text-6xl">{city.hero.title}</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{city.intro.content}</p><div className="mt-8 flex flex-wrap gap-3"><a href={`tel:${siteConfig.phone}`} className="button-dark"><FaPhoneAlt />{siteConfig.phoneDisplay}</a><a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" className="button-whatsapp"><FaWhatsapp />WhatsApp ile Yaz</a></div></div><OfferForm compact source={`city_${city.slug}_form`} /></div></section>
+    <section className="border-b border-line bg-surface"><div className="site-container grid gap-10 py-12 lg:grid-cols-[1.15fr_.75fr_.9fr] lg:items-center"><div><nav aria-label="Sayfa yolu" className="text-sm text-muted"><Link href="/">Ana Sayfa</Link><span className="px-2">/</span><span>{city.name}</span></nav><p className="eyebrow mt-10">TÜRKİYE GENELİ ARAÇ ALIM HİZMETİ</p><h1 className="display mt-4 text-4xl leading-tight sm:text-6xl">{city.hero.title}</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{city.intro.content}</p><HeroCtaButtons /></div><div className="relative min-h-[260px] overflow-hidden rounded-2xl bg-soft lg:min-h-[360px]"><Image src={image} alt={getCityImageAlt(city.id, city.name)} fill sizes="(max-width:1024px) 100vw,30vw" className="object-cover" priority /><span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-surface/95 px-3 py-1.5 text-xs font-bold text-ink shadow-[0_8px_20px_rgba(22,24,23,.14)] backdrop-blur"><FaCheckCircle className="text-accent-ink" />{city.hero.highlight}</span></div><OfferForm compact source={`city_${city.slug}_form`} /></div></section>
 
     <section className="border-b border-line bg-surface"><div className="site-container grid grid-cols-2 gap-x-6 gap-y-6 py-8 sm:grid-cols-4">{trustStrip.map(({ icon: Icon, title, copy }) => <div key={title} className="flex gap-3"><Icon className="mt-1 shrink-0 text-lg text-accent-ink" /><div><p className="text-sm font-bold text-ink">{title}</p><p className="mt-1 text-xs leading-5 text-muted">{copy}</p></div></div>)}</div></section>
 
     <section className="border-b border-line bg-bg"><div className="reveal site-container grid grid-cols-2 gap-8 py-10 sm:grid-cols-4">{[[city.stats.vehiclesBought, 'Araç Alımı'], [city.stats.responseTime, 'Ortalama Yanıt'], [city.stats.satisfaction, 'Memnuniyet'], [city.stats.experience, 'Tecrübe']].map(([value, label]) => <div key={label} className="text-center"><p className="display text-3xl text-ink sm:text-4xl">{value}</p><p className="mt-1 text-sm text-muted">{label}</p></div>)}</div></section>
 
-    <section className="site-container section-space grid gap-10 lg:grid-cols-[.85fr_1.15fr]"><div className="reveal"><p className="eyebrow">{city.name.toLocaleUpperCase('tr-TR')} HİZMET AĞI</p><h2 className="display mt-4 text-4xl leading-tight">{city.intro.title}</h2><p className="mt-5 leading-8 text-muted">Şehrinizdeki aracın durumunu uzaktan ön değerlendirme ile paylaşabilir, gerekli olduğunda yerinde inceleme için süreç hakkında bilgi alabilirsiniz.</p><div className="mt-8 grid gap-4">{city.intro.highlights.map((item) => <div key={item} className="flex gap-3 border-t border-line py-4"><FaCheck className="mt-1 shrink-0" /><p className="text-muted">{item}</p></div>)}</div></div><div className="relative min-h-[330px] overflow-hidden rounded-2xl bg-soft"><Image src={image} alt={getCityImageAlt(city.id, city.name)} fill sizes="(max-width:1024px) 100vw,50vw" className="object-cover" /></div></section>
+    <section className="site-container section-space"><div className="reveal max-w-3xl"><p className="eyebrow">{city.name.toLocaleUpperCase('tr-TR')} HİZMET AĞI</p><h2 className="display mt-4 text-4xl leading-tight">{city.intro.title}</h2><p className="mt-5 leading-8 text-muted">Şehrinizdeki aracın durumunu uzaktan ön değerlendirme ile paylaşabilir, gerekli olduğunda yerinde inceleme için süreç hakkında bilgi alabilirsiniz.</p></div><div className="reveal mt-8 grid gap-x-8 sm:grid-cols-2">{city.intro.highlights.map((item) => <div key={item} className="flex gap-3 border-t border-line py-4"><FaCheck className="mt-1 shrink-0 text-accent-ink" /><p className="text-muted">{item}</p></div>)}</div></section>
 
     <section className="border-y border-line bg-surface"><div className="reveal site-container section-space"><p className="eyebrow">NEDEN ARABAN NAKİT?</p><h2 className="display mt-4 text-4xl">{city.name}&apos;da araç satışı için destek</h2><div className="mt-10 grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">{city.whyUs.map((item) => <div key={item.title} className="border-t border-line py-6"><FaShieldAlt className="text-lg" /><h3 className="display mt-5 text-xl">{item.title}</h3><p className="mt-3 text-sm leading-6 text-muted">{item.description}</p></div>)}</div></div></section>
 
@@ -63,6 +64,6 @@ export default async function CityPage({ params }: Props) {
 
     <section className="border-y border-line bg-surface"><div className="reveal site-container section-space"><p className="eyebrow">SIK SORULAN SORULAR</p><h2 className="display mt-4 text-4xl">{city.name}&apos;da araç alımı hakkında</h2><div className="mt-8"><FaqAccordion items={cityFaqs} /></div></div></section>
 
-    <section className="bg-ink text-white"><div className="reveal site-container flex flex-col justify-between gap-6 py-14 md:flex-row md:items-center"><div><p className="eyebrow text-soft">{city.name.toLocaleUpperCase('tr-TR')} İÇİN TEKLİF</p><h2 className="display mt-3 text-3xl">Aracınızı birlikte değerlendirelim.</h2><p className="mt-3 max-w-xl text-soft">{siteConfig.phoneDisplay} numaralı telefondan veya WhatsApp&apos;tan bize ulaşabilirsiniz.</p></div><Link href="/#arac-sat" className="button-primary">Aracımı Değerlendir <FaArrowRight /></Link></div></section>
+    <section className="bg-ink text-white"><div className="reveal site-container py-14"><p className="eyebrow text-soft">{city.name.toLocaleUpperCase('tr-TR')} İÇİN TEKLİF</p><h2 className="display mt-3 text-3xl">Aracınızı birlikte değerlendirelim.</h2><p className="mt-3 max-w-xl text-soft">{siteConfig.phoneDisplay} numaralı telefondan veya WhatsApp&apos;tan bize ulaşabilirsiniz.</p><FullCtaButtons /></div></section>
   </>;
 }

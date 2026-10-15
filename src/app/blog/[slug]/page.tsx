@@ -8,7 +8,7 @@ import { BlogPost } from '@/data/types';
 import { cities } from '@/data/cities';
 import { siteConfig } from '@/config/site';
 import { ogImage, serviceImages, getCityImage, getCityImageAlt } from '@/data/media';
-import { ArticleHeroCtas, ArticleBottomCtas } from '@/components/sections/ArticleCtas';
+import { HeroCtaButtons, FullCtaButtons } from '@/components/ui/CtaButtons';
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: Props) {
               <span aria-hidden="true">·</span>
               <span className="inline-flex items-center gap-1.5"><FaClock className="text-xs" />{post.readTime} dk okuma</span>
             </div>
-            <ArticleHeroCtas />
+            <HeroCtaButtons />
           </div>
           <div className="relative min-h-[280px] overflow-hidden rounded-2xl bg-soft">
             <Image src={articleImage} alt={articleImageAlt} fill priority sizes="(max-width:1024px) 100vw,45vw" className="object-cover" />
@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mx-auto mt-14 max-w-[820px] border-t border-line pt-10">
           <p className="eyebrow">ARACINIZI DEĞERLENDİRELİM</p>
           <h2 className="display mt-3 text-2xl">Teklif almak için hemen ulaşın.</h2>
-          <ArticleBottomCtas />
+          <FullCtaButtons />
         </div>
 
         <div className="mx-auto mt-10 grid max-w-[820px] gap-3 sm:grid-cols-2">

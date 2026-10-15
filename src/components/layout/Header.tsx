@@ -96,15 +96,19 @@ export function Header() {
 
   const group = (id: 'services' | 'cities', label: string, href: string, items: string[][]) => (
     <div className="border-b border-line">
-      <div className="flex items-center">
-        <Link href={href} onClick={close} className="flex-1 py-3 font-semibold">{label}</Link>
-        <button type="button" aria-expanded={section === id} onClick={() => setSection(section === id ? null : id)} className="grid h-10 w-10 place-items-center">
-          <FaChevronDown className={section === id ? 'rotate-180' : ''} />
-        </button>
-      </div>
+      <button
+        type="button"
+        aria-expanded={section === id}
+        onClick={() => setSection(section === id ? null : id)}
+        className="flex w-full items-center justify-between py-3 text-left font-semibold"
+      >
+        {label}
+        <FaChevronDown className={`transition ${section === id ? 'rotate-180' : ''}`} />
+      </button>
       {section === id && (
         <div className="pb-3 pl-4">
           {items.map(([url, text]) => <Link onClick={close} key={url} href={url} className="block py-2 text-sm text-muted">{text}</Link>)}
+          <Link onClick={close} href={href} className="mt-1 block py-2 text-sm font-bold text-ink">Tümünü Gör</Link>
         </div>
       )}
     </div>
