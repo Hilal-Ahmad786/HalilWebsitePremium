@@ -12,7 +12,7 @@ export default function UnifiedFloatingButtons() {
           <a href={`tel:${siteConfig.phone}`} onClick={trackPhoneClick} className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-line py-3 text-sm font-bold text-ink">
             <FaPhoneAlt />Ara
           </a>
-          <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-whatsapp py-3 text-sm font-bold text-[#0b2815]">
+          <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-whatsapp py-3 text-sm font-bold text-white">
             <FaWhatsapp />WhatsApp
           </a>
         </div>
@@ -28,7 +28,7 @@ export default function UnifiedFloatingButtons() {
           rel="noopener noreferrer"
           onClick={trackWhatsAppClick}
           aria-label="WhatsApp ile yaz"
-          className="group flex h-14 w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-whatsapp px-0 text-[#0b2815] shadow-[0_12px_30px_rgba(22,24,23,.22)] transition-all duration-200 ease-out hover:w-[168px] hover:justify-start hover:rounded-lg hover:px-4 focus-visible:w-[168px] focus-visible:justify-start focus-visible:rounded-lg focus-visible:px-4"
+          className="group flex h-14 w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-whatsapp px-0 text-white shadow-[0_12px_30px_rgba(22,24,23,.22)] transition-all duration-200 ease-out hover:w-[168px] hover:justify-start hover:rounded-lg hover:px-4 focus-visible:w-[168px] focus-visible:justify-start focus-visible:rounded-lg focus-visible:px-4"
         >
           <FaWhatsapp className="shrink-0 text-xl" />
           <span className="hidden whitespace-nowrap text-sm font-bold group-hover:inline group-focus-visible:inline">WhatsApp ile Yaz</span>
