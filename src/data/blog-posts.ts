@@ -1,5 +1,6 @@
 // src/data/blog-posts.ts
 import { BlogPost } from './types';
+import { mdPosts } from './blog-md.generated';
 
 export const blogPosts: BlogPost[] = [
   {
@@ -1253,6 +1254,24 @@ Alıcı İmza: __________________
     published: true,
   },
 ];
+
+// Daily Markdown posts from content/blog/*.md (see scripts/build-blog.mjs), newest first.
+blogPosts.unshift(...mdPosts.map((p): BlogPost => ({
+  id: `md-${p.slug}`,
+  slug: p.slug,
+  title: p.title,
+  excerpt: p.description,
+  content: `<div class="md-post">${p.html}</div>`,
+  author: 'Araban Nakit Ekibi',
+  authorImage: '/images/logo.png',
+  date: p.date,
+  category: p.category,
+  tags: [p.category],
+  image: p.image || blogPosts[0].image,
+  readTime: p.readTime,
+  metaDescription: p.description,
+  published: true,
+})));
 
 export const blogCategories = [
   'Araç Alım',

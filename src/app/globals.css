@@ -48,3 +48,20 @@ body { background: var(--color-bg); color: var(--color-ink); font-family: var(--
 @media (min-width:768px){.site-container{width:min(100% - 64px,1360px)}}
 @media (min-width:1024px){header>div:first-child>.site-container{position:relative;justify-content:center!important}header>div:first-child>.site-container::before{content:'TÜRKİYE GENELİ KAZALI • HASARLI • PERT • HURDA ARAÇ ALIMI';font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--color-ink)}header>div:first-child>.site-container>a:first-of-type{position:absolute;left:0}header>div:first-child>.site-container>a:last-of-type{position:absolute;right:0}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}.reveal-ready .reveal{opacity:1!important;transform:none!important}.hero-anim{opacity:1!important;animation:none!important}}
+
+/* Daily Markdown blog posts (content/blog/*.md → scripts/build-blog.mjs) */
+.md-post { font-size: 1.0625rem; line-height: 1.8; color: #374151; }
+.md-post h2 { font-size: 1.6rem; font-weight: 700; color: #111827; margin: 2.2rem 0 0.9rem; line-height: 1.3; }
+.md-post h3 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 1.6rem 0 0.6rem; line-height: 1.35; }
+.md-post h4 { font-size: 1.1rem; font-weight: 700; color: #111827; margin: 1.3rem 0 0.5rem; }
+.md-post p { margin: 0 0 1.1rem; }
+.md-post ul { list-style: disc; padding-left: 1.4rem; margin: 0 0 1.2rem; }
+.md-post ol { list-style: decimal; padding-left: 1.4rem; margin: 0 0 1.2rem; }
+.md-post li { margin: 0.35rem 0; }
+.md-post strong { color: #111827; font-weight: 700; }
+.md-post a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.md-post blockquote { border-left: 4px solid inherit; background: #f9fafb; padding: 0.7rem 1rem; margin: 1.4rem 0; font-style: italic; }
+.md-post .table-wrap { overflow-x: auto; margin: 1.4rem 0; }
+.md-post table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.md-post th { background: #f3f4f6; text-align: left; font-weight: 700; color: #111827; }
+.md-post th, .md-post td { border: 1px solid #e5e7eb; padding: 0.6rem 0.8rem; vertical-align: top; }

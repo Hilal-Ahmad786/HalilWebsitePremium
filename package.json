@@ -6,7 +6,10 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predev": "node scripts/build-blog.mjs",
+    "prebuild": "node scripts/build-blog.mjs",
+    "blog": "node scripts/build-blog.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
