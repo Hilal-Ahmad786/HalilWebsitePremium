@@ -44,7 +44,7 @@ export default function HomePage() {
 
       <section className="site-container py-10">
         <p className="reveal mx-auto max-w-4xl text-center text-lg leading-8 text-muted">
-          Türkiye genelinde <a href="https://hasarliaracalan.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-ink underline decoration-accent decoration-4 underline-offset-4">hasarlı araç alan</a> uzman ekibimizle kazalı, pert ve hurda aracınız için 30 dakikada nakit teklif veriyor, noter devrinin ardından aynı gün ödeme yapıyoruz.
+          Türkiye genelinde hasarlı araç alan uzman ekibimizle kazalı, pert ve hurda aracınız için 30 dakikada nakit teklif veriyor, noter devrinin ardından aynı gün ödeme yapıyoruz.
         </p>
       </section>
 

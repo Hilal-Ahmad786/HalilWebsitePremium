@@ -44,7 +44,6 @@ export function Footer() {
           <h2 className="display text-base">Hizmetlerimiz</h2>
           <div className="mt-5 grid gap-3 text-sm text-muted">
             {services.map(([slug, label]) => <Link key={slug} href={`/hizmetler/${slug}`}>{label}</Link>)}
-            <a href="https://hasarliaracalan.com/" target="_blank" rel="noopener" title="Hasarlı Araç Alan - Hasarlı Araç Alım Satım">Hasarlı Araç Alan</a>
           </div>
         </div>
         <div>
