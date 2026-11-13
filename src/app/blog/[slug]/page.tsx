@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
-      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: post.id.startsWith('md-') && post.image.startsWith('/images/blog/') ? post.image : ogImage, width: 1200, height: 630, alt: post.title }],
     },
   };
 }
@@ -60,8 +60,10 @@ export default async function BlogPostPage({ params }: Props) {
   const related = blogPosts.filter((p) => p.published && p.id !== post.id && p.category === post.category).slice(0, 3);
   const url = `${siteConfig.url}/blog/${post.slug}`;
   const city = detectCity(post);
-  const articleImage = city ? getCityImage(city.id) : serviceImages['hasarli-arac-alim'];
-  const articleImageAlt = city ? getCityImageAlt(city.id, city.name) : 'Hasarlı araç değerlendirme';
+  // Markdown posts (content/blog) carry their own cover; older posts keep the city/service photo.
+  const ownCover = post.id.startsWith('md-') && post.image.startsWith('/images/blog/');
+  const articleImage = ownCover ? post.image : city ? getCityImage(city.id) : serviceImages['hasarli-arac-alim'];
+  const articleImageAlt = ownCover ? post.title : city ? getCityImageAlt(city.id, city.name) : 'Hasarlı araç değerlendirme';
 
   const pageSchema = {
     '@context': 'https://schema.org',
