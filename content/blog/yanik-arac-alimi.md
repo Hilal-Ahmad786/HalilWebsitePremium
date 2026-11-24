@@ -34,6 +34,8 @@ Fotoğrafların yangından hemen sonra mı, taşındıktan sonra mı çekildiği
 
 Resmî hurda kaydı bulunan araçlarda normal noter satışını otomatik olarak varsaymayın. Mevcut belgenin gerektirdiği işlem ve teslim yolunu ayrıca teyit etmek gerekir. Önce kaydı netleştirelim, ardından bedel ve teslim koşullarını o duruma göre görüşelim.
 
+![Isli beyaz kompakt aracın hasar değerlendirmesi](/images/blog/yanik-arac-alimi-1.webp)
+
 ## Yanık aracın teklifini hangi ayrıntılar etkiler?
 
 Aracın marka, model ve yılı ilk bilgileri oluşturur. Bilinen kilometreyi de paylaşabilirsiniz. Gösterge okunamıyorsa son bildiğiniz değerin yaklaşık olduğunu belirtin. Fotoğraftan görülemeyen bilgiye kesinmiş gibi yaklaşmayalım.
